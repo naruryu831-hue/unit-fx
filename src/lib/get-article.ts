@@ -8,7 +8,11 @@ export function getArticleBySlug(slug: string): Article | undefined {
 }
 
 export function getBrokersForArticle(article: Article): Broker[] {
-  return article.brokerSlugs
-    .map((slug) => getBrokerBySlug(slug))
-    .filter((broker): broker is Broker => broker !== undefined)
+  return article.brokerSlugs.map((slug) => {
+    const broker = getBrokerBySlug(slug)
+    if (!broker) {
+      throw new Error(`Unknown broker slug: ${slug}`)
+    }
+    return broker
+  })
 }

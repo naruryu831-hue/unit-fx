@@ -2,7 +2,7 @@ import type { Article } from '../articles-types'
 
 export const kaigaiFxHikakuHub: Article = {
   slug: 'kaigai-fx-hikaku-hub',
-  title: '海外FX 全業者比較・おすすめランキング',
+  title: '海外FX業者比較・選び方ガイド',
   category: 'hub',
   brokerSlugs: ['xm'],
   body: `海外FXは、日本国内のFX業者に比べて高いレバレッジを利用できる点が特徴です。一方で、紹介する業者の多くは日本の金融庁に登録されていない海外業者である点に注意が必要です。

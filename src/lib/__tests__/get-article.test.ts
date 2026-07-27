@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { getArticleBySlug, getBrokersForArticle } from '../get-article'
+import type { Article } from '@/data/articles-types'
 
 describe('getArticleBySlug', () => {
   it('finds the seeded hub article by slug', () => {
@@ -18,5 +19,17 @@ describe('getBrokersForArticle', () => {
     const article = getArticleBySlug('kaigai-fx-hikaku-hub')!
     const brokers = getBrokersForArticle(article)
     expect(brokers.map((b) => b.slug)).toEqual(article.brokerSlugs)
+  })
+
+  it('throws for an article referencing an unknown broker slug', () => {
+    const article: Article = {
+      slug: 'fixture-unknown-broker',
+      title: 'テスト記事',
+      category: 'hub',
+      brokerSlugs: ['does-not-exist'],
+      body: 'テスト本文',
+      faq: [],
+    }
+    expect(() => getBrokersForArticle(article)).toThrow('Unknown broker slug: does-not-exist')
   })
 })
