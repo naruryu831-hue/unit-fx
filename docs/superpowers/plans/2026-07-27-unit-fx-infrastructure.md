@@ -1100,3 +1100,4 @@ Expected: Task 1〜10までの全コミットが履歴に並んでいる。
 - `FaqSection`のJSON-LD出力で`<`をエスケープする（FAQ本文に`</script>`相当の文字列が入った場合の破損防止）。
 - `validateArticleTitleCount`のタイトル数字マッチが全角数字（１２選 等）に対応していない点の改善。
 - `AFFILIATE_LINKS`の型を`Record<string, string | null>`からbroker slugのユニオン型ベースに変更し、キーの打ち間違いをコンパイル時に検出できるようにする。ASP審査通過後、実リンクを設定する際に実施するのが自然。
+- `src/data/__tests__/data-integrity.test.ts`に、各記事の`getBrokersForArticle(article)`が例外を投げずに`brokerSlugs`と同じ件数を解決できることを検証する`it.each`ケースを追加する（現状は`validateBroker`/`validateArticleTitleCount`のみで、未解決slugの検出はカバーしていない）。33記事バッチで多数の記事が業者を参照するようになった際に効いてくる。
