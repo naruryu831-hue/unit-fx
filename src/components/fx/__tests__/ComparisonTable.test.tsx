@@ -1,8 +1,26 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { ComparisonTable } from '../ComparisonTable'
+import { ComparisonTable, parseLeverageValue } from '../ComparisonTable'
 import { xm } from '@/data/brokers/xm'
 import type { Broker } from '@/data/brokers-types'
+
+describe('parseLeverageValue', () => {
+  it('returns Infinity for "無制限"', () => {
+    expect(parseLeverageValue('無制限（Unlimited）')).toBe(Infinity)
+  })
+
+  it('returns Infinity for "unlimited" case-insensitively', () => {
+    expect(parseLeverageValue('Unlimited leverage')).toBe(Infinity)
+  })
+
+  it('returns NaN when no number and no unlimited marker is present', () => {
+    expect(Number.isNaN(parseLeverageValue('公式サイト参照'))).toBe(true)
+  })
+
+  it('extracts a plain number', () => {
+    expect(parseLeverageValue('1000倍')).toBe(1000)
+  })
+})
 
 describe('ComparisonTable', () => {
   it('renders one row per broker including the age requirement column', () => {

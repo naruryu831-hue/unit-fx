@@ -28,4 +28,16 @@ describe('SpecBar', () => {
     const bars = screen.getAllByTestId('spec-bar-fill')
     expect(bars[bars.length - 1].style.width).toBe('0%')
   })
+
+  it('fills the bar to 100% for an unlimited (Infinity) value', () => {
+    render(<SpecBar label="最大レバレッジ" value={Infinity} max={3000} displayValue="無制限" />)
+    const bar = screen.getByTestId('spec-bar-fill')
+    expect(bar.style.width).toBe('100%')
+  })
+
+  it('shows a neutral unknown state instead of a 0% fill when value is NaN', () => {
+    render(<SpecBar label="最大レバレッジ" value={NaN} max={3000} displayValue="公式サイト参照" />)
+    expect(screen.queryByTestId('spec-bar-fill')).not.toBeInTheDocument()
+    expect(screen.getByTestId('spec-bar-unknown')).toBeInTheDocument()
+  })
 })

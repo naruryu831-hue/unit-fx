@@ -17,7 +17,7 @@ function findReviewSlug(brokerSlug: string): string | undefined {
 export function BrokerRankingList({ brokers }: { brokers: Broker[] }) {
   const maxLeverageValue = Math.max(
     0,
-    ...brokers.map((broker) => parseLeverageValue(broker.maxLeverage))
+    ...brokers.map((broker) => parseLeverageValue(broker.maxLeverage)).filter(Number.isFinite)
   )
 
   return (

@@ -4,16 +4,17 @@ import { SpecBar } from './SpecBar'
 import { CtaButton } from './CtaButton'
 
 export function parseLeverageValue(text: string): number {
+  if (/無制限|unlimited/i.test(text)) return Infinity
   const match = text.match(/[\d,]+(?:\.\d+)?/)
-  if (!match) return 0
+  if (!match) return NaN
   const parsed = Number(match[0].replace(/,/g, ''))
-  return Number.isNaN(parsed) ? 0 : parsed
+  return parsed
 }
 
 export function ComparisonTable({ brokers }: { brokers: Broker[] }) {
   const maxLeverageValue = Math.max(
     0,
-    ...brokers.map((broker) => parseLeverageValue(broker.maxLeverage))
+    ...brokers.map((broker) => parseLeverageValue(broker.maxLeverage)).filter(Number.isFinite)
   )
 
   return (
