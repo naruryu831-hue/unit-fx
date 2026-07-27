@@ -23,14 +23,18 @@ export function ComparisonTable({ brokers }: { brokers: Broker[] }) {
             <td className="p-2">{broker.japaneseSupport ? 'あり' : 'なし'}</td>
             <td className="p-2">{broker.minAgeYears}歳以上</td>
             <td className="p-2">
-              <a
-                href={getBrokerLink(broker.slug)}
-                className="text-blue-600 underline"
-                target="_blank"
-                rel="noopener noreferrer nofollow sponsored"
-              >
-                公式サイト
-              </a>
+              {broker.linkCaution ? (
+                <span className="text-gray-500">現在確認中（リンクなし）</span>
+              ) : (
+                <a
+                  href={getBrokerLink(broker.slug)}
+                  className="text-blue-600 underline"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow sponsored"
+                >
+                  公式サイト
+                </a>
+              )}
             </td>
           </tr>
         ))}

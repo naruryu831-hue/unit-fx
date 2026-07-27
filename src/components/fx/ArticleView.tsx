@@ -3,6 +3,8 @@ import type { Broker } from '@/data/brokers-types'
 import { RiskDisclaimer } from './RiskDisclaimer'
 import { ComparisonTable } from './ComparisonTable'
 import { FaqSection } from './FaqSection'
+import { RelatedArticles } from './RelatedArticles'
+import { getRelatedArticles } from '@/lib/get-article'
 
 export function ArticleView({ article, brokers }: { article: Article; brokers: Broker[] }) {
   return (
@@ -12,6 +14,7 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
       <div className="whitespace-pre-line leading-relaxed">{article.body}</div>
       <ComparisonTable brokers={brokers} />
       <FaqSection items={article.faq} />
+      <RelatedArticles articles={getRelatedArticles(article)} />
     </article>
   )
 }

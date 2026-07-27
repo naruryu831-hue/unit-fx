@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { ComparisonTable } from '../ComparisonTable'
 import { xm } from '@/data/brokers/xm'
+import type { Broker } from '@/data/brokers-types'
 
 describe('ComparisonTable', () => {
   it('renders one row per broker including the age requirement column', () => {
@@ -12,5 +13,27 @@ describe('ComparisonTable', () => {
     const link = screen.getByRole('link', { name: '公式サイト' })
     expect(link).toHaveAttribute('href', 'https://www.xmtrading.com/')
     expect(link.getAttribute('rel')).toContain('sponsored')
+  })
+
+  it('does not render an official site link for brokers flagged with linkCaution, showing a caution note instead', () => {
+    const cautionBroker: Broker = {
+      slug: 'caution-broker',
+      name: '要確認業者',
+      officialUrl: 'https://example.com/',
+      minAgeYears: 18,
+      maxLeverage: '公式サイト参照',
+      minDeposit: '公式サイト参照',
+      bonusSummary: '公式サイト参照',
+      japaneseSupport: true,
+      founded: 2020,
+      summary: 'テスト用',
+      linkCaution: true,
+    }
+
+    render(<ComparisonTable brokers={[cautionBroker]} />)
+
+    expect(screen.getByText('要確認業者')).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '公式サイト' })).not.toBeInTheDocument()
+    expect(screen.getByText('現在確認中（リンクなし）')).toBeInTheDocument()
   })
 })

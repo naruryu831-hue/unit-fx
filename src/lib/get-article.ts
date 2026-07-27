@@ -16,3 +16,10 @@ export function getBrokersForArticle(article: Article): Broker[] {
     return broker
   })
 }
+
+export function getRelatedArticles(article: Article): Article[] {
+  const slugs = article.relatedSlugs ?? []
+  return slugs
+    .map((slug) => getArticleBySlug(slug))
+    .filter((related): related is Article => related !== undefined)
+}

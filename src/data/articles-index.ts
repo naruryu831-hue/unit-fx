@@ -22,6 +22,7 @@ import { tradeviewAccountOpening } from './articles/tradeview-account-opening'
 import { threetraderAccountOpening } from './articles/threetrader-account-opening'
 import { vantageAccountOpening } from './articles/vantage-account-opening'
 import { landfxAccountOpening } from './articles/landfx-account-opening'
+import { bigbossAccountOpening } from './articles/bigboss-account-opening'
 import { kaigaiFxShougakuStart } from './articles/kaigai-fx-shougaku-start'
 import { kaigaiFxScalpingOk } from './articles/kaigai-fx-scalping-ok'
 import { kaigaiFxNihongoSupport } from './articles/kaigai-fx-nihongo-support'
@@ -58,6 +59,7 @@ export const articles: Article[] = [
   threetraderAccountOpening,
   vantageAccountOpening,
   landfxAccountOpening,
+  bigbossAccountOpening,
   kaigaiFxShougakuStart,
   kaigaiFxScalpingOk,
   kaigaiFxNihongoSupport,

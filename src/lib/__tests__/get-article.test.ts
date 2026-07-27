@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getArticleBySlug, getBrokersForArticle } from '../get-article'
+import { getArticleBySlug, getBrokersForArticle, getRelatedArticles } from '../get-article'
 import type { Article } from '@/data/articles-types'
 
 describe('getArticleBySlug', () => {
@@ -31,5 +31,38 @@ describe('getBrokersForArticle', () => {
       faq: [],
     }
     expect(() => getBrokersForArticle(article)).toThrow('Unknown broker slug: does-not-exist')
+  })
+})
+
+describe('getRelatedArticles', () => {
+  it('resolves relatedSlugs to article records', () => {
+    const article = getArticleBySlug('xm-account-opening')!
+    const related = getRelatedArticles(article)
+    expect(related.map((a) => a.slug)).toEqual(['mt4-mt5-guide'])
+  })
+
+  it('returns an empty array when relatedSlugs is undefined', () => {
+    const article: Article = {
+      slug: 'fixture-no-related',
+      title: 'テスト記事',
+      category: 'hub',
+      brokerSlugs: [],
+      body: 'テスト本文',
+      faq: [],
+    }
+    expect(getRelatedArticles(article)).toEqual([])
+  })
+
+  it('ignores unknown related slugs instead of throwing', () => {
+    const article: Article = {
+      slug: 'fixture-unknown-related',
+      title: 'テスト記事',
+      category: 'hub',
+      brokerSlugs: [],
+      body: 'テスト本文',
+      faq: [],
+      relatedSlugs: ['does-not-exist', 'mt4-mt5-guide'],
+    }
+    expect(getRelatedArticles(article).map((a) => a.slug)).toEqual(['mt4-mt5-guide'])
   })
 })
