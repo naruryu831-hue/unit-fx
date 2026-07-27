@@ -10,6 +10,15 @@ import { tradeviewReview } from './articles/tradeview-review'
 import { threetraderReview } from './articles/threetrader-review'
 import { vantageReview } from './articles/vantage-review'
 import { landfxReview } from './articles/landfx-review'
+import { icMarketsReview } from './articles/ic-markets-review'
+import { fbsReview } from './articles/fbs-review'
+import { miltonMarketsReview } from './articles/milton-markets-review'
+import { ironfxReview } from './articles/ironfx-review'
+import { tradersTrustReview } from './articles/traders-trust-review'
+import { dooPrimeReview } from './articles/doo-prime-review'
+import { puPrimeReview } from './articles/pu-prime-review'
+import { windsorBrokersReview } from './articles/windsor-brokers-review'
+import { vtMarketsReview } from './articles/vt-markets-review'
 import { xmAccountOpening } from './articles/xm-account-opening'
 import { exnessAccountOpening } from './articles/exness-account-opening'
 import { titanfxAccountOpening } from './articles/titanfx-account-opening'
@@ -21,6 +30,15 @@ import { threetraderAccountOpening } from './articles/threetrader-account-openin
 import { vantageAccountOpening } from './articles/vantage-account-opening'
 import { landfxAccountOpening } from './articles/landfx-account-opening'
 import { bigbossAccountOpening } from './articles/bigboss-account-opening'
+import { icMarketsAccountOpening } from './articles/ic-markets-account-opening'
+import { fbsAccountOpening } from './articles/fbs-account-opening'
+import { miltonMarketsAccountOpening } from './articles/milton-markets-account-opening'
+import { ironfxAccountOpening } from './articles/ironfx-account-opening'
+import { tradersTrustAccountOpening } from './articles/traders-trust-account-opening'
+import { dooPrimeAccountOpening } from './articles/doo-prime-account-opening'
+import { puPrimeAccountOpening } from './articles/pu-prime-account-opening'
+import { windsorBrokersAccountOpening } from './articles/windsor-brokers-account-opening'
+import { vtMarketsAccountOpening } from './articles/vt-markets-account-opening'
 import { kaigaiFxShougakuStart } from './articles/kaigai-fx-shougaku-start'
 import { kaigaiFxScalpingOk } from './articles/kaigai-fx-scalping-ok'
 import { kaigaiFxNihongoSupport } from './articles/kaigai-fx-nihongo-support'
@@ -45,6 +63,15 @@ export const articles: Article[] = [
   threetraderReview,
   vantageReview,
   landfxReview,
+  icMarketsReview,
+  fbsReview,
+  miltonMarketsReview,
+  ironfxReview,
+  tradersTrustReview,
+  dooPrimeReview,
+  puPrimeReview,
+  windsorBrokersReview,
+  vtMarketsReview,
   xmAccountOpening,
   exnessAccountOpening,
   titanfxAccountOpening,
@@ -56,6 +83,15 @@ export const articles: Article[] = [
   vantageAccountOpening,
   landfxAccountOpening,
   bigbossAccountOpening,
+  icMarketsAccountOpening,
+  fbsAccountOpening,
+  miltonMarketsAccountOpening,
+  ironfxAccountOpening,
+  tradersTrustAccountOpening,
+  dooPrimeAccountOpening,
+  puPrimeAccountOpening,
+  windsorBrokersAccountOpening,
+  vtMarketsAccountOpening,
   kaigaiFxShougakuStart,
   kaigaiFxScalpingOk,
   kaigaiFxNihongoSupport,
