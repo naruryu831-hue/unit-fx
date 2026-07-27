@@ -1,7 +1,7 @@
-# 海外FXアフィリエイトサイト 設計
+# UNIT-FX（海外FXアフィリエイトサイト） 設計
 
 作成日: 2026-07-27
-対象: 新規アフィリエイトサイト（ジャンル: 海外FX）。UNIT-GOLFとは完全に独立した別プロジェクト。
+対象: 新規アフィリエイトサイト（ジャンル: 海外FX）。サイト名は「UNIT-FX」。UNIT-GOLFとブランドの統一感を持たせつつ、システム・ドメイン・リポジトリはUNIT-GOLFとは完全に独立した別プロジェクト。
 
 ## 背景・目的
 
@@ -26,7 +26,8 @@
 
 ## アーキテクチャ
 
-- 新規リポジトリ: `C:\Users\narur\Desktop\海外FXサイト\fx-broker-guide`（本specもここに配置。既存の巨大なホームディレクトリ配下gitリポジトリとは無関係の独立リポジトリ）
+- サイト名: **UNIT-FX**
+- 新規リポジトリ: `C:\Users\narur\Desktop\海外FXサイト\unit-fx`（本specもここに配置。既存の巨大なホームディレクトリ配下gitリポジトリとは無関係の独立リポジトリ）
 - Next.js + TypeScript + Tailwind CSS。DBなし（会員機能・決済は不要な静的コンテンツ主体サイト）
 - Vercelに新規プロジェクトとしてデプロイ。当面は `*.vercel.app` の仮ドメインで公開し、独自ドメインは後日ユーザーが取得
 
@@ -70,7 +71,7 @@ golf-friendの `/gear` パターンを踏襲する。
 ## デプロイ
 
 ```
-cd "C:\Users\narur\Desktop\海外FXサイト\fx-broker-guide"
+cd "C:\Users\narur\Desktop\海外FXサイト\unit-fx"
 git add <ファイル>
 git commit -m "メッセージ"
 git push origin main
