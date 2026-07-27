@@ -3,7 +3,6 @@ import { exness } from './brokers/exness'
 import { titanfx } from './brokers/titanfx'
 import { hfm } from './brokers/hfm'
 import { bigboss } from './brokers/bigboss'
-import { gemforex } from './brokers/gemforex'
 import { fxgt } from './brokers/fxgt'
 import { axiory } from './brokers/axiory'
 import { tradeview } from './brokers/tradeview'
@@ -18,7 +17,6 @@ export const brokers: Broker[] = [
   titanfx,
   hfm,
   bigboss,
-  gemforex,
   fxgt,
   axiory,
   tradeview,

@@ -26,14 +26,24 @@ export function ComparisonTable({ brokers }: { brokers: Broker[] }) {
               {broker.linkCaution ? (
                 <span className="text-gray-500">現在確認中（リンクなし）</span>
               ) : (
-                <a
-                  href={getBrokerLink(broker.slug)}
-                  className="text-blue-600 underline"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow sponsored"
-                >
-                  公式サイト
-                </a>
+                (() => {
+                  // getBrokerLink は broker.linkCaution === true の場合に null を返す。
+                  // 上の分岐で既に linkCaution を確認しているため通常は null にならないが、
+                  // 万一 null が返ってきた場合でもリンクを出さずに注意書きへフォールバックする。
+                  const link = getBrokerLink(broker.slug)
+                  return link ? (
+                    <a
+                      href={link}
+                      className="text-blue-600 underline"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow sponsored"
+                    >
+                      公式サイト
+                    </a>
+                  ) : (
+                    <span className="text-gray-500">現在確認中（リンクなし）</span>
+                  )
+                })()
               )}
             </td>
           </tr>

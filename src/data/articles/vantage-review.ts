@@ -5,6 +5,7 @@ export const vantageReview: Article = {
   title: 'Vantage(Vantage Markets)の評判・特徴を徹底解説|海外FX業者レビュー',
   category: 'broker-review',
   brokerSlugs: ['vantage'],
+  relatedSlugs: ['vantage-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `Vantage(ヴァンテージ、Vantage Markets)は、2009年に設立された海外FX・CFDブローカーです。オーストラリアのASIC(Australian Securities and Investments Commission)や英国のFCA(Financial Conduct Authority)、バヌアツのVFSC(Vanuatu Financial Services Commission)など、複数の金融当局からライセンスを取得したグループ企業によって運営されています。本記事では、Vantageの特徴・口座タイプ・レバレッジ・入金方法・日本語サポートなどの情報を整理し、メリット・デメリット、どのようなトレーダーに向いているかを解説します。
 
 なお、レバレッジや最低入金額、ボーナス条件などの数値・条件は口座タイプや時期によって変動する可能性があり、また公式サイト(https://www.vantagemarkets.com/)への直接アクセスで最新情報を逐一確認できたわけではない項目も含まれます。本文中で「公式サイト参照」と記載している箇所については、断定的な数値を記載せず、必ずご自身で公式サイトの最新情報をご確認ください。

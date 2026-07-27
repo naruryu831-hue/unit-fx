@@ -5,6 +5,7 @@ export const tradeviewReview: Article = {
   title: 'Tradeview Markets(トレードビュー)の評判・特徴を徹底解説',
   category: 'broker-review',
   brokerSlugs: ['tradeview'],
+  relatedSlugs: ['tradeview-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `Tradeview Markets(トレードビュー)は、ケイマン諸島を拠点として2004年から運営されている海外FX・CFDブローカーです。MT4・MT5・cTraderといった複数の取引プラットフォームに対応し、最大1:500のレバレッジを提供していることが公式サイトで確認できます。本記事では、Tradeview Marketsの特徴・口座タイプ・レバレッジ・入金方法・日本語サポート体制などを整理し、メリット・デメリットや向いているトレーダー像について解説します。なお、業者選びに際しては本記事の情報だけで判断せず、必ず公式サイトの最新情報をご自身で確認したうえで検討してください。
 
 ■ Tradeview Marketsとは何か

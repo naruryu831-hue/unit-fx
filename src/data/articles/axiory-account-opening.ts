@@ -5,7 +5,7 @@ export const axioryAccountOpening: Article = {
   title: 'AXIORY(アキシオリー)の口座開設方法をわかりやすく解説',
   category: 'account-opening',
   brokerSlugs: ['axiory'],
-  relatedSlugs: ['mt4-mt5-guide'],
+  relatedSlugs: ['mt4-mt5-guide', 'axiory-review', 'kaigai-fx-hikaku-hub'],
   body: `AXIORY(アキシオリー)は、ベリーズを拠点とするAxiory Global Ltd.が運営する海外FX・CFDブローカーです。MT4・MT5・cTraderという複数の取引プラットフォームに対応しており、日本語でのカスタマーサポートも用意されていることから、口座開設を検討している方も多いのではないでしょうか。本記事では、AXIORYの公式サイトへのアクセスから登録フォームの入力、本人確認書類の提出、入金方法、開設後にやっておきたいことまで、実際の手順に沿って番号付きで解説します。
 
 海外FXの口座開設自体は、多くの業者と同様にオンラインで完結し、費用もかかりません。ただし、入力項目の誤りや提出書類の不備があると、審査や出金の際にやり直しが発生し、結果的に手続きが長引いてしまうことがあります。本記事では、そうしたつまずきをできるだけ避けられるよう、各手順で注意すべきポイントもあわせて紹介します。

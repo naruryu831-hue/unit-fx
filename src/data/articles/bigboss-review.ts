@@ -5,6 +5,7 @@ export const bigbossReview: Article = {
   title: 'BigBossの評判・特徴を徹底解説',
   category: 'broker-review',
   brokerSlugs: ['bigboss'],
+  relatedSlugs: ['bigboss-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `BigBoss（ビッグボス）は、セントビンセント・グレナディーン諸島を拠点とする海外FX業者です。日本語でのサポート体制を整えており、日本国内からも多くのトレーダーが利用しています。「最大2222倍」という高水準のレバレッジ表記や、BigBoss独自のポイント制度・コイン建てボーナスなど、他の海外FX業者とは異なる独自色のある施策を打ち出している点も特徴のひとつとして挙げられます。
 
 本記事では、BigBossの基本情報から口座タイプ、レバレッジ、最低入金額、入出金方法、ボーナス・キャンペーン、スプレッド、取引プラットフォーム、日本語サポート、メリット・デメリットまで、口座開設を検討する際に確認しておきたいポイントをできるだけ具体的に整理して解説します。

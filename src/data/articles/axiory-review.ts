@@ -5,6 +5,7 @@ export const axioryReview: Article = {
   title: 'AXIORY(アキシオリー)の評判・特徴を徹底解説',
   category: 'broker-review',
   brokerSlugs: ['axiory'],
+  relatedSlugs: ['axiory-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `AXIORY(アキシオリー)は、ベリーズを拠点とするAxiory Global Ltd.が運営する海外FX・CFDブローカーです。2011年頃から運営が続いているとされ、MT4・MT5・cTraderという複数の取引プラットフォームに対応していることや、日本語でのカスタマーサポートを受けられることから、日本在住のトレーダーの間でも名前が挙がることの多い業者です。この記事では、AXIORYの特徴やスペック、メリット・デメリット、口座開設の流れなどを整理して解説します。なお、レバレッジや最低入金額、ボーナス条件など時期によって変動しやすい項目については、本記事では断定的な数値を記載せず「公式サイト参照」としています。口座開設や取引の前には、必ずAXIORYの公式サイト(https://www.axiory.com/jp/)で最新情報をご確認ください。
 
 ■AXIORY(アキシオリー)とは何か

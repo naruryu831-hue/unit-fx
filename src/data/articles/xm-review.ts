@@ -5,6 +5,7 @@ export const xmReview: Article = {
   title: 'XM(XM Trading)の評判・特徴を徹底解説',
   category: 'broker-review',
   brokerSlugs: ['xm'],
+  relatedSlugs: ['xm-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `海外FX業者を検討する際、多くの人が最初に名前を目にするのが「XM(XM Trading)」ではないでしょうか。日本語対応の充実度や知名度の高さから、海外FX初心者の入り口として選ばれることが多い業者です。本記事では、XMの基本情報・レバレッジ・入金出金方法・ボーナス制度・日本語サポート体制などを整理し、メリットとデメリットの両面から特徴を解説します。数値情報については公式サイトで確認できる範囲にとどめ、断定できない項目は「公式サイト参照」と明記しています。口座開設や取引を検討する際の参考としてご活用ください。
 
 ■ XM(XM Trading)とは何か

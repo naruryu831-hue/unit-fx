@@ -5,6 +5,7 @@ export const threetraderReview: Article = {
   title: 'ThreeTrader(スリートレーダー)の評判・特徴を徹底解説',
   category: 'broker-review',
   brokerSlugs: ['threetrader'],
+  relatedSlugs: ['threetrader-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `ThreeTrader(スリートレーダー)は、2021年に設立されたとされる比較的新しい海外FXブローカーです。バヌアツ金融サービス委員会(VFSC)のライセンスを取得して運営されており、子会社としてモーリシャス金融サービス委員会(FSC)の規制下にある事業体も持っています。海外FX業者の中では後発組にあたりますが、RAW Zero・PURE Spreadという2種類の口座タイプ、最大1:1000のレバレッジ、日本語チャット・メールサポートなどを打ち出し、日本の個人トレーダーに向けた情報発信(media.threetrader.comなどの日本語メディア)にも力を入れています。
 
 本記事では、ThreeTraderの基本スペック、口座タイプ、入出金方法、日本語サポート体制、メリット・デメリット、そしてどのようなトレーダーに向いているのかを、公式サイトで確認できる情報を中心に整理して解説します。数値やキャンペーン内容は変更される可能性があるため、最終的な確認は必ず公式サイト(threetrader.com)で行ってください。

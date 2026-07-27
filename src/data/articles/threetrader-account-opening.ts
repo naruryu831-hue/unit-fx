@@ -5,7 +5,7 @@ export const threetraderAccountOpening: Article = {
   title: 'ThreeTrader(スリートレーダー)の口座開設方法をわかりやすく解説',
   category: 'account-opening',
   brokerSlugs: ['threetrader'],
-  relatedSlugs: ['mt4-mt5-guide'],
+  relatedSlugs: ['mt4-mt5-guide', 'threetrader-review', 'kaigai-fx-hikaku-hub'],
   body: `ThreeTrader(スリートレーダー)は、バヌアツ金融サービス委員会(VFSC)のライセンスのもとで運営されているとされる海外FXブローカーです。RAW Zero口座・PURE Spread口座という2種類の口座タイプ、最大1:1000のレバレッジ、日本語でのチャット・メールサポートなどを打ち出しており、日本の個人トレーダーに向けた情報発信にも力を入れています。本記事では、ThreeTraderの公式サイトでの口座開設から、MT4/MT5での取引開始までの流れを、実際の操作順に沿って番号付きの手順で解説します。
 
 レバレッジ・最低入金額といった具体的なスペックは、口座タイプや入金方法、時期によって公式サイトの記載が更新される可能性があるため、本記事では断定を避け「公式サイト参照」としている箇所があります。申し込み前には必ず公式サイト(https://www.threetrader.com/)の最新情報をご自身で確認してください。

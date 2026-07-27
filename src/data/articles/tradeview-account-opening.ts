@@ -5,7 +5,7 @@ export const tradeviewAccountOpening: Article = {
   title: 'Tradeview Markets(トレードビュー)の口座開設方法をわかりやすく解説',
   category: 'account-opening',
   brokerSlugs: ['tradeview'],
-  relatedSlugs: ['mt4-mt5-guide'],
+  relatedSlugs: ['mt4-mt5-guide', 'tradeview-review', 'kaigai-fx-hikaku-hub'],
   body: `Tradeview Markets(トレードビュー)は、ケイマン諸島を拠点として2004年から運営されている海外FX・CFDブローカーで、MT4・MT5・cTraderという複数の取引プラットフォームに対応しています。本記事では、公式サイトへのアクセスから登録フォームの入力、本人確認書類の提出、入金方法、開設後にやっておきたい設定まで、実際の手続きの流れに沿って番号付きで解説します。これから口座開設を検討している方は、手順を一つずつ確認しながら進めてください。
 
 海外FXの口座開設自体は、多くの業者と同様にオンラインで完結し、入力から本人確認書類のアップロードまでを含めても、それほど長い時間を要するものではありません。ただし、入力項目の誤りや書類の不備があると、審査や出金の際にやり直しが発生し、結果的に時間がかかってしまうことがあります。本記事では、そうしたつまずきをできるだけ避けられるよう、各手順で注意すべきポイントもあわせて紹介します。

@@ -5,6 +5,7 @@ export const exnessReview: Article = {
   title: 'Exnessの評判・特徴を徹底解説',
   category: 'broker-review',
   brokerSlugs: ['exness'],
+  relatedSlugs: ['exness-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `Exness（エクスネス）は、海外FX・CFD業者の中でも世界的に知名度が高いブローカーのひとつとして紹介されることが多い業者です。本記事では、Exnessの基本情報から口座タイプ、レバレッジ、入出金、ボーナス、日本語サポート、スプレッドなどの特徴を整理し、メリット・デメリット、どのようなトレーダーに向いているかを解説します。実際に口座開設や入金を検討する際は、本記事の内容だけで判断せず、必ず公式サイトで最新の条件をご確認ください。
 
 ■ Exnessとは

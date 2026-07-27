@@ -38,7 +38,7 @@ describe('getRelatedArticles', () => {
   it('resolves relatedSlugs to article records', () => {
     const article = getArticleBySlug('xm-account-opening')!
     const related = getRelatedArticles(article)
-    expect(related.map((a) => a.slug)).toEqual(['mt4-mt5-guide'])
+    expect(related.map((a) => a.slug)).toEqual(['mt4-mt5-guide', 'xm-review', 'kaigai-fx-hikaku-hub'])
   })
 
   it('returns an empty array when relatedSlugs is undefined', () => {

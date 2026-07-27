@@ -5,6 +5,7 @@ export const landfxReview: Article = {
   title: 'LAND-FX（現Land Prime）の特徴・評判を徹底解説【海外FXレビュー】',
   category: 'broker-review',
   brokerSlugs: ['landfx'],
+  relatedSlugs: ['landfx-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `海外FX業者「LAND-FX」は、2023年に「Land Prime」へブランド名を変更し、現在は公式サイト（landprime.com）でサービスを展開しています。本記事では、旧名称であるLAND-FXという呼び方も広く使われている状況を踏まえつつ、現行のLand Primeとしての特徴・スペック・メリット/デメリットを整理して解説します。口座開設や取引を検討する際の判断材料としてご活用ください。
 
 なお、本記事に記載しているスペック情報のうち、公式サイトで直接確認できなかった項目については「公式サイト参照」と明記しています。数値を断定できない箇所は必ず公式サイトの最新情報をご自身で確認したうえで判断してください。

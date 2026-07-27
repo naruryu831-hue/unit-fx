@@ -5,7 +5,7 @@ export const landfxAccountOpening: Article = {
   title: 'LAND-FX（現Land Prime）の口座開設方法をわかりやすく解説',
   category: 'account-opening',
   brokerSlugs: ['landfx'],
-  relatedSlugs: ['mt4-mt5-guide'],
+  relatedSlugs: ['mt4-mt5-guide', 'landfx-review', 'kaigai-fx-hikaku-hub'],
   body: `LAND-FXは2013年頃に設立された海外FX業者で、2023年に「Land Prime」へブランド名を変更し、現在は公式サイト(https://www.landprime.com/)でサービスを提供しています。モーリシャス金融庁(FSC)のライセンスのもとで運営されており、日本語対応の年中無休カスタマーサポートも用意されています。本記事では、公式サイトへのアクセスから登録フォームの入力、本人確認書類の提出、入金方法、口座開設後にやっておきたい設定まで、実際の手順に沿って番号付きで解説します。これからLAND-FX(現Land Prime)の口座開設を検討している方は、手順を一つずつ確認しながら進めてください。
 
 海外FXの口座開設自体は、多くの業者でオンライン完結・無料で行うことができ、入力から本人確認書類のアップロードまでを含めても、それほど長い時間を要するものではありません。ただし、入力項目の誤りや書類の不備があると、審査や出金の際にやり直しが発生し、結果的に時間がかかってしまうことがあります。本記事では、そうしたつまずきをできるだけ避けられるよう、各手順で注意すべきポイントもあわせて紹介します。

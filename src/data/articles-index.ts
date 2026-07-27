@@ -4,7 +4,6 @@ import { exnessReview } from './articles/exness-review'
 import { titanfxReview } from './articles/titanfx-review'
 import { hfmReview } from './articles/hfm-review'
 import { bigbossReview } from './articles/bigboss-review'
-import { gemforexReview } from './articles/gemforex-review'
 import { fxgtReview } from './articles/fxgt-review'
 import { axioryReview } from './articles/axiory-review'
 import { tradeviewReview } from './articles/tradeview-review'
@@ -15,7 +14,6 @@ import { xmAccountOpening } from './articles/xm-account-opening'
 import { exnessAccountOpening } from './articles/exness-account-opening'
 import { titanfxAccountOpening } from './articles/titanfx-account-opening'
 import { hfmAccountOpening } from './articles/hfm-account-opening'
-import { gemforexAccountOpening } from './articles/gemforex-account-opening'
 import { fxgtAccountOpening } from './articles/fxgt-account-opening'
 import { axioryAccountOpening } from './articles/axiory-account-opening'
 import { tradeviewAccountOpening } from './articles/tradeview-account-opening'
@@ -41,7 +39,6 @@ export const articles: Article[] = [
   titanfxReview,
   hfmReview,
   bigbossReview,
-  gemforexReview,
   fxgtReview,
   axioryReview,
   tradeviewReview,
@@ -52,7 +49,6 @@ export const articles: Article[] = [
   exnessAccountOpening,
   titanfxAccountOpening,
   hfmAccountOpening,
-  gemforexAccountOpening,
   fxgtAccountOpening,
   axioryAccountOpening,
   tradeviewAccountOpening,
