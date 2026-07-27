@@ -11,9 +11,14 @@ describe('BrokerRankingList', () => {
     expect(screen.getByText('Exness')).toBeInTheDocument()
   })
 
-  it('never renders the word "位" anywhere', () => {
-    const { container } = render(<BrokerRankingList brokers={[xm, exness]} />)
-    expect(container.textContent ?? '').not.toContain('位')
+  it('discloses the ranking criterion so "1位" is not read as a numeric score', () => {
+    render(<BrokerRankingList brokers={[xm, exness]} />)
+    expect(screen.getByText(/編集部調べ/)).toBeInTheDocument()
+  })
+
+  it('renders a logo badge for each broker', () => {
+    render(<BrokerRankingList brokers={[xm, exness]} />)
+    expect(screen.getByText('XM')).toBeInTheDocument()
   })
 
   it('renders correct CtaButton links to each official site', () => {

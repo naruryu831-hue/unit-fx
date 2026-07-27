@@ -3,9 +3,10 @@ import { render, screen } from '@testing-library/react'
 import { RankBadge } from '../RankBadge'
 
 describe('RankBadge', () => {
-  it('displays "01" for index=1', () => {
+  it('displays "1" and "位" for index=1', () => {
     render(<RankBadge index={1} />)
-    expect(screen.getByText('01')).toBeInTheDocument()
+    expect(screen.getByText('1')).toBeInTheDocument()
+    expect(screen.getByText('位')).toBeInTheDocument()
   })
 
   it('displays "12" for index=12', () => {
@@ -13,8 +14,9 @@ describe('RankBadge', () => {
     expect(screen.getByText('12')).toBeInTheDocument()
   })
 
-  it('never renders the word "位"', () => {
-    const { container } = render(<RankBadge index={3} />)
-    expect(container.textContent ?? '').not.toContain('位')
+  it('gives rank 1 a distinct gold style from rank 4+', () => {
+    const { container: gold } = render(<RankBadge index={1} />)
+    const { container: plain } = render(<RankBadge index={4} />)
+    expect(gold.querySelector('span')?.className).not.toBe(plain.querySelector('span')?.className)
   })
 })
