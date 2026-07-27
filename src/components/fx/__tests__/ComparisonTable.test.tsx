@@ -9,6 +9,7 @@ describe('ComparisonTable', () => {
     render(<ComparisonTable brokers={[xm]} />)
     expect(screen.getByText('XM(XM Trading)')).toBeInTheDocument()
     expect(screen.getByText('18歳以上')).toBeInTheDocument()
+    expect(screen.getByText(xm.maxLeverage)).toBeInTheDocument()
 
     const link = screen.getByRole('link', { name: '公式サイト' })
     expect(link).toHaveAttribute('href', 'https://www.xmtrading.com/')
