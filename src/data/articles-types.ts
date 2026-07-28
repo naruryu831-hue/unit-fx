@@ -17,4 +17,5 @@ export type Article = {
   body: string
   faq: FaqItem[]
   relatedSlugs?: string[]
+  summaryPoints?: string[]
 }

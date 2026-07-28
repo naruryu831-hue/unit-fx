@@ -4,6 +4,7 @@ import { RiskDisclaimer } from './RiskDisclaimer'
 import { ComparisonTable } from './ComparisonTable'
 import { BrokerRankingList } from './BrokerRankingList'
 import { BrokerCtaBanner } from './BrokerCtaBanner'
+import { ArticleSummaryBox } from './ArticleSummaryBox'
 import { FaqSection } from './FaqSection'
 import { RelatedArticles } from './RelatedArticles'
 import { TableOfContents } from './TableOfContents'
@@ -31,6 +32,9 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
         <div className="space-y-8">
           <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
             {!isHub && <RiskDisclaimer />}
+            {singleBroker && article.summaryPoints && (
+              <ArticleSummaryBox brokerName={singleBroker.name} points={article.summaryPoints} />
+            )}
             {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
             <ArticleBody body={article.body} />
             {!isHub && <ComparisonTable brokers={brokers} />}
