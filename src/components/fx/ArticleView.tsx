@@ -3,6 +3,7 @@ import type { Broker } from '@/data/brokers-types'
 import { RiskDisclaimer } from './RiskDisclaimer'
 import { ComparisonTable } from './ComparisonTable'
 import { BrokerRankingList } from './BrokerRankingList'
+import { BrokerCtaBanner } from './BrokerCtaBanner'
 import { FaqSection } from './FaqSection'
 import { RelatedArticles } from './RelatedArticles'
 import { TableOfContents } from './TableOfContents'
@@ -13,6 +14,7 @@ import { extractHeadings } from '@/lib/parse-body'
 export function ArticleView({ article, brokers }: { article: Article; brokers: Broker[] }) {
   const headings = extractHeadings(article.body)
   const isHub = article.category === 'hub'
+  const singleBroker = brokers.length === 1 ? brokers[0] : null
 
   return (
     <article className="mx-auto max-w-6xl space-y-8 p-6">
@@ -29,8 +31,10 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
         <div className="space-y-8">
           <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
             {!isHub && <RiskDisclaimer />}
+            {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
             <ArticleBody body={article.body} />
             {!isHub && <ComparisonTable brokers={brokers} />}
+            {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
             <FaqSection items={article.faq} />
           </div>
           <RelatedArticles articles={getRelatedArticles(article)} />
