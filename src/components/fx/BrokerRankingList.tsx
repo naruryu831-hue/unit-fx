@@ -22,7 +22,7 @@ export function BrokerRankingList({ brokers }: { brokers: Broker[] }) {
 
   return (
     <div className="space-y-4">
-      <p className="text-xs leading-relaxed text-slate-500">
+      <p className="text-xs leading-relaxed text-slate-600">
         ※
         この順位は金融的な優劣を数値で採点したものではありません。日本人トレーダーの利用実績が多いとされる順に編集部が並べたものです（編集部調べ）。レバレッジ等の数値は変更されることがあるため、最新情報は必ず公式サイトでご確認ください。
       </p>
@@ -50,17 +50,17 @@ export function BrokerRankingList({ brokers }: { brokers: Broker[] }) {
                   />
                   <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm sm:grid-cols-3">
                     <div>
-                      <dt className="text-xs text-slate-500">最低入金額</dt>
+                      <dt className="text-xs text-slate-600">最低入金額</dt>
                       <dd className="font-bold text-slate-800">{broker.minDeposit}</dd>
                     </div>
                     <div>
-                      <dt className="text-xs text-slate-500">日本語サポート</dt>
+                      <dt className="text-xs text-slate-600">日本語サポート</dt>
                       <dd className="font-bold text-slate-800">
                         {broker.japaneseSupport ? 'あり' : 'なし'}
                       </dd>
                     </div>
                     <div className="col-span-2 sm:col-span-1">
-                      <dt className="text-xs text-slate-500">ボーナス</dt>
+                      <dt className="text-xs text-slate-600">ボーナス</dt>
                       <dd className="line-clamp-2 font-bold text-slate-800">
                         {broker.bonusSummary}
                       </dd>

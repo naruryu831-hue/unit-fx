@@ -14,7 +14,7 @@ export function FeaturedArticleCard({ article }: { article: Article }) {
       <h2 className="mt-4 text-2xl font-bold text-slate-900 group-hover:text-indigo-600 md:text-3xl">
         {article.title}
       </h2>
-      <p className="mt-2 text-sm text-slate-500">{categoryLabels[article.category]}</p>
+      <p className="mt-2 text-sm text-slate-600">{categoryLabels[article.category]}</p>
       <span className="mt-4 inline-block font-bold text-indigo-600">続きを読む →</span>
     </Link>
   )

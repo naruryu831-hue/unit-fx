@@ -18,4 +18,24 @@ describe('ArticleList', () => {
     render(<ArticleList articles={sample} />)
     expect(screen.getByText('比較ハブ')).toBeInTheDocument()
   })
+
+  it('shows a broker review thumbnail for broker-review articles', () => {
+    const reviewArticle: Article[] = [
+      {
+        slug: 'xm-review',
+        title: 'XM(XM Trading)の評判・特徴を徹底解説',
+        category: 'broker-review',
+        brokerSlugs: ['xm'],
+        body: '',
+        faq: [],
+      },
+    ]
+    render(<ArticleList articles={reviewArticle} />)
+    expect(screen.getByText('口コミ・評判')).toBeInTheDocument()
+  })
+
+  it('does not show a broker thumbnail for non broker-review articles', () => {
+    render(<ArticleList articles={sample} />)
+    expect(screen.queryByText('口コミ・評判')).not.toBeInTheDocument()
+  })
 })

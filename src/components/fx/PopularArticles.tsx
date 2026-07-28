@@ -12,7 +12,7 @@ export function PopularArticles({ articles }: { articles: Article[] }) {
       <ul className="mt-3 space-y-3">
         {articles.map((article, i) => (
           <li key={article.slug} className="flex items-start gap-3">
-            <span className="mt-0.5 text-lg font-bold text-slate-300">{i + 1}</span>
+            <span className="mt-0.5 text-lg font-bold text-slate-400">{i + 1}</span>
             <Link
               href={`/articles/${article.slug}`}
               className="text-sm font-medium text-slate-800 hover:text-indigo-600"

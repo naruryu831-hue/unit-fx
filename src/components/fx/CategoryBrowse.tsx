@@ -24,7 +24,7 @@ export function CategoryBrowse({ articles }: { articles: Article[] }) {
 
           return (
             <div key={category}>
-              <p className="text-xs font-bold text-slate-500">{categoryLabels[category]}</p>
+              <p className="text-xs font-bold text-slate-600">{categoryLabels[category]}</p>
               <ul className="mt-1 space-y-1">
                 {items.map((article) => (
                   <li key={article.slug}>

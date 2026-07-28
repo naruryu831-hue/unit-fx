@@ -1,7 +1,5 @@
 import { articles } from '@/data/articles-index'
-import { brokers } from '@/data/brokers-index'
 import { ArticleList } from '@/components/fx/ArticleList'
-import { BrokerRankingList } from '@/components/fx/BrokerRankingList'
 import { FeaturedArticleCard } from '@/components/fx/FeaturedArticleCard'
 import { PopularArticles } from '@/components/fx/PopularArticles'
 import { CategoryBrowse } from '@/components/fx/CategoryBrowse'
@@ -31,16 +29,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 pt-6">
+      <div className="mx-auto max-w-6xl px-6 py-6">
         {hubArticle && <FeaturedArticleCard article={hubArticle} />}
       </div>
-
-      <section className="mx-auto max-w-6xl space-y-4 px-6 py-6">
-        <h2 className="text-2xl font-bold text-slate-900">
-          業者比較(日本人トレーダーの利用実績が多いとされる順)
-        </h2>
-        <BrokerRankingList brokers={brokers} />
-      </section>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 pb-16 lg:grid-cols-[1fr_320px]">
         <section className="space-y-4">
