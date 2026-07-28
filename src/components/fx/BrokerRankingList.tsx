@@ -33,35 +33,54 @@ export function BrokerRankingList({ brokers }: { brokers: Broker[] }) {
           return (
             <li
               key={broker.slug}
-              className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md md:flex-row md:items-center"
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
             >
-              <div className="flex items-center gap-3 md:flex-col">
-                <RankBadge index={i + 1} />
-                <BrokerLogoBadge name={broker.name} slug={broker.slug} />
-              </div>
-              <div className="flex-1 space-y-3">
-                <p className="text-xl font-bold text-slate-900">{broker.name}</p>
-                <div className="grid gap-3 sm:grid-cols-2">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="flex items-center gap-3 md:flex-col">
+                  <RankBadge index={i + 1} />
+                  <BrokerLogoBadge name={broker.name} slug={broker.slug} />
+                </div>
+                <div className="flex-1 space-y-3">
+                  <p className="text-xl font-bold text-slate-900">{broker.name}</p>
                   <SpecBar
                     label="最大レバレッジ"
                     value={parseLeverageValue(broker.maxLeverage)}
                     max={maxLeverageValue}
                     displayValue={broker.maxLeverage}
                   />
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-600">
-                    <span>最低入金額: {broker.minDeposit}</span>
-                    <span>日本語サポート: {broker.japaneseSupport ? 'あり' : 'なし'}</span>
-                  </div>
+                  <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm sm:grid-cols-3">
+                    <div>
+                      <dt className="text-xs text-slate-500">最低入金額</dt>
+                      <dd className="font-bold text-slate-800">{broker.minDeposit}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs text-slate-500">日本語サポート</dt>
+                      <dd className="font-bold text-slate-800">
+                        {broker.japaneseSupport ? 'あり' : 'なし'}
+                      </dd>
+                    </div>
+                    <div className="col-span-2 sm:col-span-1">
+                      <dt className="text-xs text-slate-500">ボーナス</dt>
+                      <dd className="line-clamp-2 font-bold text-slate-800">
+                        {broker.bonusSummary}
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
+              </div>
+              <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:justify-end">
                 {reviewSlug && (
-                  <Link href={`/articles/${reviewSlug}`} className="text-sm text-blue-600 underline">
-                    詳しく見る
+                  <Link
+                    href={`/articles/${reviewSlug}`}
+                    className="inline-block cursor-pointer rounded-xl bg-amber-500 px-6 py-3 text-center font-bold text-slate-900 transition-colors duration-200 hover:bg-amber-400"
+                  >
+                    この業者の紹介ページを見る
                   </Link>
                 )}
+                <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)}>
+                  公式サイトはこちら
+                </CtaButton>
               </div>
-              <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)}>
-                公式サイト
-              </CtaButton>
             </li>
           )
         })}
