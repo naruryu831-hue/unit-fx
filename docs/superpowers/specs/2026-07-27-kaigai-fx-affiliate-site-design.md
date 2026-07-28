@@ -43,6 +43,10 @@
 - **最終構成**: 業者20社、記事50本（業者レビュー20 + 口座開設ガイド20 + 比較ハブ1 + MT4/MT5使い方1 + その他8）。
 - 各記事に `relatedSlugs` を設定し、レビュー⇄口座開設ガイド⇄比較ハブの内部リンクを実装済み。
 
+## 業者ロースター縮小（2026-07-28追記）
+
+サイト運営者が実際にアフィリエイト提携契約を締結できたのは20社中7社（XM, Exness, TitanFX, HFM, BigBoss, FXGT, AXIORY）のみだったため、未提携の13社（Tradeview, ThreeTrader, Vantage, LAND-FX, IC Markets, FBS, Milton Markets, IronFX, Traders Trust, Doo Prime, PU Prime, Windsor Brokers, VT Markets）を業者データ・レビュー記事・口座開設ガイド記事ごと完全削除した。比較ハブ記事（`kaigai-fx-hikaku-hub.ts`）はタイトルを「海外FX おすすめ比較ランキング【提携7社】」に変更し、本文・FAQから削除業者への言及をすべて除去。他の比較・お悩み解決系記事（`brokerSlugs` で複数業者を参照するもの）についても、削除業者を名指しする記述を自然な文章に書き換えたうえで除去した。**最終構成: 業者7社、記事24本**（業者レビュー7 + 口座開設ガイド7 + 比較ハブ1 + MT4/MT5使い方1 + その他8）。
+
 ## データ構造
 
 golf-friendの `/gear` パターンを踏襲する。

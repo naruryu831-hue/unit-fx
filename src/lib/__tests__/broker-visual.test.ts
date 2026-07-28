@@ -11,7 +11,7 @@ describe('getBrokerInitials', () => {
   })
 
   it('combines the first letter of the first two words when space-separated', () => {
-    expect(getBrokerInitials('Traders Trust')).toBe('TT')
+    expect(getBrokerInitials('Foo Bar')).toBe('FB')
   })
 })
 
