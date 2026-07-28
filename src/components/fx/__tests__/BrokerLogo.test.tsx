@@ -16,18 +16,26 @@ describe('BrokerLogo', () => {
   })
 
   it('renders the logo image with descriptive alt text when a file exists', () => {
-    mockedGetLogoPath.mockReturnValue('/logos/xm.svg')
-    render(<BrokerLogo name="XM(XM Trading)" slug="xm" />)
+    mockedGetLogoPath.mockReturnValue('/logos/titanfx.svg')
+    render(<BrokerLogo name="TitanFX（タイタンFX）" slug="titanfx" />)
 
-    const img = screen.getByAltText('XM(XM Trading)のロゴ')
-    expect(img).toHaveAttribute('src', '/logos/xm.svg')
+    const img = screen.getByAltText('TitanFX（タイタンFX）のロゴ')
+    expect(img).toHaveAttribute('src', '/logos/titanfx.svg')
   })
 
-  it('falls back to a branded initials badge when no logo file exists', () => {
+  it('falls back to a wordmark of the short name when no logo file exists', () => {
     mockedGetLogoPath.mockReturnValue(null)
-    render(<BrokerLogo name="Exness" slug="exness" />)
+    render(<BrokerLogo name="AXIORY(アキシオリー)" slug="axiory" />)
 
     expect(screen.queryByRole('img')).not.toBeInTheDocument()
-    expect(screen.getByText('EX')).toBeInTheDocument()
+    expect(screen.getByText('AXIORY')).toBeInTheDocument()
+  })
+
+  it('strips the parenthetical alias from the wordmark', () => {
+    mockedGetLogoPath.mockReturnValue(null)
+    render(<BrokerLogo name="XM(XM Trading)" slug="xm" />)
+
+    expect(screen.getByText('XM')).toBeInTheDocument()
+    expect(screen.queryByText('XM(XM Trading)')).not.toBeInTheDocument()
   })
 })

@@ -1,9 +1,9 @@
-import { getBrokerInitials, getBrokerColor } from '@/lib/broker-visual'
+import { getBrokerShortName, getBrokerColor } from '@/lib/broker-visual'
 import { getBrokerLogoPath } from '@/lib/broker-logos'
 
 const SIZES = {
-  md: { box: 'h-12 w-12 text-sm', image: 'h-10' },
-  lg: { box: 'h-16 w-16 text-xl', image: 'h-14' },
+  md: { image: 'h-9', text: 'text-lg', bar: 'h-6' },
+  lg: { image: 'h-12', text: 'text-2xl', bar: 'h-8' },
 } as const
 
 export function BrokerLogo({
@@ -16,26 +16,28 @@ export function BrokerLogo({
   size?: keyof typeof SIZES
 }) {
   const logoPath = getBrokerLogoPath(slug)
-  const { box, image } = SIZES[size]
+  const { image, text, bar } = SIZES[size]
 
   if (logoPath) {
     return (
-      // next/image は画像ごとの寸法指定が必要で、業者ロゴは縦横比がばらばらなため
-      // ここでは高さ固定・幅auto で比率を保てる img を使う。
+      // next/image は画像ごとの寸法指定が必要だが、業者ロゴは縦横比がばらばらなため
+      // 高さ固定・幅autoで比率を保てる img を使う。
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={logoPath}
         alt={`${name}のロゴ`}
-        className={`${image} w-auto max-w-[160px] shrink-0 object-contain`}
+        className={`${image} w-auto max-w-[170px] shrink-0 object-contain object-left`}
       />
     )
   }
 
+  // 公式ロゴ画像が未設置の業者は、実ロゴと並べても浮かない横長のワードマークで表示する。
   return (
-    <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-2xl font-bold text-white ${box} ${getBrokerColor(slug)}`}
-    >
-      {getBrokerInitials(name)}
+    <span className={`inline-flex shrink-0 items-center gap-2 ${image}`}>
+      <span className={`w-1 rounded-full ${bar} ${getBrokerColor(slug)}`} />
+      <span className={`font-bold tracking-tight text-slate-900 ${text}`}>
+        {getBrokerShortName(name)}
+      </span>
     </span>
   )
 }

@@ -9,6 +9,14 @@ const PALETTE = [
   'bg-orange-600',
 ]
 
+/**
+ * 括弧書き（別名・カナ表記）を落とした表示用の社名。
+ * 例: 'XM(XM Trading)' -> 'XM' / 'AXIORY(アキシオリー)' -> 'AXIORY'
+ */
+export function getBrokerShortName(name: string): string {
+  return name.replace(/[（(].*?[）)]/g, '').trim()
+}
+
 export function getBrokerInitials(name: string): string {
   const clean = name.replace(/[（(].*?[）)]/g, '').trim()
   const words = clean.split(/[\s-]+/).filter(Boolean)
