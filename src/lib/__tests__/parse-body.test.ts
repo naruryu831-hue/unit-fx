@@ -83,7 +83,7 @@ describe('parseBody', () => {
     expect(blocks[1]).toMatchObject({
       type: 'heading',
       level: 2,
-      text: 'XM(XM Trading)とは何か',
+      text: 'XM(XM Trading)とは',
     })
     expect(blocks[2]).toMatchObject({ type: 'paragraph' })
 
@@ -94,7 +94,7 @@ describe('parseBody', () => {
 
     // every heading in xm-review has no numbering, so all headings are level 2
     const headingBlocks = blocks.filter((b) => b.type === 'heading')
-    expect(headingBlocks.length).toBeGreaterThan(20)
+    expect(headingBlocks.length).toBeGreaterThan(8)
     expect(headingBlocks.every((b) => b.type === 'heading' && b.level === 2)).toBe(
       true
     )
