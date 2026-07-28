@@ -5,6 +5,7 @@ import { ComparisonTable } from './ComparisonTable'
 import { BrokerRankingList } from './BrokerRankingList'
 import { BrokerCtaBanner } from './BrokerCtaBanner'
 import { ArticleSummaryBox } from './ArticleSummaryBox'
+import { BrokerLogo } from './BrokerLogo'
 import { FaqSection } from './FaqSection'
 import { RelatedArticles } from './RelatedArticles'
 import { TableOfContents } from './TableOfContents'
@@ -19,7 +20,17 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
 
   return (
     <article className="mx-auto max-w-6xl space-y-8 p-6">
-      <h1 className="text-2xl font-bold">{article.title}</h1>
+      {singleBroker ? (
+        <header className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center">
+          <BrokerLogo name={singleBroker.name} slug={singleBroker.slug} size="lg" />
+          <div>
+            <p className="text-sm font-bold text-slate-600">{singleBroker.name}</p>
+            <h1 className="mt-1 text-2xl font-bold text-slate-900">{article.title}</h1>
+          </div>
+        </header>
+      ) : (
+        <h1 className="text-2xl font-bold">{article.title}</h1>
+      )}
 
       {isHub && (
         <div className="space-y-4">

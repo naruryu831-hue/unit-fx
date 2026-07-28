@@ -4,7 +4,7 @@ import { articles } from '@/data/articles-index'
 import { getBrokerLink } from '@/lib/affiliates'
 import { RankBadge } from './RankBadge'
 import { CtaButton } from './CtaButton'
-import { BrokerLogoBadge } from './BrokerLogoBadge'
+import { BrokerLogo } from './BrokerLogo'
 import { SpecBar } from './SpecBar'
 import { parseLeverageValue } from './ComparisonTable'
 
@@ -38,7 +38,7 @@ export function BrokerRankingList({ brokers }: { brokers: Broker[] }) {
               <div className="flex flex-col gap-4 md:flex-row">
                 <div className="flex items-center gap-3 md:flex-col">
                   <RankBadge index={i + 1} />
-                  <BrokerLogoBadge name={broker.name} slug={broker.slug} />
+                  <BrokerLogo name={broker.name} slug={broker.slug} />
                 </div>
                 <div className="flex-1 space-y-3">
                   <p className="text-xl font-bold text-slate-900">{broker.name}</p>
