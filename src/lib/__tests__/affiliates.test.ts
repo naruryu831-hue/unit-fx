@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { getBrokerLink } from '../affiliates'
+import { getBrokerLink, getBrokerSignupLink, hasAffiliateLink } from '../affiliates'
 import type { Broker } from '../../data/brokers-types'
 
 // linkCaution: true のダミー業者。実際の brokers-index には登録せず、
@@ -34,8 +34,12 @@ vi.mock('../../data/brokers-index', async (importOriginal) => {
 })
 
 describe('getBrokerLink', () => {
+  it('returns the configured homepage affiliate link when one exists', () => {
+    expect(getBrokerLink('xm')).toBe('https://affx.click/tFXMb')
+  })
+
   it('falls back to the official URL when no affiliate link is configured', () => {
-    expect(getBrokerLink('xm')).toBe('https://www.xmtrading.com/')
+    expect(getBrokerLink('axiory')).toBe('https://www.axiory.com/jp/')
   })
 
   it('throws for an unknown broker slug', () => {
@@ -44,5 +48,34 @@ describe('getBrokerLink', () => {
 
   it('returns null for a broker flagged with linkCaution, even if an affiliate/official URL exists', () => {
     expect(getBrokerLink(cautionBroker.slug)).toBeNull()
+  })
+})
+
+describe('getBrokerSignupLink', () => {
+  it('prefers the dedicated signup link over the homepage link', () => {
+    expect(getBrokerSignupLink('xm')).toBe('https://affx.click/h0xVg')
+  })
+
+  it('falls back to the homepage link when only one link is issued', () => {
+    expect(getBrokerSignupLink('exness')).toBe('https://one.exnessonelink.com/a/228znq0vo6')
+  })
+
+  it('falls back to the official URL when nothing is configured', () => {
+    expect(getBrokerSignupLink('axiory')).toBe('https://www.axiory.com/jp/')
+  })
+
+  it('returns null for a linkCaution broker', () => {
+    expect(getBrokerSignupLink(cautionBroker.slug)).toBeNull()
+  })
+})
+
+describe('hasAffiliateLink', () => {
+  it('is true for brokers whose tracking links are configured', () => {
+    expect(hasAffiliateLink('xm')).toBe(true)
+    expect(hasAffiliateLink('exness')).toBe(true)
+  })
+
+  it('is false for brokers still pointing at the plain official site', () => {
+    expect(hasAffiliateLink('axiory')).toBe(false)
   })
 })

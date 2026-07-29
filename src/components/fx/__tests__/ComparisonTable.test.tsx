@@ -30,7 +30,8 @@ describe('ComparisonTable', () => {
     expect(screen.getByText(xm.maxLeverage)).toBeInTheDocument()
 
     const link = screen.getByRole('link', { name: '公式サイト' })
-    expect(link).toHaveAttribute('href', 'https://www.xmtrading.com/')
+    // 素の公式URLではなく、トップページ用の計測リンクが使われていること。
+    expect(link).toHaveAttribute('href', 'https://affx.click/tFXMb')
     expect(link.getAttribute('rel')).toContain('sponsored')
   })
 

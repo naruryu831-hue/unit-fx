@@ -21,12 +21,13 @@ describe('BrokerRankingList', () => {
     expect(screen.getByText('XM')).toBeInTheDocument()
   })
 
-  it('renders correct CtaButton links to each official site', () => {
+  it('renders each broker CTA using its affiliate tracking link, not the bare official URL', () => {
     render(<BrokerRankingList brokers={[xm, exness]} />)
     const links = screen.getAllByRole('link', { name: '公式サイトはこちら' })
     const hrefs = links.map((link) => link.getAttribute('href'))
-    expect(hrefs).toContain('https://www.xmtrading.com/')
-    expect(hrefs).toContain('https://www.exness.com/')
+    expect(hrefs).toContain('https://affx.click/tFXMb')
+    expect(hrefs).toContain('https://one.exnessonelink.com/a/228znq0vo6')
+    expect(hrefs).not.toContain('https://www.xmtrading.com/')
   })
 
   it('renders a primary button linking to each broker review page', () => {

@@ -4,11 +4,13 @@ import { BrokerCtaBanner } from '../BrokerCtaBanner'
 import { xm } from '@/data/brokers/xm'
 
 describe('BrokerCtaBanner', () => {
-  it('renders the bonus summary and a CTA button linking to the broker', () => {
+  it('renders the bonus summary and a CTA button using the signup tracking link', () => {
     render(<BrokerCtaBanner broker={xm} />)
     expect(screen.getByText(xm.bonusSummary)).toBeInTheDocument()
     const link = screen.getByRole('link', { name: /XM\(XM Trading\)公式サイト/ })
-    expect(link).toHaveAttribute('href', 'https://www.xmtrading.com/')
+    // 素の公式URLではなく、口座開設用の計測リンクが使われていること（＝報酬が発生する状態）。
+    expect(link).toHaveAttribute('href', 'https://affx.click/h0xVg')
+    expect(link.getAttribute('rel')).toContain('sponsored')
   })
 
   it('shows the caution state instead of a link when linkCaution is true', () => {
