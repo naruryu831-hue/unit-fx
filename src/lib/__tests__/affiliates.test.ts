@@ -40,6 +40,11 @@ describe('getBrokerLink', () => {
 
   it('falls back to the official URL when no affiliate link is configured', () => {
     expect(getBrokerLink('axiory')).toBe('https://www.axiory.com/jp/')
+    expect(getBrokerLink('titanfx')).toBe('https://titanfx.jp/')
+  })
+
+  it('falls back to the signup link when only a signup link is issued', () => {
+    expect(getBrokerLink('fxgt')).toBe('https://fxgt.link/register?refid=4614')
   })
 
   it('throws for an unknown broker slug', () => {
@@ -58,6 +63,7 @@ describe('getBrokerSignupLink', () => {
 
   it('falls back to the homepage link when only one link is issued', () => {
     expect(getBrokerSignupLink('exness')).toBe('https://one.exnessonelink.com/a/228znq0vo6')
+    expect(getBrokerSignupLink('hfm')).toBe('https://www.hfm.com/sv/jp/?refid=30560054')
   })
 
   it('falls back to the official URL when nothing is configured', () => {
@@ -73,6 +79,7 @@ describe('hasAffiliateLink', () => {
   it('is true for brokers whose tracking links are configured', () => {
     expect(hasAffiliateLink('xm')).toBe(true)
     expect(hasAffiliateLink('exness')).toBe(true)
+    expect(hasAffiliateLink('hfm')).toBe(true)
   })
 
   it('is false for brokers still pointing at the plain official site', () => {

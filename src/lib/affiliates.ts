@@ -19,6 +19,17 @@ const AFFILIATE_LINKS: Record<string, AffiliateLinks> = {
     homepage: 'https://one.exnessonelink.com/a/228znq0vo6',
     signup: 'https://one.exnessonelink.com/a/228znq0vo6',
   },
+  hfm: {
+    // refid付きの紹介リンク1本のみのため、両方に同じリンクを使う。
+    homepage: 'https://www.hfm.com/sv/jp/?refid=30560054',
+    signup: 'https://www.hfm.com/sv/jp/?refid=30560054',
+  },
+  fxgt: {
+    // 発行されているのは口座開設ページ直行の計測リンクのみ。
+    signup: 'https://fxgt.link/register?refid=4614',
+  },
+  // TitanFX / BigBoss / AXIORY はパートナー登録が未完了のため未設定。
+  // 設定するまでは素の公式サイトURLにフォールバックし、報酬は発生しない。
 }
 
 function resolve(slug: string, prefer: keyof AffiliateLinks): string | null {
