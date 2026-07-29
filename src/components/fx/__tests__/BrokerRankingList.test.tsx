@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { BrokerRankingList } from '../BrokerRankingList'
 import { xm } from '@/data/brokers/xm'
 import { exness } from '@/data/brokers/exness'
+import { getBrokerShortName } from '@/lib/broker-visual'
 
 describe('BrokerRankingList', () => {
   it('renders both broker names', () => {
@@ -16,9 +17,16 @@ describe('BrokerRankingList', () => {
     expect(screen.getByText(/編集部調べ/)).toBeInTheDocument()
   })
 
-  it('renders a logo badge for each broker', () => {
+  it('renders a logo for each broker', () => {
     render(<BrokerRankingList brokers={[xm, exness]} />)
-    expect(screen.getByText('XM')).toBeInTheDocument()
+    // public/logos にロゴ画像がある業者は画像で、無い業者はワードマークで表示される。
+    // どちらの場合でも各社に何らかのロゴ表現があることを確認する。
+    for (const broker of [xm, exness]) {
+      const logo =
+        screen.queryByAltText(`${broker.name}のロゴ`) ??
+        screen.queryByText(getBrokerShortName(broker.name))
+      expect(logo).not.toBeNull()
+    }
   })
 
   it('renders each broker CTA using its affiliate tracking link, not the bare official URL', () => {
