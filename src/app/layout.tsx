@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import { JsonLd } from "@/components/fx/JsonLd";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-SLRLGGPQRW";
 import { SiteHeader } from "@/components/fx/SiteHeader";
 
 const geistSans = Geist({
@@ -53,6 +56,13 @@ export default function RootLayout({
         />
         <SiteHeader />
         {children}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "${GA_ID}");`}
+        </Script>
       </body>
     </html>
   );
