@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const xmKouzaType: Article = {
   slug: 'xm-kouza-type',
   title: 'XMの口座タイプ比較：スタンダード・マイクロ・KIWAMI極・Zeroの違い',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['xm'],
   relatedSlugs: [
     'xm-review',

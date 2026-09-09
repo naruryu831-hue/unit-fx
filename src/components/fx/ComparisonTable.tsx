@@ -18,42 +18,51 @@ export function ComparisonTable({ brokers }: { brokers: Broker[] }) {
   )
 
   return (
-    <div className="rounded-xl overflow-hidden border border-slate-200">
-      <table className="w-full border-collapse text-sm">
-        <thead>
-          <tr className="bg-slate-900 text-white">
-            <th className="p-2 text-left">業者名</th>
-            <th className="p-2 text-left">最大レバレッジ</th>
-            <th className="p-2 text-left">最低入金額</th>
-            <th className="p-2 text-left">日本語サポート</th>
-            <th className="p-2 text-left">開設可能年齢</th>
-            <th className="p-2 text-left">公式サイト</th>
-          </tr>
-        </thead>
-        <tbody>
-          {brokers.map((broker) => (
-            <tr key={broker.slug} className="border-b border-slate-200">
-              <td className="p-2">{broker.name}</td>
-              <td className="p-2">
-                <SpecBar
-                  label="レバレッジ"
-                  value={parseLeverageValue(broker.maxLeverage)}
-                  max={maxLeverageValue}
-                  displayValue={broker.maxLeverage}
-                />
-              </td>
-              <td className="p-2">{broker.minDeposit}</td>
-              <td className="p-2">{broker.japaneseSupport ? 'あり' : 'なし'}</td>
-              <td className="p-2">{broker.minAgeYears}歳以上</td>
-              <td className="p-2">
-                <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)}>
-                  公式サイト
-                </CtaButton>
-              </td>
+    <section aria-label="業者比較表">
+      <h2 className="mb-3 flex items-center gap-2 text-lg font-black text-navy-900">
+        <span className="h-5 w-1.5 rounded-full bg-gold-500" aria-hidden="true" />
+        掲載業者の比較表
+      </h2>
+      <div className="overflow-x-auto rounded-xl border border-line">
+        <table className="w-full min-w-[720px] border-collapse text-sm">
+          <thead>
+            <tr className="bg-navy-900 text-left text-xs text-white">
+              <th className="p-3 font-bold">業者名</th>
+              <th className="p-3 font-bold">最大レバレッジ</th>
+              <th className="p-3 font-bold">最低入金額</th>
+              <th className="p-3 font-bold">日本語サポート</th>
+              <th className="p-3 font-bold">開設可能年齢</th>
+              <th className="p-3 font-bold">公式サイト</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {brokers.map((broker, i) => (
+              <tr
+                key={broker.slug}
+                className={`border-b border-line ${i % 2 === 1 ? 'bg-paper' : 'bg-white'}`}
+              >
+                <td className="p-3 font-black text-navy-900">{broker.name}</td>
+                <td className="w-48 p-3">
+                  <SpecBar
+                    label="レバレッジ"
+                    value={parseLeverageValue(broker.maxLeverage)}
+                    max={maxLeverageValue}
+                    displayValue={broker.maxLeverage}
+                  />
+                </td>
+                <td className="p-3">{broker.minDeposit}</td>
+                <td className="p-3">{broker.japaneseSupport ? 'あり' : 'なし'}</td>
+                <td className="p-3">{broker.minAgeYears}歳以上</td>
+                <td className="p-3">
+                  <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)} size="sm">
+                    公式サイト
+                  </CtaButton>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   )
 }

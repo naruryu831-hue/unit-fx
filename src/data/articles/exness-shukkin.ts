@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const exnessShukkin: Article = {
   slug: 'exness-shukkin',
   title: 'Exnessの出金方法と出金ルール【手順と注意点】',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['exness'],
   relatedSlugs: [
     'exness-review',

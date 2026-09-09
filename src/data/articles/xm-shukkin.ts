@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const xmShukkin: Article = {
   slug: 'xm-shukkin',
   title: 'XMの出金方法と出金ルール【手順と注意点】',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['xm'],
   relatedSlugs: [
     'xm-review',

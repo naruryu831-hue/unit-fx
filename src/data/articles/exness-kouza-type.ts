@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const exnessKouzaType: Article = {
   slug: 'exness-kouza-type',
   title: 'Exnessの口座タイプ比較：スタンダード・プロ・ゼロ・ロースプレッド',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['exness'],
   relatedSlugs: [
     'exness-review',

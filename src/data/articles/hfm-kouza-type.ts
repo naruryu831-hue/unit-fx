@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const hfmKouzaType: Article = {
   slug: 'hfm-kouza-type',
   title: 'HFMの口座タイプ比較',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['hfm'],
   relatedSlugs: [
     'hfm-review',

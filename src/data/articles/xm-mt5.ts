@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const xmMt5: Article = {
   slug: 'xm-mt5',
   title: 'XMでMT5を使う方法：ダウンロード・ログイン・注文まで',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['xm'],
   relatedSlugs: [
     'xm-review',

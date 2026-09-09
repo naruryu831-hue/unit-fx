@@ -18,23 +18,45 @@ function renderThumbnail(article: Article) {
     ) : null
   }
 
+  if (article.brokerSlugs.length === 1 && article.category !== 'hub') {
+    const broker = getBrokerBySlug(article.brokerSlugs[0])
+    if (broker) {
+      return (
+        <BrokerReviewThumbnail
+          brokerName={broker.name}
+          slug={broker.slug}
+          caption={categoryLabels[article.category]}
+        />
+      )
+    }
+  }
+
   return <CategoryThumbnail category={article.category} />
+}
+
+function readingMinutes(body: string): number {
+  return Math.max(1, Math.round(body.length / 600))
 }
 
 export function ArticleList({ articles }: { articles: Article[] }) {
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
+    <ul className="grid gap-5 sm:grid-cols-2">
       {articles.map((article) => (
         <li key={article.slug}>
           <Link
             href={`/articles/${article.slug}`}
-            className="block h-full cursor-pointer rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow duration-200 hover:shadow-md"
+            className="group flex h-full cursor-pointer flex-col rounded-2xl border border-line bg-white p-4 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
           >
             {renderThumbnail(article)}
-            <span className="inline-block rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-slate-600">
-              {categoryLabels[article.category]}
-            </span>
-            <p className="mt-2 font-bold leading-snug text-slate-900">{article.title}</p>
+            <div className="flex items-center gap-2 text-xs">
+              <span className="rounded-md bg-navy-50 px-2 py-0.5 font-bold text-navy-800">
+                {categoryLabels[article.category]}
+              </span>
+              <span className="text-slate-400">約{readingMinutes(article.body)}分</span>
+            </div>
+            <p className="mt-2 font-bold leading-snug text-navy-900 transition-colors group-hover:text-navy-700">
+              {article.title}
+            </p>
           </Link>
         </li>
       ))}

@@ -21,11 +21,13 @@ export function SpecBar({
 
   return (
     <div>
-      <div className="flex items-center justify-between text-sm">
-        <span>{label}</span>
-        <span>{displayValue}</span>
+      <div className="flex items-start justify-between gap-3 text-xs">
+        <span className="shrink-0 font-bold text-slate-500">{label}</span>
+        <span className="tnum min-w-0 text-right font-black leading-snug text-navy-900">
+          {displayValue}
+        </span>
       </div>
-      <div className="mt-1 h-2 rounded-full bg-slate-100">
+      <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-navy-50">
         {isUnknown ? (
           <div
             data-testid="spec-bar-unknown"
@@ -34,7 +36,9 @@ export function SpecBar({
         ) : (
           <div
             data-testid="spec-bar-fill"
-            className={`h-2 rounded-full ${isUnlimited ? 'bg-emerald-500' : 'bg-indigo-600'}`}
+            className={`h-2 rounded-full bg-gradient-to-r ${
+              isUnlimited ? 'from-emerald-400 to-emerald-600' : 'from-navy-700 to-navy-900'
+            }`}
             style={{ width: `${percentage}%` }}
           />
         )}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/fx/SiteHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,10 @@ export default function RootLayout({
       lang="ja"
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansJP.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }

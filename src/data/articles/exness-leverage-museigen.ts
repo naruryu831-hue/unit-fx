@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const exnessLeverageMuseigen: Article = {
   slug: 'exness-leverage-museigen',
   title: 'Exnessの無制限レバレッジの仕組みと適用条件',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['exness'],
   relatedSlugs: [
     'exness-review',

@@ -24,24 +24,24 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
   }
 
   return (
-    <section aria-label="よくある質問">
-      <h2 className="text-xl font-bold">よくある質問</h2>
+    <section aria-label="よくある質問" className="rounded-2xl border border-line bg-paper p-5 md:p-6">
+      <h2 className="flex items-center gap-2 text-lg font-black text-navy-900"><span className="h-5 w-1.5 rounded-full bg-gold-500" aria-hidden="true" />よくある質問</h2>
       <dl className="mt-4">
         {items.map((item, index) => {
           const isOpen = openIndex === index
           const answerId = `faq-answer-${index}`
 
           return (
-            <div key={item.question} className="border-b border-slate-200 py-4">
+            <div key={item.question} className="border-b border-line py-4 last:border-b-0">
               <dt>
                 <button
                   type="button"
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="font-semibold text-slate-900 flex justify-between items-center w-full text-left cursor-pointer"
+                  className="flex w-full cursor-pointer items-start justify-between gap-3 text-left font-bold text-navy-900"
                 >
-                  <span>{item.question}</span>
+                  <span className="flex gap-2"><span className="shrink-0 font-black text-gold-600">Q.</span><span>{item.question}</span></span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -59,7 +59,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
                   </svg>
                 </button>
               </dt>
-              <dd id={answerId} className="mt-1" hidden={!isOpen}>
+              <dd id={answerId} className="mt-2 text-sm leading-7 text-slate-700" hidden={!isOpen}>
                 {item.answer}
               </dd>
             </div>

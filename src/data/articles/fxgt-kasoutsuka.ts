@@ -3,7 +3,7 @@ import type { Article } from '../articles-types'
 export const fxgtKasoutsuka: Article = {
   slug: 'fxgt-kasoutsuka',
   title: 'FXGTで仮想通貨CFDを取引する方法と注意点',
-  category: 'broker-review',
+  category: 'problem-solving',
   brokerSlugs: ['fxgt'],
   relatedSlugs: [
     'fxgt-review',

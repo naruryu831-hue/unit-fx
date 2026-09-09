@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Article } from '@/data/articles-types'
 import type { Broker } from '@/data/brokers-types'
 import { RiskDisclaimer } from './RiskDisclaimer'
@@ -10,8 +11,10 @@ import { FaqSection } from './FaqSection'
 import { RelatedArticles } from './RelatedArticles'
 import { TableOfContents } from './TableOfContents'
 import { ArticleBody } from './ArticleBody'
+import { SiteFooter } from './SiteFooter'
 import { getRelatedArticles } from '@/lib/get-article'
 import { extractHeadings } from '@/lib/parse-body'
+import { categoryLabels } from '@/lib/category-labels'
 
 export function ArticleView({ article, brokers }: { article: Article; brokers: Broker[] }) {
   const headings = extractHeadings(article.body)
@@ -19,45 +22,71 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
   const singleBroker = brokers.length === 1 ? brokers[0] : null
 
   return (
-    <article className="mx-auto max-w-6xl space-y-8 p-6">
-      {singleBroker ? (
-        <header className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center">
-          <BrokerLogo name={singleBroker.name} slug={singleBroker.slug} size="lg" />
-          <div>
-            <p className="text-sm font-bold text-slate-600">{singleBroker.name}</p>
-            <h1 className="mt-1 text-2xl font-bold text-slate-900">{article.title}</h1>
-          </div>
-        </header>
-      ) : (
-        <h1 className="text-2xl font-bold">{article.title}</h1>
-      )}
+    <>
+      <article className="mx-auto max-w-6xl space-y-8 px-5 py-8">
+        <nav aria-label="パンくずリスト" className="text-xs text-slate-500">
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li>
+              <Link href="/" className="hover:text-navy-900">
+                トップ
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li className="font-bold text-navy-800">{categoryLabels[article.category]}</li>
+          </ol>
+        </nav>
 
-      {isHub && (
-        <div className="space-y-4">
-          <RiskDisclaimer />
-          <BrokerRankingList brokers={brokers} />
-        </div>
-      )}
+        {singleBroker ? (
+          <header className="flex flex-col gap-5 rounded-2xl border border-line bg-white p-6 shadow-card sm:flex-row sm:items-center">
+            <BrokerLogo name={singleBroker.name} slug={singleBroker.slug} size="lg" />
+            <div>
+              <p className="inline-block rounded-md bg-navy-50 px-2 py-0.5 text-xs font-bold text-navy-800">
+                {categoryLabels[article.category]} ・ {singleBroker.name}
+              </p>
+              <h1 className="mt-2 text-2xl font-black leading-tight text-navy-900 md:text-3xl">
+                {article.title}
+              </h1>
+            </div>
+          </header>
+        ) : (
+          <header>
+            <p className="inline-block rounded-md bg-navy-50 px-2 py-0.5 text-xs font-bold text-navy-800">
+              {categoryLabels[article.category]}
+            </p>
+            <h1 className="mt-3 text-2xl font-black leading-tight text-navy-900 md:text-4xl">
+              {article.title}
+            </h1>
+          </header>
+        )}
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_280px]">
-        <div className="space-y-8">
-          <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
-            {!isHub && <RiskDisclaimer />}
-            {singleBroker && article.summaryPoints && (
-              <ArticleSummaryBox brokerName={singleBroker.name} points={article.summaryPoints} />
-            )}
-            {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
-            <ArticleBody body={article.body} />
-            {!isHub && <ComparisonTable brokers={brokers} />}
-            {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
-            <FaqSection items={article.faq} />
+        {isHub && (
+          <div className="space-y-5">
+            <RiskDisclaimer />
+            <BrokerRankingList brokers={brokers} />
           </div>
-          <RelatedArticles articles={getRelatedArticles(article)} />
+        )}
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_280px]">
+          <div className="space-y-8">
+            <div className="space-y-8 rounded-2xl border border-line bg-white p-5 shadow-card md:p-10">
+              {!isHub && <RiskDisclaimer compact />}
+              {singleBroker && article.summaryPoints && (
+                <ArticleSummaryBox brokerName={singleBroker.name} points={article.summaryPoints} />
+              )}
+              {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
+              <ArticleBody body={article.body} />
+              {!isHub && <ComparisonTable brokers={brokers} />}
+              {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
+              <FaqSection items={article.faq} />
+            </div>
+            <RelatedArticles articles={getRelatedArticles(article)} />
+          </div>
+          <aside className="lg:sticky lg:top-20 lg:h-fit">
+            <TableOfContents items={headings} />
+          </aside>
         </div>
-        <aside className="lg:sticky lg:top-6 lg:h-fit">
-          <TableOfContents items={headings} />
-        </aside>
-      </div>
-    </article>
+      </article>
+      <SiteFooter />
+    </>
   )
 }

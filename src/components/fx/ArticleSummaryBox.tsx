@@ -6,12 +6,19 @@ export function ArticleSummaryBox({
   points: string[]
 }) {
   return (
-    <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-6">
-      <p className="text-sm font-bold text-indigo-700">3行でわかる{brokerName}</p>
-      <ul className="mt-3 space-y-2">
+    <div className="rounded-2xl border border-navy-100 bg-gradient-to-br from-navy-50 to-white p-5 md:p-6">
+      <p className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-3 py-1 text-xs font-black text-white">
+        <span className="text-gold-400" aria-hidden="true">
+          ✓
+        </span>
+        3行でわかる{brokerName}
+      </p>
+      <ul className="mt-4 space-y-3">
         {points.map((point, i) => (
-          <li key={point} className="flex gap-2 text-sm font-bold text-slate-800">
-            <span className="shrink-0 text-indigo-600">{i + 1}.</span>
+          <li key={point} className="flex gap-3 text-sm font-bold leading-relaxed text-navy-900">
+            <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold-500 text-xs font-black text-navy-950">
+              {i + 1}
+            </span>
             <span>{point}</span>
           </li>
         ))}

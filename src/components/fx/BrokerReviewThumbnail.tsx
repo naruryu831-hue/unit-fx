@@ -1,4 +1,5 @@
-import { getBrokerColor } from '@/lib/broker-visual'
+import { getBrokerLogoPath } from '@/lib/broker-logos'
+import { getBrokerShortName } from '@/lib/broker-visual'
 
 export function BrokerReviewThumbnail({
   brokerName,
@@ -9,14 +10,23 @@ export function BrokerReviewThumbnail({
   slug: string
   caption?: string
 }) {
-  const color = getBrokerColor(slug)
+  const logoPath = getBrokerLogoPath(slug)
 
   return (
-    <div
-      className={`mb-3 flex h-24 w-full flex-col items-center justify-center rounded-lg px-3 text-center text-white ${color}`}
-    >
-      <p className="text-base font-bold leading-tight">{brokerName}</p>
-      <p className="mt-1 text-xs font-bold tracking-wide text-white/90">{caption}</p>
+    <div className="relative mb-3 flex h-28 w-full items-center gap-4 overflow-hidden rounded-xl bg-gradient-to-br from-navy-950 to-navy-800 px-5 text-white">
+      <div className="absolute inset-0 bg-grid opacity-60" aria-hidden="true" />
+      <span className="relative grid h-14 w-20 shrink-0 place-items-center rounded-lg bg-white px-2">
+        {logoPath ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={logoPath} alt="" className="max-h-9 max-w-full object-contain" />
+        ) : (
+          <span className="text-sm font-black text-navy-900">{getBrokerShortName(brokerName)}</span>
+        )}
+      </span>
+      <div className="relative min-w-0">
+        <p className="truncate text-base font-black leading-tight">{brokerName}</p>
+        <p className="mt-1 text-xs font-bold tracking-wide text-gold-400">{caption}</p>
+      </div>
     </div>
   )
 }
