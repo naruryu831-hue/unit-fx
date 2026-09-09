@@ -25,6 +25,7 @@ import { DEFAULT_UPDATED_AT, SITE_NAME, SITE_URL } from '@/lib/site-config'
 export function ArticleView({ article, brokers }: { article: Article; brokers: Broker[] }) {
   const headings = extractHeadings(article.body)
   const isHub = article.category === 'hub'
+  const isSingleBrokerReview = article.category === 'broker-review' && article.brokerSlugs.length === 1
   const singleBroker = brokers.length === 1 ? brokers[0] : null
   const market = article.market ?? 'overseas'
   const isDomestic = market === 'domestic'
@@ -56,11 +57,31 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
     articleSection: categoryLabels[article.category],
     about: brokers.map((b) => ({ '@type': 'Organization', name: b.name, url: b.officialUrl })),
   }
+  const itemListLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: brokers.map((broker, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: { '@type': 'Organization', name: broker.name, url: broker.officialUrl },
+    })),
+  }
+  const brokerOrganizationLd = singleBroker
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: singleBroker.name,
+        url: singleBroker.officialUrl,
+        description: singleBroker.summary,
+      }
+    : null
 
   return (
     <>
       <JsonLd data={breadcrumbLd} />
       <JsonLd data={articleLd} />
+      {isHub && <JsonLd data={itemListLd} />}
+      {isSingleBrokerReview && brokerOrganizationLd && <JsonLd data={brokerOrganizationLd} />}
       <article className="mx-auto max-w-6xl space-y-8 px-5 py-8">
         <nav aria-label="パンくずリスト" className="text-xs text-slate-500">
           <ol className="flex flex-wrap items-center gap-1.5">

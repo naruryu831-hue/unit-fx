@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     description,
     alternates: { canonical: url },
     openGraph: { title, description, url, siteName: 'UNIT-FX', type: 'article', locale: 'ja_JP' },
-    twitter: { card: 'summary', title, description },
+    twitter: { card: 'summary_large_image', title, description },
   }
 }
 

@@ -116,6 +116,30 @@ import { kaigaiFxXmVsFxgt } from './articles/kaigai-fx-xm-vs-fxgt'
 import { kokunaiFxKaraKaigaiFxNorikae } from './articles/kokunai-fx-kara-kaigai-fx-norikae'
 import { lightFxAccountOpening } from './articles/light-fx-account-opening'
 import { lightFxReview } from './articles/light-fx-review'
+import { dmmFxVsGaitame } from './articles/dmm-fx-vs-gaitame'
+import { dmmFxVsGmoClick } from './articles/dmm-fx-vs-gmo-click'
+import { dmmFxVsMatsuiFx } from './articles/dmm-fx-vs-matsui-fx'
+import { fxChartPatternNyumon } from './articles/fx-chart-pattern-nyumon'
+import { fxChumonHouhouKihon } from './articles/fx-chumon-houhou-kihon'
+import { fxIfdOcoChumon } from './articles/fx-ifd-oco-chumon'
+import { fxKaishaErabiPoint } from './articles/fx-kaisha-erabi-point'
+import { fxKinriToKawase } from './articles/fx-kinri-to-kawase'
+import { fxSwapPointZeikin } from './articles/fx-swap-point-zeikin'
+import { gmoClickVsGmoGaika } from './articles/gmo-click-vs-gmo-gaika'
+import { gmoClickVsMinnaFx } from './articles/gmo-click-vs-minna-fx'
+import { hiroseLionfxVsJfx } from './articles/hirose-lionfx-vs-jfx'
+import { kokunaiFxDemoKouzaHikaku } from './articles/kokunai-fx-demo-kouza-hikaku'
+import { kokunaiFxJuminzei } from './articles/kokunai-fx-juminzei'
+import { kokunaiFxKakuteiShinkokuFuyouCase } from './articles/kokunai-fx-kakutei-shinkoku-fuyou-case'
+import { kokunaiFxKouzaKaisetsuHitsuyouShorui } from './articles/kokunai-fx-kouza-kaisetsu-hitsuyou-shorui'
+import { kokunaiFxNyukinShukkin } from './articles/kokunai-fx-nyukin-shukkin'
+import { kokunaiFxPcToolHikaku } from './articles/kokunai-fx-pc-tool-hikaku'
+import { kokunaiFxShufuGakusei } from './articles/kokunai-fx-shufu-gakusei'
+import { kokunaiFxTesuryoHikaku } from './articles/kokunai-fx-tesuryo-hikaku'
+import { kokunaiFxTsukaPairKazu } from './articles/kokunai-fx-tsuka-pair-kazu'
+import { kokunaiFxYakujouryoku } from './articles/kokunai-fx-yakujouryoku'
+import { minnaFxVsLightFx } from './articles/minna-fx-vs-light-fx'
+import { sbiFxtradeVsGaitame } from './articles/sbi-fxtrade-vs-gaitame'
 import type { Article } from './articles-types'
 
 export const articles: Article[] = [
@@ -237,4 +261,28 @@ export const articles: Article[] = [
   kokunaiFxKaraKaigaiFxNorikae,
   lightFxAccountOpening,
   lightFxReview,
+  dmmFxVsGaitame,
+  dmmFxVsGmoClick,
+  dmmFxVsMatsuiFx,
+  fxChartPatternNyumon,
+  fxChumonHouhouKihon,
+  fxIfdOcoChumon,
+  fxKaishaErabiPoint,
+  fxKinriToKawase,
+  fxSwapPointZeikin,
+  gmoClickVsGmoGaika,
+  gmoClickVsMinnaFx,
+  hiroseLionfxVsJfx,
+  kokunaiFxDemoKouzaHikaku,
+  kokunaiFxJuminzei,
+  kokunaiFxKakuteiShinkokuFuyouCase,
+  kokunaiFxKouzaKaisetsuHitsuyouShorui,
+  kokunaiFxNyukinShukkin,
+  kokunaiFxPcToolHikaku,
+  kokunaiFxShufuGakusei,
+  kokunaiFxTesuryoHikaku,
+  kokunaiFxTsukaPairKazu,
+  kokunaiFxYakujouryoku,
+  minnaFxVsLightFx,
+  sbiFxtradeVsGaitame,
 ]
