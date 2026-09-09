@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'FX計算ツール（必要証拠金・pips損益・税金シミュレーター） | UNIT-FX',
   description:
     '必要証拠金とロスカット水準、pipsあたりの損益、国内FX（申告分離課税）と海外FX（総合課税）の税額を無料で試算できる計算ツールです。',
+  alternates: { canonical: '/tools' },
 }
 
 export default function ToolsPage() {

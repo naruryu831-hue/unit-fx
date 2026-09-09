@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: '運営者情報・編集方針 | UNIT-FX',
   description:
     'UNIT-FXの運営者情報、編集方針、記事の作成・更新ルール、広告掲載に関する方針、免責事項をまとめたページです。',
+  alternates: { canonical: '/about' },
 }
 
 const SECTIONS: { title: string; body: string[] }[] = [
