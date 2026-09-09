@@ -62,6 +62,30 @@ import { xmBonus } from './articles/xm-bonus'
 import { xmKouzaType } from './articles/xm-kouza-type'
 import { xmMt5 } from './articles/xm-mt5'
 import { xmShukkin } from './articles/xm-shukkin'
+import { dmmFxAccountOpening } from './articles/dmm-fx-account-opening'
+import { dmmFxReview } from './articles/dmm-fx-review'
+import { gaitameAccountOpening } from './articles/gaitame-account-opening'
+import { gaitameReview } from './articles/gaitame-review'
+import { gmoClickAccountOpening } from './articles/gmo-click-account-opening'
+import { gmoClickReview } from './articles/gmo-click-review'
+import { gmoGaikaAccountOpening } from './articles/gmo-gaika-account-opening'
+import { gmoGaikaReview } from './articles/gmo-gaika-review'
+import { hiroseLionfxAccountOpening } from './articles/hirose-lionfx-account-opening'
+import { hiroseLionfxReview } from './articles/hirose-lionfx-review'
+import { kokunaiFx1000TsukaShougaku } from './articles/kokunai-fx-1000-tsuka-shougaku'
+import { kokunaiFxAppHikaku } from './articles/kokunai-fx-app-hikaku'
+import { kokunaiFxHikakuHub } from './articles/kokunai-fx-hikaku-hub'
+import { kokunaiFxJidouBaibai } from './articles/kokunai-fx-jidou-baibai'
+import { kokunaiFxShoshinshaHajimekata } from './articles/kokunai-fx-shoshinsha-hajimekata'
+import { kokunaiFxSpreadHikaku } from './articles/kokunai-fx-spread-hikaku'
+import { kokunaiFxSwapPoint } from './articles/kokunai-fx-swap-point'
+import { kokunaiFxZeikinKakuteiShinkoku } from './articles/kokunai-fx-zeikin-kakutei-shinkoku'
+import { matsuiFxAccountOpening } from './articles/matsui-fx-account-opening'
+import { matsuiFxReview } from './articles/matsui-fx-review'
+import { minnaFxAccountOpening } from './articles/minna-fx-account-opening'
+import { minnaFxReview } from './articles/minna-fx-review'
+import { sbiFxtradeAccountOpening } from './articles/sbi-fxtrade-account-opening'
+import { sbiFxtradeReview } from './articles/sbi-fxtrade-review'
 import type { Article } from './articles-types'
 
 export const articles: Article[] = [
@@ -129,4 +153,28 @@ export const articles: Article[] = [
   xmKouzaType,
   xmMt5,
   xmShukkin,
+  dmmFxAccountOpening,
+  dmmFxReview,
+  gaitameAccountOpening,
+  gaitameReview,
+  gmoClickAccountOpening,
+  gmoClickReview,
+  gmoGaikaAccountOpening,
+  gmoGaikaReview,
+  hiroseLionfxAccountOpening,
+  hiroseLionfxReview,
+  kokunaiFx1000TsukaShougaku,
+  kokunaiFxAppHikaku,
+  kokunaiFxHikakuHub,
+  kokunaiFxJidouBaibai,
+  kokunaiFxShoshinshaHajimekata,
+  kokunaiFxSpreadHikaku,
+  kokunaiFxSwapPoint,
+  kokunaiFxZeikinKakuteiShinkoku,
+  matsuiFxAccountOpening,
+  matsuiFxReview,
+  minnaFxAccountOpening,
+  minnaFxReview,
+  sbiFxtradeAccountOpening,
+  sbiFxtradeReview,
 ]

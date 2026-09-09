@@ -7,5 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/articles/${article.slug}`,
   }))
 
-  return [{ url: SITE_URL }, ...articleEntries]
+  return [
+    { url: SITE_URL },
+    { url: `${SITE_URL}/tools` },
+    { url: `${SITE_URL}/about` },
+    ...articleEntries,
+  ]
 }

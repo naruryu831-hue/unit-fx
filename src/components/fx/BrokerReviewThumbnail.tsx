@@ -24,7 +24,7 @@ export function BrokerReviewThumbnail({
         )}
       </span>
       <div className="relative min-w-0">
-        <p className="truncate text-base font-black leading-tight">{brokerName}</p>
+        <p className="line-clamp-2 text-base font-black leading-tight">{brokerName}</p>
         <p className="mt-1 text-xs font-bold tracking-wide text-gold-400">{caption}</p>
       </div>
     </div>

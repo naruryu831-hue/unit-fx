@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { SiteLogo } from './SiteHeader'
 
 const LINKS = [
+  { href: '/articles/kokunai-fx-hikaku-hub', label: '国内FX比較ランキング' },
+  { href: '/tools', label: 'FX計算ツール' },
+  { href: '/about', label: '運営者情報・編集方針' },
   { href: '/articles/kaigai-fx-hikaku-hub', label: '海外FX比較ランキング' },
   { href: '/articles/kaigai-fx-hajimekata', label: '海外FXの始め方' },
   { href: '/articles/kaigai-fx-kouza-bonus-matome', label: '口座開設ボーナスまとめ' },

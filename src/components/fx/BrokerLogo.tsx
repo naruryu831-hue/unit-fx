@@ -2,8 +2,8 @@ import { getBrokerShortName, getBrokerColor } from '@/lib/broker-visual'
 import { getBrokerLogoPath } from '@/lib/broker-logos'
 
 const SIZES = {
-  md: { frame: 'h-12 w-28 px-2', image: 'max-h-8', text: 'text-base' },
-  lg: { frame: 'h-16 w-36 px-3', image: 'max-h-11', text: 'text-xl' },
+  md: { frame: 'h-12 min-w-28 px-3', image: 'max-h-8', text: 'text-sm' },
+  lg: { frame: 'h-16 min-w-36 px-4', image: 'max-h-11', text: 'text-lg' },
 } as const
 
 export function BrokerLogo({
@@ -36,7 +36,7 @@ export function BrokerLogo({
       ) : (
         <span className="inline-flex items-center gap-1.5">
           <span className={`h-5 w-1 rounded-full ${getBrokerColor(slug)}`} />
-          <span className={`font-bold tracking-tight text-slate-900 ${text}`}>
+          <span className={`whitespace-nowrap font-black tracking-tight text-navy-900 ${text}`}>
             {getBrokerShortName(name)}
           </span>
         </span>

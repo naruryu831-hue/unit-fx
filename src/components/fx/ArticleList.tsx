@@ -40,9 +40,9 @@ function readingMinutes(body: string): number {
 
 export function ArticleList({ articles }: { articles: Article[] }) {
   return (
-    <ul className="grid gap-5 sm:grid-cols-2">
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {articles.map((article) => (
-        <li key={article.slug}>
+        <li key={article.slug} className="min-w-0">
           <Link
             href={`/articles/${article.slug}`}
             className="group flex h-full cursor-pointer flex-col rounded-2xl border border-line bg-white p-4 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"

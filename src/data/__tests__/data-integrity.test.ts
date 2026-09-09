@@ -29,7 +29,11 @@ describe('data integrity', () => {
     expect(matches.map((a) => a.slug)).toHaveLength(1)
   })
 
-  it.each(articles.filter((article) => article.category === 'account-opening'))(
+  it.each(
+    articles.filter(
+      (article) => article.category === 'account-opening' && article.market !== 'domestic'
+    )
+  )(
     'account-opening article $slug includes mt4-mt5-guide in relatedSlugs',
     (article) => {
       expect(article.relatedSlugs ?? []).toContain('mt4-mt5-guide')

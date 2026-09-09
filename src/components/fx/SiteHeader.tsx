@@ -1,10 +1,11 @@
 import Link from 'next/link'
 
 const NAV = [
-  { href: '/articles/kaigai-fx-hikaku-hub', label: '比較ランキング' },
-  { href: '/articles/kaigai-fx-hajimekata', label: '始め方' },
-  { href: '/articles/kaigai-fx-kouza-bonus-matome', label: 'ボーナス' },
-  { href: '/articles/kaigai-fx-kakutei-shinkoku-yarikata', label: '税金' },
+  { href: '/articles/kokunai-fx-hikaku-hub', label: '国内FX比較' },
+  { href: '/articles/kaigai-fx-hikaku-hub', label: '海外FX比較' },
+  { href: '/articles/kokunai-fx-shoshinsha-hajimekata', label: '始め方' },
+  { href: '/tools', label: '計算ツール' },
+  { href: '/articles/kokunai-fx-zeikin-kakutei-shinkoku', label: '税金' },
 ]
 
 export function SiteLogo({ light = false }: { light?: boolean }) {
@@ -39,7 +40,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link
-          href="/articles/kaigai-fx-hikaku-hub"
+          href="/articles/kokunai-fx-hikaku-hub"
           className="rounded-lg bg-navy-900 px-3.5 py-2 text-xs font-bold text-white transition-colors hover:bg-navy-800 md:text-sm"
         >
           業者を比較する

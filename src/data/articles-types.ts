@@ -1,4 +1,9 @@
-import type { FaqItem } from '@/components/fx/FaqSection'
+import type { BrokerMarket } from './brokers-types'
+
+export type FaqItem = {
+  question: string
+  answer: string
+}
 
 export type ArticleCategory =
   | 'hub'
@@ -18,4 +23,6 @@ export type Article = {
   faq: FaqItem[]
   relatedSlugs?: string[]
   summaryPoints?: string[]
+  /** 'domestic' は国内FX向け記事。省略時は海外FX向け。 */
+  market?: BrokerMarket
 }
