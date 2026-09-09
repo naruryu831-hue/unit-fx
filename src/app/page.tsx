@@ -69,7 +69,12 @@ function MarketBlock({
   return (
     <section id={id} className="scroll-mt-20 space-y-10">
       <div className="border-b-2 border-navy-900 pb-3">
-        <h2 className="text-2xl font-black text-navy-900 md:text-3xl">{title}</h2>
+        <h2 className="flex items-center justify-between text-2xl font-black text-navy-900 md:text-3xl">
+          {title}
+          <Link href={id === 'kokunai' ? '/kokunai' : '/kaigai'} className="text-sm font-bold text-navy-800 hover:underline">
+            すべて見る →
+          </Link>
+        </h2>
         <p className="mt-1 text-sm text-slate-500">{lead}</p>
       </div>
       {sections.map(({ category, lead: sectionLead }) => {

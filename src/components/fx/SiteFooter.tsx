@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { SiteLogo } from './SiteHeader'
 
 const LINKS = [
+  { href: '/kokunai', label: '国内FX 記事一覧' },
+  { href: '/kaigai', label: '海外FX 記事一覧' },
   { href: '/articles/kokunai-fx-hikaku-hub', label: '国内FX比較ランキング' },
   { href: '/tools', label: 'FX計算ツール' },
   { href: '/about', label: '運営者情報・編集方針' },

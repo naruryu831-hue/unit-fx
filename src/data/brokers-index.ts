@@ -13,6 +13,9 @@ import { minnaFx } from './brokers/minna-fx'
 import { matsuiFx } from './brokers/matsui-fx'
 import { hiroseLionfx } from './brokers/hirose-lionfx'
 import { gmoGaika } from './brokers/gmo-gaika'
+import { fxtf } from './brokers/fxtf'
+import { jfx } from './brokers/jfx'
+import { lightFx } from './brokers/light-fx'
 import type { Broker, BrokerMarket } from './brokers-types'
 
 export const brokers: Broker[] = [
@@ -31,6 +34,9 @@ export const brokers: Broker[] = [
   matsuiFx,
   hiroseLionfx,
   gmoGaika,
+  fxtf,
+  jfx,
+  lightFx,
 ]
 
 export function getBrokerBySlug(slug: string): Broker | undefined {

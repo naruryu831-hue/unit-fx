@@ -1,4 +1,5 @@
 import { parseBody } from '@/lib/parse-body'
+import { InlineText } from './InlineText'
 
 export function ArticleBody({ body }: { body: string }) {
   const blocks = parseBody(body)
@@ -31,7 +32,7 @@ export function ArticleBody({ body }: { body: string }) {
           case 'paragraph':
             return (
               <p key={index} className="mb-5">
-                {block.text}
+                <InlineText text={block.text} />
               </p>
             )
           case 'ul':
@@ -40,7 +41,9 @@ export function ArticleBody({ body }: { body: string }) {
                 {block.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex gap-2.5 leading-7">
                     <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" aria-hidden="true" />
-                    <span>{item}</span>
+                    <span>
+                      <InlineText text={item} />
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -53,7 +56,9 @@ export function ArticleBody({ body }: { body: string }) {
                     <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-navy-900 text-xs font-black text-white">
                       {itemIndex + 1}
                     </span>
-                    <span>{item}</span>
+                    <span>
+                      <InlineText text={item} />
+                    </span>
                   </li>
                 ))}
               </ol>

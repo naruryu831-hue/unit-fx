@@ -25,4 +25,6 @@ export type Article = {
   summaryPoints?: string[]
   /** 'domestic' は国内FX向け記事。省略時は海外FX向け。 */
   market?: BrokerMarket
+  /** 最終更新日（ISO 8601: YYYY-MM-DD）。省略時はサイト全体の既定日。 */
+  updatedAt?: string
 }

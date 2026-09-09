@@ -86,6 +86,36 @@ import { minnaFxAccountOpening } from './articles/minna-fx-account-opening'
 import { minnaFxReview } from './articles/minna-fx-review'
 import { sbiFxtradeAccountOpening } from './articles/sbi-fxtrade-account-opening'
 import { sbiFxtradeReview } from './articles/sbi-fxtrade-review'
+import { fxDemoKouza } from './articles/fx-demo-kouza'
+import { fxFukugyouKaishain } from './articles/fx-fukugyou-kaishain'
+import { fxFundamentalsNyumon } from './articles/fx-fundamentals-nyumon'
+import { fxIkuraKaraHajimerareru } from './articles/fx-ikura-kara-hajimerareru'
+import { fxKakuteishinkokuKaishaBareru } from './articles/fx-kakuteishinkoku-kaisha-bareru'
+import { fxKeizaiShihyouCalendar } from './articles/fx-keizai-shihyou-calendar'
+import { fxKouzaFukusuu } from './articles/fx-kouza-fukusuu'
+import { fxLeverage25baiImi } from './articles/fx-leverage-25bai-imi'
+import { fxLosscutKokunai } from './articles/fx-losscut-kokunai'
+import { fxPipsToha } from './articles/fx-pips-toha'
+import { fxShikinKanri } from './articles/fx-shikin-kanri'
+import { fxShippaiReiShoshinsha } from './articles/fx-shippai-rei-shoshinsha'
+import { fxShoukokinIjiritsu } from './articles/fx-shoukokin-ijiritsu'
+import { fxSonkiriRule } from './articles/fx-sonkiri-rule'
+import { fxSonshitsuKurikoshiKokunai } from './articles/fx-sonshitsu-kurikoshi-kokunai'
+import { fxSwapTouishiChuui } from './articles/fx-swap-touishi-chuui'
+import { fxTechnicalNyumon } from './articles/fx-technical-nyumon'
+import { fxTohaShoshinsha } from './articles/fx-toha-shoshinsha'
+import { fxTorihikiJikan } from './articles/fx-torihiki-jikan'
+import { fxTsukaPairShoshinsha } from './articles/fx-tsuka-pair-shoshinsha'
+import { fxtfAccountOpening } from './articles/fxtf-account-opening'
+import { fxtfReview } from './articles/fxtf-review'
+import { jfxAccountOpening } from './articles/jfx-account-opening'
+import { jfxReview } from './articles/jfx-review'
+import { kaigaiFxExnessVsHfm } from './articles/kaigai-fx-exness-vs-hfm'
+import { kaigaiFxShoshinshaYokuaruShitsumon } from './articles/kaigai-fx-shoshinsha-yokuaru-shitsumon'
+import { kaigaiFxXmVsFxgt } from './articles/kaigai-fx-xm-vs-fxgt'
+import { kokunaiFxKaraKaigaiFxNorikae } from './articles/kokunai-fx-kara-kaigai-fx-norikae'
+import { lightFxAccountOpening } from './articles/light-fx-account-opening'
+import { lightFxReview } from './articles/light-fx-review'
 import type { Article } from './articles-types'
 
 export const articles: Article[] = [
@@ -177,4 +207,34 @@ export const articles: Article[] = [
   minnaFxReview,
   sbiFxtradeAccountOpening,
   sbiFxtradeReview,
+  fxDemoKouza,
+  fxFukugyouKaishain,
+  fxFundamentalsNyumon,
+  fxIkuraKaraHajimerareru,
+  fxKakuteishinkokuKaishaBareru,
+  fxKeizaiShihyouCalendar,
+  fxKouzaFukusuu,
+  fxLeverage25baiImi,
+  fxLosscutKokunai,
+  fxPipsToha,
+  fxShikinKanri,
+  fxShippaiReiShoshinsha,
+  fxShoukokinIjiritsu,
+  fxSonkiriRule,
+  fxSonshitsuKurikoshiKokunai,
+  fxSwapTouishiChuui,
+  fxTechnicalNyumon,
+  fxTohaShoshinsha,
+  fxTorihikiJikan,
+  fxTsukaPairShoshinsha,
+  fxtfAccountOpening,
+  fxtfReview,
+  jfxAccountOpening,
+  jfxReview,
+  kaigaiFxExnessVsHfm,
+  kaigaiFxShoshinshaYokuaruShitsumon,
+  kaigaiFxXmVsFxgt,
+  kokunaiFxKaraKaigaiFxNorikae,
+  lightFxAccountOpening,
+  lightFxReview,
 ]

@@ -15,9 +15,12 @@ import { TableOfContents } from './TableOfContents'
 import { ArticleBody } from './ArticleBody'
 import { SiteFooter } from './SiteFooter'
 import { ToolsPromo } from './ToolsPromo'
+import { ArticleMeta, AuthorBox } from './ArticleMeta'
+import { JsonLd } from './JsonLd'
 import { getRelatedArticles } from '@/lib/get-article'
 import { extractHeadings } from '@/lib/parse-body'
 import { categoryLabels } from '@/lib/category-labels'
+import { DEFAULT_UPDATED_AT, SITE_NAME, SITE_URL } from '@/lib/site-config'
 
 export function ArticleView({ article, brokers }: { article: Article; brokers: Broker[] }) {
   const headings = extractHeadings(article.body)
@@ -26,10 +29,38 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
   const market = article.market ?? 'overseas'
   const isDomestic = market === 'domestic'
   const marketLabel = isDomestic ? '国内FX' : '海外FX'
-  const hubHref = isDomestic ? '/articles/kokunai-fx-hikaku-hub' : '/articles/kaigai-fx-hikaku-hub'
+  const marketHref = isDomestic ? '/kokunai' : '/kaigai'
+  const updatedAt = article.updatedAt ?? DEFAULT_UPDATED_AT
+  const url = `${SITE_URL}/articles/${article.slug}`
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'トップ', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: marketLabel, item: `${SITE_URL}${marketHref}` },
+      { '@type': 'ListItem', position: 3, name: article.title, item: url },
+    ],
+  }
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    url,
+    mainEntityOfPage: url,
+    datePublished: updatedAt,
+    dateModified: updatedAt,
+    inLanguage: 'ja',
+    author: { '@type': 'Organization', name: `${SITE_NAME}編集部`, url: `${SITE_URL}/about` },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    articleSection: categoryLabels[article.category],
+    about: brokers.map((b) => ({ '@type': 'Organization', name: b.name, url: b.officialUrl })),
+  }
 
   return (
     <>
+      <JsonLd data={breadcrumbLd} />
+      <JsonLd data={articleLd} />
       <article className="mx-auto max-w-6xl space-y-8 px-5 py-8">
         <nav aria-label="パンくずリスト" className="text-xs text-slate-500">
           <ol className="flex flex-wrap items-center gap-1.5">
@@ -40,7 +71,7 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href={hubHref} className="hover:text-navy-900">
+              <Link href={marketHref} className="hover:text-navy-900">
                 {marketLabel}
               </Link>
             </li>
@@ -52,23 +83,25 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
         {singleBroker ? (
           <header className="flex flex-col gap-5 rounded-2xl border border-line bg-white p-6 shadow-card sm:flex-row sm:items-center">
             <BrokerLogo name={singleBroker.name} slug={singleBroker.slug} size="lg" />
-            <div>
+            <div className="space-y-2">
               <p className="inline-block rounded-md bg-navy-50 px-2 py-0.5 text-xs font-bold text-navy-800">
                 {marketLabel} ・ {categoryLabels[article.category]} ・ {singleBroker.name}
               </p>
-              <h1 className="mt-2 text-2xl font-black leading-tight text-navy-900 md:text-3xl">
+              <h1 className="text-2xl font-black leading-tight text-navy-900 md:text-3xl">
                 {article.title}
               </h1>
+              <ArticleMeta updatedAt={updatedAt} />
             </div>
           </header>
         ) : (
-          <header>
+          <header className="space-y-3">
             <p className="inline-block rounded-md bg-navy-50 px-2 py-0.5 text-xs font-bold text-navy-800">
               {marketLabel} ・ {categoryLabels[article.category]}
             </p>
-            <h1 className="mt-3 text-2xl font-black leading-tight text-navy-900 md:text-4xl">
+            <h1 className="text-2xl font-black leading-tight text-navy-900 md:text-4xl">
               {article.title}
             </h1>
+            <ArticleMeta updatedAt={updatedAt} />
           </header>
         )}
 
@@ -84,7 +117,7 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
         )}
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_280px]">
-          <div className="space-y-8">
+          <div className="min-w-0 space-y-8">
             <div className="space-y-8 rounded-2xl border border-line bg-white p-5 shadow-card md:p-10">
               {!isHub && <RiskDisclaimer compact market={market} />}
               {singleBroker && article.summaryPoints && (
@@ -102,6 +135,7 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
               {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
               <FaqSection items={article.faq} />
             </div>
+            <AuthorBox />
             <ToolsPromo market={market} />
             <RelatedArticles articles={getRelatedArticles(article)} />
           </div>

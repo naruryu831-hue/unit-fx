@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 const NAV = [
-  { href: '/articles/kokunai-fx-hikaku-hub', label: '国内FX比較' },
-  { href: '/articles/kaigai-fx-hikaku-hub', label: '海外FX比較' },
+  { href: '/kokunai', label: '国内FX' },
+  { href: '/kaigai', label: '海外FX' },
   { href: '/articles/kokunai-fx-shoshinsha-hajimekata', label: '始め方' },
   { href: '/tools', label: '計算ツール' },
   { href: '/articles/kokunai-fx-zeikin-kakutei-shinkoku', label: '税金' },
