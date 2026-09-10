@@ -28,6 +28,14 @@ const AFFILIATE_LINKS: Record<string, AffiliateLinks> = {
     // 発行されているのは口座開設ページ直行の計測リンクのみ。
     signup: 'https://fxgt.link/register?refid=4614',
   },
+  fxtf: {
+    // A8.net（メディアID a26060521639 / 掲載サイト UNIT-FX = wid 003）で
+    // ゴールデンウェイ・ジャパンと提携。素材は「自由テキスト」を使用しているため、
+    // アンカーテキストはサイト側のボタン文言をそのまま使える。
+    // 口座開設フォーム直行の素材は発行されていないため、両方に同じリンクを使う。
+    homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM',
+    signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM',
+  },
   // TitanFX / BigBoss / AXIORY はパートナー登録が未完了のため未設定。
   // 設定するまでは素の公式サイトURLにフォールバックし、報酬は発生しない。
 }

@@ -43,6 +43,11 @@ describe('getBrokerLink', () => {
     expect(getBrokerLink('titanfx')).toBe('https://titanfx.jp/')
   })
 
+  it('returns the A8 tracking link for FXTF (domestic)', () => {
+    expect(getBrokerLink('fxtf')).toBe('https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM')
+    expect(getBrokerSignupLink('fxtf')).toBe('https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM')
+  })
+
   it('falls back to the signup link when only a signup link is issued', () => {
     expect(getBrokerLink('fxgt')).toBe('https://fxgt.link/register?refid=4614')
   })
@@ -80,6 +85,7 @@ describe('hasAffiliateLink', () => {
     expect(hasAffiliateLink('xm')).toBe(true)
     expect(hasAffiliateLink('exness')).toBe(true)
     expect(hasAffiliateLink('hfm')).toBe(true)
+    expect(hasAffiliateLink('fxtf')).toBe(true)
   })
 
   it('is false for brokers still pointing at the plain official site', () => {
