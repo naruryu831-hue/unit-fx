@@ -22,11 +22,18 @@ import { extractHeadings } from '@/lib/parse-body'
 import { categoryLabels } from '@/lib/category-labels'
 import { DEFAULT_UPDATED_AT, SITE_NAME, SITE_URL } from '@/lib/site-config'
 
+/** 検索意図が『どれを選ぶか』の記事は、結論の比較表を本文より先に見せる。 */
+const CTA_FIRST_CATEGORIES = new Set<Article['category']>(['comparison', 'bonus-roundup'])
+
 export function ArticleView({ article, brokers }: { article: Article; brokers: Broker[] }) {
   const headings = extractHeadings(article.body)
   const isHub = article.category === 'hub'
   const isSingleBrokerReview = article.category === 'broker-review' && article.brokerSlugs.length === 1
   const singleBroker = brokers.length === 1 ? brokers[0] : null
+  const isTwoBrokerCta = !isHub && brokers.length === 2
+  const showComparisonBeforeBody =
+    !isHub && CTA_FIRST_CATEGORIES.has(article.category) && brokers.length >= 3
+  const showComparisonAfterBody = !isHub && brokers.length > 0 && !showComparisonBeforeBody
   const market = article.market ?? 'overseas'
   const isDomestic = market === 'domestic'
   const marketLabel = isDomestic ? '国内FX' : '海外FX'
@@ -145,9 +152,21 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
                 <ArticleSummaryBox brokerName={singleBroker.name} points={article.summaryPoints} />
               )}
               {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
+              {isTwoBrokerCta && (
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {brokers.map((broker) => (
+                    <BrokerCtaBanner key={broker.slug} broker={broker} />
+                  ))}
+                </div>
+              )}
+              {showComparisonBeforeBody &&
+                (isDomestic ? (
+                  <DomesticComparisonTable brokers={brokers} />
+                ) : (
+                  <ComparisonTable brokers={brokers} />
+                ))}
               <ArticleBody body={article.body} />
-              {!isHub &&
-                brokers.length > 0 &&
+              {showComparisonAfterBody &&
                 (isDomestic ? (
                   <DomesticComparisonTable brokers={brokers} />
                 ) : (

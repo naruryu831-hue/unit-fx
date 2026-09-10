@@ -5,16 +5,7 @@ export const fxKakuteishinkokuKaishaBareru: Article = {
   title: 'FXの利益は会社に知られる？住民税の徴収方法と申告の実務',
   category: 'tax',
   market: 'domestic',
-  brokerSlugs: [
-    'dmm-fx',
-    'gmo-click',
-    'sbi-fxtrade',
-    'gaitame',
-    'minna-fx',
-    'matsui-fx',
-    'hirose-lionfx',
-    'gmo-gaika',
-  ],
+  brokerSlugs: ['dmm-fx', 'gmo-click', 'sbi-fxtrade'],
   body: `会社員が国内FXで利益を出し確定申告をする際、「会社にFXをしていることが知られるのではないか」と不安に感じる人は少なくありません。この不安の多くは、住民税の徴収方法の仕組みを理解していないことから生じます。この記事では、FXの利益が会社に知られる可能性がある仕組みと、住民税の徴収方法の選び方について解説します。なお、本記事は一般的な仕組みの解説であり、個別の税務相談ではありません。具体的な手続きは税務署や税理士、お住まいの市区町村にご確認ください。
 
 ■ 1. なぜ「会社に知られる」と言われるのか

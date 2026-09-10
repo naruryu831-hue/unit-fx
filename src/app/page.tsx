@@ -192,7 +192,7 @@ export default function Home() {
               article={overseasHub}
               brokers={overseasBrokers}
               badge="海外FX"
-              lead="提携7社をレバレッジ・最低入金額・日本語対応で横並び比較"
+              lead={`海外${overseasBrokers.length}社をレバレッジ・最低入金額・日本語対応で横並び比較`}
             />
           )}
         </div>

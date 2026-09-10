@@ -34,6 +34,9 @@ export function RiskDisclaimer({
         </svg>
         リスク・注意事項
       </p>
+      <p className="mt-1.5 font-bold leading-relaxed">
+        ※当サイトはアフィリエイト広告を利用しています。リンク経由で口座開設が行われた場合、運営者が広告主から成果報酬を受け取ることがあります。
+      </p>
       <ul className="mt-2 list-disc space-y-1 pl-5 leading-relaxed">
         {ITEMS[market].map((text) => (
           <li key={text}>{text}</li>

@@ -40,7 +40,7 @@ export function BrokerRankingList({ brokers }: { brokers: Broker[] }) {
             >
               {isTop && (
                 <span className="absolute right-0 top-0 rounded-bl-xl bg-gold-500 px-3 py-1 text-[11px] font-black text-navy-950">
-                  日本人利用実績 No.1
+                  編集部イチオシ
                 </span>
               )}
               <div className="flex flex-col gap-5 md:flex-row">

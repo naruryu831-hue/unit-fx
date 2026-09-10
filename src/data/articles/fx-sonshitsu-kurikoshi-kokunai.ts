@@ -5,16 +5,7 @@ export const fxSonshitsuKurikoshiKokunai: Article = {
   title: '国内FXの損失繰越控除の使い方【3年間・毎年申告が条件】',
   category: 'tax',
   market: 'domestic',
-  brokerSlugs: [
-    'dmm-fx',
-    'gmo-click',
-    'sbi-fxtrade',
-    'gaitame',
-    'minna-fx',
-    'matsui-fx',
-    'hirose-lionfx',
-    'gmo-gaika',
-  ],
+  brokerSlugs: ['dmm-fx', 'gmo-click', 'sbi-fxtrade'],
   body: `国内FXの取引で年間を通じて損失が出た場合でも、確定申告を行うことでその損失を翌年以降に繰り越し、将来の利益と相殺できる「損失繰越控除」という制度があります。この制度を正しく使えるかどうかで、将来の納税額が変わる可能性があります。この記事では、国内FXの損失繰越控除の仕組みと、利用する際の注意点を解説します。なお、本記事は一般的な仕組みの解説であり、個別の税務相談ではありません。具体的な適用の可否は税務署や税理士にご確認ください。
 
 ■ 1. 損失繰越控除とは

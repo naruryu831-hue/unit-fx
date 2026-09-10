@@ -2,7 +2,7 @@ import type { Article } from '../articles-types'
 
 export const kaigaiFxHikakuHub: Article = {
   slug: 'kaigai-fx-hikaku-hub',
-  title: '海外FX おすすめ比較ランキング【提携7社】',
+  title: '海外FX おすすめ比較ランキング【主要7社】',
   category: 'hub',
   brokerSlugs: [
     'xm',
