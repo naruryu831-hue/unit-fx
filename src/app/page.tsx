@@ -25,7 +25,7 @@ const POPULAR_SLUGS = [
 ]
 
 const DOMESTIC_SECTIONS: { category: ArticleCategory; lead: string }[] = [
-  { category: 'broker-review', lead: '金融庁登録の主要8社を、公表されている条件だけで整理' },
+  { category: 'broker-review', lead: `金融庁登録の主要${domesticBrokers.length}社を、公表されている条件だけで整理` },
   { category: 'comparison', lead: '取引単位・スプレッドの読み方・アプリ・自動売買を観点別に比較' },
   { category: 'problem-solving', lead: '始め方・スワップなど、最初につまずくポイントを解消' },
   { category: 'account-opening', lead: '必要書類と申込手順を業者ごとに' },
@@ -184,7 +184,7 @@ export default function Home() {
               article={domesticHub}
               brokers={domesticBrokers}
               badge="国内FX"
-              lead="金融庁登録8社を、最低取引単位・通貨ペア数・ツールで横並び比較"
+              lead={`金融庁登録${domesticBrokers.length}社を、最低取引単位・通貨ペア数・ツールで横並び比較`}
             />
           )}
           {overseasHub && (
