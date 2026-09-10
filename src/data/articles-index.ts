@@ -140,6 +140,11 @@ import { kokunaiFxTsukaPairKazu } from './articles/kokunai-fx-tsuka-pair-kazu'
 import { kokunaiFxYakujouryoku } from './articles/kokunai-fx-yakujouryoku'
 import { minnaFxVsLightFx } from './articles/minna-fx-vs-light-fx'
 import { sbiFxtradeVsGaitame } from './articles/sbi-fxtrade-vs-gaitame'
+import { fxtfKnockoutOption } from './articles/fxtf-knockout-option'
+import { fxtfMt4Tsukaikata } from './articles/fxtf-mt4-tsukaikata'
+import { fxtfVsGmoClick } from './articles/fxtf-vs-gmo-click'
+import { kokunaiFxMt4EaJidoubaibai } from './articles/kokunai-fx-mt4-ea-jidoubaibai'
+import { kokunaiFxMt4Taiou } from './articles/kokunai-fx-mt4-taiou'
 import type { Article } from './articles-types'
 
 export const articles: Article[] = [
@@ -285,4 +290,9 @@ export const articles: Article[] = [
   kokunaiFxYakujouryoku,
   minnaFxVsLightFx,
   sbiFxtradeVsGaitame,
+  fxtfKnockoutOption,
+  fxtfMt4Tsukaikata,
+  fxtfVsGmoClick,
+  kokunaiFxMt4EaJidoubaibai,
+  kokunaiFxMt4Taiou,
 ]
