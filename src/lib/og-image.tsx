@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { SITE_MARKET } from './site-config'
 
 /** OGP画像で使うネイビー／ゴールドのカラートークン（globals.css の navy-950 / navy-900 / gold-500 / gold-400 と一致） */
 export const OG_NAVY_950 = '#060c1c'
@@ -28,8 +29,17 @@ export function OgEyebrow({ label }: { label: string }) {
   )
 }
 
-/** 右下に置く「UNIT-FX」ワードマーク */
+/** 右下に置くサイト名のワードマーク（SITE_NAME に追従） */
 export function OgBrand() {
+  if (SITE_MARKET === 'overseas') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}>
+        <span style={{ color: '#ffffff', fontSize: 34, fontWeight: 900 }}>海外</span>
+        <span style={{ color: OG_GOLD_400, fontSize: 34, fontWeight: 900 }}>FX</span>
+        <span style={{ color: '#ffffff', fontSize: 34, fontWeight: 900 }}>比較ラボ</span>
+      </div>
+    )
+  }
   return (
     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}>
       <span style={{ color: '#ffffff', fontSize: 34, fontWeight: 900 }}>UNIT-</span>

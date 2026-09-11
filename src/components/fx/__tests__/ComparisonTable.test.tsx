@@ -1,8 +1,16 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { ComparisonTable, parseLeverageValue } from '../ComparisonTable'
-import { xm } from '@/data/brokers/xm'
+import { dmmFx } from '@/data/brokers/dmm-fx'
 import type { Broker } from '@/data/brokers-types'
+
+// ComparisonTable は getBrokerLink（→ SITE_MARKET でフィルタ済みの getBrokerBySlug）を使う。
+// 国内FXの dmm-fx を固定で使うため、overseas ビルド設定で実行しても見つかるよう、
+// 市場フィルタを経由しない allBrokers を参照するようにモックする。
+vi.mock('@/data/brokers-index', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/data/brokers-index')>()
+  return { ...actual, getBrokerBySlug: (slug: string) => actual.allBrokers.find((b) => b.slug === slug) }
+})
 
 describe('parseLeverageValue', () => {
   it('returns Infinity for "無制限"', () => {
@@ -24,14 +32,14 @@ describe('parseLeverageValue', () => {
 
 describe('ComparisonTable', () => {
   it('renders one row per broker including the age requirement column', () => {
-    render(<ComparisonTable brokers={[xm]} />)
-    expect(screen.getByText('XM(XM Trading)')).toBeInTheDocument()
+    render(<ComparisonTable brokers={[dmmFx]} />)
+    expect(screen.getByText('DMM FX')).toBeInTheDocument()
     expect(screen.getByText('18歳以上')).toBeInTheDocument()
-    expect(screen.getByText(xm.maxLeverage)).toBeInTheDocument()
+    expect(screen.getByText(dmmFx.maxLeverage)).toBeInTheDocument()
 
     const link = screen.getByRole('link', { name: '公式サイト' })
     // 素の公式URLではなく、トップページ用の計測リンクが使われていること。
-    expect(link).toHaveAttribute('href', 'https://affx.click/tFXMb')
+    expect(link).toHaveAttribute('href', 'https://h.accesstrade.net/sp/cc?rk=0100kz3n00oyuv')
     expect(link.getAttribute('rel')).toContain('sponsored')
   })
 

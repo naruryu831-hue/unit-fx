@@ -12,7 +12,7 @@ describe('SiteFooter', () => {
     render(<SiteFooter />)
     const text = screen.getByRole('contentinfo').textContent ?? ''
     expect(text).toContain('アフィリエイト')
-    expect(text).toContain('金融庁に登録されていない')
+    expect(text).toContain('金融庁（財務局）に登録された')
     expect(text).toContain('UNIT-FX')
   })
 

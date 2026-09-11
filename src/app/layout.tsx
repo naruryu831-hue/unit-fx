@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
+import { GA_ID, SITE_DESCRIPTION, SITE_MARKET, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import { JsonLd } from "@/components/fx/JsonLd";
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-SLRLGGPQRW";
 import { SiteHeader } from "@/components/fx/SiteHeader";
 
 const geistSans = Geist({
@@ -25,12 +23,14 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
+const marketLabel = SITE_MARKET === "overseas" ? "海外FX業者比較" : "国内FX業者比較";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "UNIT-FX | 国内FX・海外FX業者比較",
+  title: `${SITE_NAME} | ${marketLabel}`,
   description: SITE_DESCRIPTION,
   alternates: { canonical: "/" },
-  openGraph: { siteName: "UNIT-FX", type: "website", locale: "ja_JP" },
+  openGraph: { siteName: SITE_NAME, type: "website", locale: "ja_JP" },
 };
 
 export default function RootLayout({
@@ -55,13 +55,17 @@ export default function RootLayout({
         />
         <SiteHeader />
         {children}
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag("js", new Date());
 gtag("config", "${GA_ID}");`}
-        </Script>
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

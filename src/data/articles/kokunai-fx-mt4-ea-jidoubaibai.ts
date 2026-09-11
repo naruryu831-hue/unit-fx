@@ -8,7 +8,6 @@ export const kokunaiFxMt4EaJidoubaibai: Article = {
   brokerSlugs: ['fxtf'],
   relatedSlugs: [
     'fxtf-review',
-    'mt4-mt5-guide',
     'kokunai-fx-jidou-baibai',
     'kokunai-fx-hikaku-hub',
     'fx-losscut-kokunai',
@@ -19,7 +18,7 @@ export const kokunaiFxMt4EaJidoubaibai: Article = {
     'EAを稼働させ続けるにはパソコンの常時稼働などの環境が必要で、動作や収益性は保証されない',
   ],
   updatedAt: '2026-09-10',
-  body: `MT4(MetaTrader4)には、あらかじめ設定したルールに従って自動的に売買を行うプログラム「EA（エキスパートアドバイザー）」を組み込める仕組みがあります。海外FXの世界ではEAを使った自動売買が広く行われていますが、国内FXでEAを動かすには、そもそもMT4に対応した業者の口座が必要になります。本サイトで紹介している国内FX業者の中では[FXTF](/articles/fxtf-review)がMT4に対応しており、EAを利用する際の入り口になります。この記事では、EAの基本的な仕組みと、国内FXで利用する際に押さえておきたいポイントを整理します。
+  body: `MT4(MetaTrader4)には、あらかじめ設定したルールに従って自動的に売買を行うプログラム「EA（エキスパートアドバイザー）」を組み込める仕組みがあります。EAを使った自動売買はMT4の代表的な活用法のひとつですが、国内FXでEAを動かすには、そもそもMT4に対応した業者の口座が必要になります。本サイトで紹介している国内FX業者の中では[FXTF](/articles/fxtf-review)がMT4に対応しており、EAを利用する際の入り口になります。この記事では、EAの基本的な仕組みと、国内FXで利用する際に押さえておきたいポイントを整理します。
 
 ■ 1. 国内FXでEAを使うには何が必要か
 

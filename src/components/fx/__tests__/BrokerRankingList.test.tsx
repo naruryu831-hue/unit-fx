@@ -1,9 +1,24 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { BrokerRankingList } from '../BrokerRankingList'
 import { xm } from '@/data/brokers/xm'
 import { exness } from '@/data/brokers/exness'
 import { getBrokerShortName } from '@/lib/broker-visual'
+
+// BrokerRankingList は海外FXページでのみ使われるコンポーネントだが、内部で使う
+// getBrokerLink（→ getBrokerBySlug）と articles（→ findReviewSlug）は SITE_MARKET で
+// フィルタ済みの brokers-index / articles-index を参照する実装のため、テスト実行時の
+// 既定市場（domestic）のままだと海外FX業者の xm / exness が見つからず失敗する。
+// ここでは市場フィルタを経由しない allBrokers / allArticles を参照するようにモックする。
+vi.mock('@/data/brokers-index', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/data/brokers-index')>()
+  return { ...actual, getBrokerBySlug: (slug: string) => actual.allBrokers.find((b) => b.slug === slug) }
+})
+
+vi.mock('@/data/articles-index', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/data/articles-index')>()
+  return { ...actual, articles: actual.allArticles }
+})
 
 describe('BrokerRankingList', () => {
   it('renders both broker names', () => {

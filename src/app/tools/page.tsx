@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { FxCalculators } from '@/components/fx/FxCalculators'
 import { RiskDisclaimer } from '@/components/fx/RiskDisclaimer'
 import { SiteFooter } from '@/components/fx/SiteFooter'
+import { SITE_MARKET, SITE_NAME } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  title: 'FX計算ツール（必要証拠金・pips損益・税金シミュレーター） | UNIT-FX',
+  title: `FX計算ツール（必要証拠金・pips損益・税金シミュレーター） | ${SITE_NAME}`,
   description:
-    '必要証拠金とロスカット水準、pipsあたりの損益、国内FX（申告分離課税）と海外FX（総合課税）の税額を無料で試算できる計算ツールです。',
+    SITE_MARKET === 'overseas'
+      ? '必要証拠金とロスカット水準、pipsあたりの損益、海外FX（総合課税）の税額を無料で試算できる計算ツールです。'
+      : '必要証拠金とロスカット水準、pipsあたりの損益、国内FX（申告分離課税）の税額を無料で試算できる計算ツールです。',
   alternates: { canonical: '/tools' },
 }
 
@@ -37,7 +40,7 @@ export default function ToolsPage() {
             口座開設の前に「いくら必要か」「1pipsでいくら動くか」「税金はいくらか」を数字で確認できます。計算はブラウザ内で完結し、入力内容は送信されません。
           </p>
         </header>
-        <RiskDisclaimer compact market="domestic" />
+        <RiskDisclaimer compact market={SITE_MARKET} />
         <FxCalculators />
       </main>
       <SiteFooter />

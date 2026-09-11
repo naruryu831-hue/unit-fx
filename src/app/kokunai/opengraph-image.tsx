@@ -2,10 +2,11 @@ import { ImageResponse } from 'next/og'
 import { articles } from '@/data/articles-index'
 import { domesticBrokers } from '@/data/brokers-index'
 import { OgBrand, OgEyebrow, ogContainerStyle } from '@/lib/og-image'
+import { SITE_MARKET, SITE_NAME } from '@/lib/site-config'
 
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-export const alt = 'UNIT-FX 国内FX 記事一覧'
+export const alt = SITE_MARKET === 'domestic' ? `${SITE_NAME} 国内FX 記事一覧` : SITE_NAME
 
 export default function Image() {
   const articleCount = articles.filter((article) => article.market === 'domestic').length

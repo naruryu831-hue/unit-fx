@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getArticleBySlug, getBrokersForArticle } from '@/lib/get-article'
 import { ArticleView } from '@/components/fx/ArticleView'
 import { articles } from '@/data/articles-index'
-import { SITE_URL } from '@/lib/site-config'
+import { SITE_NAME, SITE_URL } from '@/lib/site-config'
 
 type Params = Promise<{ slug: string }>
 
@@ -24,14 +24,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     return {}
   }
   const marketLabel = article.market === 'domestic' ? '国内FX' : '海外FX'
-  const title = `${article.title} | UNIT-FX ${marketLabel}比較`
+  const title = `${article.title} | ${SITE_NAME} ${marketLabel}比較`
   const description = buildDescription(article.body)
   const url = `${SITE_URL}/articles/${article.slug}`
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, siteName: 'UNIT-FX', type: 'article', locale: 'ja_JP' },
+    openGraph: { title, description, url, siteName: SITE_NAME, type: 'article', locale: 'ja_JP' },
     twitter: { card: 'summary_large_image', title, description },
   }
 }

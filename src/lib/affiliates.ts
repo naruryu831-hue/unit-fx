@@ -43,10 +43,14 @@ const AFFILIATE_LINKS: Record<string, AffiliateLinks> = {
     signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
   },
   'dmm-fx': {
-    // A8.net（掲載サイト UNIT-FX = wid 003）で株式会社ＤＭＭ．ｃｏｍ証券と提携（2026-09-11承認）。
+    // アクセストレード（報酬¥30,000）に差し替え。A8.net（報酬¥20,000）より高いため。
+    // 素材「DMM FX公式サイトへ」= homepage、「DMM FX無料口座お申込みへ」= signup。
+    homepage: 'https://h.accesstrade.net/sp/cc?rk=0100kz3n00oyuv',
+    signup: 'https://h.accesstrade.net/sp/cc?rk=0100kz3o00oyuv',
+    // 旧: A8.net（掲載サイト UNIT-FX = wid 003）で株式会社ＤＭＭ．ｃｏｍ証券と提携（2026-09-11承認）。
     // homepage = 「【DMM FX】について詳しくはこちら」、signup = 「アカウント登録のお申込みはこちら」。
-    homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+PLPC2+1WP2+69WPU',
-    signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+PLPC2+1WP2+6JC82',
+    // homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+PLPC2+1WP2+69WPU',
+    // signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+PLPC2+1WP2+6JC82',
   },
   // TitanFX / BigBoss / AXIORY はパートナー登録が未完了のため未設定。
   // 設定するまでは素の公式サイトURLにフォールバックし、報酬は発生しない。

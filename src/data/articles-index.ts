@@ -146,8 +146,9 @@ import { fxtfVsGmoClick } from './articles/fxtf-vs-gmo-click'
 import { kokunaiFxMt4EaJidoubaibai } from './articles/kokunai-fx-mt4-ea-jidoubaibai'
 import { kokunaiFxMt4Taiou } from './articles/kokunai-fx-mt4-taiou'
 import type { Article } from './articles-types'
+import { SITE_MARKET } from '@/lib/site-config'
 
-export const articles: Article[] = [
+export const allArticles: Article[] = [
   kaigaiFxHikakuHub,
   xmReview,
   exnessReview,
@@ -296,3 +297,8 @@ export const articles: Article[] = [
   kokunaiFxMt4EaJidoubaibai,
   kokunaiFxMt4Taiou,
 ]
+
+/** SITE_MARKET でフィルタ済みの記事一覧。market 未指定の記事は overseas 扱い。 */
+export const articles: Article[] = allArticles.filter(
+  (article) => (article.market ?? 'overseas') === SITE_MARKET
+)

@@ -1,9 +1,10 @@
 import { ImageResponse } from 'next/og'
 import { OgBrand, OgEyebrow, ogContainerStyle } from '@/lib/og-image'
+import { SITE_NAME } from '@/lib/site-config'
 
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-export const alt = 'UNIT-FX 計算ツール'
+export const alt = `${SITE_NAME} 計算ツール`
 
 export default function Image() {
   return new ImageResponse(

@@ -24,12 +24,16 @@ const { cautionBroker } = vi.hoisted(() => {
   return { cautionBroker }
 })
 
+// getBrokerBySlug は SITE_MARKET でフィルタ済みの brokers から検索する実装のため、
+// テスト実行時（既定 = domestic）のまま呼ぶと海外FX業者が見つからず失敗する。
+// affiliates.ts のリンク解決ロジックは市場を問わずテストしたいので、
+// ここでは市場フィルタを介さない allBrokers から検索するようにモックする。
 vi.mock('../../data/brokers-index', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../../data/brokers-index')>()
   return {
     ...actual,
     getBrokerBySlug: (slug: string) =>
-      slug === cautionBroker.slug ? cautionBroker : actual.getBrokerBySlug(slug),
+      slug === cautionBroker.slug ? cautionBroker : actual.allBrokers.find((b) => b.slug === slug),
   }
 })
 

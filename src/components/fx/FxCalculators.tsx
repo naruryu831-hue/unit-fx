@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { SITE_MARKET } from '@/lib/site-config'
 
 const yen = (n: number) =>
   Number.isFinite(n) ? `${Math.round(n).toLocaleString('ja-JP')}円` : '―'
@@ -89,7 +90,9 @@ function MarginCalculator() {
         <Field label="ロスカット水準（証拠金維持率）" value={losscut} onChange={setLosscut} suffix="%" />
         <div className="flex flex-wrap items-end gap-2 text-xs">
           <button type="button" onClick={() => setLeverage(25)} className="rounded-md border border-line px-2.5 py-1.5 font-bold text-navy-900 hover:bg-navy-50">国内 25倍</button>
-          <button type="button" onClick={() => setLeverage(1000)} className="rounded-md border border-line px-2.5 py-1.5 font-bold text-navy-900 hover:bg-navy-50">海外 1000倍</button>
+          {SITE_MARKET === 'overseas' && (
+            <button type="button" onClick={() => setLeverage(1000)} className="rounded-md border border-line px-2.5 py-1.5 font-bold text-navy-900 hover:bg-navy-50">海外 1000倍</button>
+          )}
         </div>
       </div>
       <div className="space-y-2">
@@ -175,10 +178,14 @@ function TaxCalculator() {
       </div>
       <div className="space-y-2">
         <Result label="国内FX（申告分離課税 20.315%）" value={yen(r.domestic)} strong />
-        <Result label="海外FX（総合課税）合計" value={yen(r.overseas)} strong />
-        <Result label="　うち所得税＋復興特別所得税（増加分）" value={yen(r.overseasIncome)} />
-        <Result label="　うち住民税（10%）" value={yen(r.overseasResident)} />
-        <Result label="差額（海外 − 国内）" value={`${r.diff >= 0 ? '+' : ''}${yen(r.diff)}`} />
+        {SITE_MARKET === 'overseas' && (
+          <>
+            <Result label="海外FX（総合課税）合計" value={yen(r.overseas)} strong />
+            <Result label="　うち所得税＋復興特別所得税（増加分）" value={yen(r.overseasIncome)} />
+            <Result label="　うち住民税（10%）" value={yen(r.overseasResident)} />
+            <Result label="差額（海外 − 国内）" value={`${r.diff >= 0 ? '+' : ''}${yen(r.diff)}`} />
+          </>
+        )}
         <p className="text-[11px] leading-relaxed text-slate-500">
           ※ 2026年時点の所得税速算表と住民税10%で計算した概算です。住民税の均等割・調整控除、国内FXの損失繰越、各種控除の変動は含みません。最終的な税額は税務署・税理士にご確認ください。
         </p>
@@ -196,7 +203,15 @@ export function FxCalculators() {
       <Card id="pips" title="pips損益計算" lead="値幅と数量から、円建ての損益額を確認します。">
         <PipsCalculator />
       </Card>
-      <Card id="tax" title="FX税金シミュレーター（国内 vs 海外）" lead="同じ利益で、申告分離課税と総合課税の税額がどれだけ違うかを比較します。">
+      <Card
+        id="tax"
+        title={SITE_MARKET === 'overseas' ? 'FX税金シミュレーター（国内 vs 海外）' : 'FX税金シミュレーター（申告分離課税）'}
+        lead={
+          SITE_MARKET === 'overseas'
+            ? '同じ利益で、申告分離課税と総合課税の税額がどれだけ違うかを比較します。'
+            : '国内FXの申告分離課税（一律20.315%）で、利益に対する税額を試算します。'
+        }
+      >
         <TaxCalculator />
       </Card>
     </div>

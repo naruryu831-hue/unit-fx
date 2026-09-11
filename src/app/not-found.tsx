@@ -1,5 +1,17 @@
 import Link from 'next/link'
 import { SiteFooter } from '@/components/fx/SiteFooter'
+import { SITE_MARKET } from '@/lib/site-config'
+
+const NOT_FOUND_LINKS =
+  SITE_MARKET === 'overseas'
+    ? [
+        { href: '/kaigai', label: '海外FXの記事一覧' },
+        { href: '/tools', label: 'FX計算ツール' },
+      ]
+    : [
+        { href: '/kokunai', label: '国内FXの記事一覧' },
+        { href: '/tools', label: 'FX計算ツール' },
+      ]
 
 export default function NotFound() {
   return (
@@ -11,11 +23,7 @@ export default function NotFound() {
           URLが変更されたか、記事が削除された可能性があります。以下から目的のページをお探しください。
         </p>
         <ul className="mt-8 grid gap-3 sm:grid-cols-3">
-          {[
-            { href: '/kokunai', label: '国内FXの記事一覧' },
-            { href: '/kaigai', label: '海外FXの記事一覧' },
-            { href: '/tools', label: 'FX計算ツール' },
-          ].map((l) => (
+          {NOT_FOUND_LINKS.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}

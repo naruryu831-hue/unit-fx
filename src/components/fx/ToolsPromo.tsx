@@ -1,13 +1,17 @@
 import Link from 'next/link'
 import type { BrokerMarket } from '@/data/brokers-types'
 
-const TOOLS = [
-  { href: '/tools#margin', label: '必要証拠金・ロスカット計算', desc: '通貨量とレバレッジから必要証拠金と維持率を試算' },
-  { href: '/tools#pips', label: 'pips損益計算', desc: '値幅と取引数量から損益額を円で確認' },
-  { href: '/tools#tax', label: 'FX税金シミュレーター', desc: '国内(申告分離)と海外(総合課税)の税額を比較' },
-]
-
 export function ToolsPromo({ market = 'overseas' }: { market?: BrokerMarket }) {
+  const tools = [
+    { href: '/tools#margin', label: '必要証拠金・ロスカット計算', desc: '通貨量とレバレッジから必要証拠金と維持率を試算' },
+    { href: '/tools#pips', label: 'pips損益計算', desc: '値幅と取引数量から損益額を円で確認' },
+    {
+      href: '/tools#tax',
+      label: 'FX税金シミュレーター',
+      desc: market === 'domestic' ? '申告分離課税での税額を試算' : '国内(申告分離)と海外(総合課税)の税額を比較',
+    },
+  ]
+
   return (
     <section
       aria-label="計算ツール"
@@ -23,7 +27,7 @@ export function ToolsPromo({ market = 'overseas' }: { market?: BrokerMarket }) {
           : '高レバレッジ・総合課税の海外FX条件でも計算できます。'}
       </p>
       <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-        {TOOLS.map((tool) => (
+        {tools.map((tool) => (
           <li key={tool.href}>
             <Link
               href={tool.href}

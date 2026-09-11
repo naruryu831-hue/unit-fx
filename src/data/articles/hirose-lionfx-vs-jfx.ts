@@ -9,7 +9,6 @@ export const hiroseLionfxVsJfx: Article = {
   relatedSlugs: [
     'hirose-lionfx-review',
     'jfx-review',
-    'mt4-mt5-guide',
     'kokunai-fx-spread-hikaku',
     'kokunai-fx-hikaku-hub',
   ],
@@ -37,7 +36,7 @@ export const hiroseLionfxVsJfx: Article = {
 
 ■ 2-2. 取引ツール（LION FX vs MATRIX TRADER）
 
-ヒロセ通商の取引ツールはLION FXで、PC版・スマホアプリ版が提供されています。長年運営されてきたツールで、チャート機能や操作性に定評があります。JFXの取引ツールはMATRIX TRADERで、独自ツールに加えてMT5・TradingViewにも対応している点が特徴です。MT4・MT5を使い慣れているトレーダーや、TradingViewの描画ツール・アラート機能を活用したいトレーダーにとっては、JFXの対応幅の広さがメリットになります。他社のMT4・MT5口座と操作感を揃えたい場合は、[MT4/MT5の使い方](/articles/mt4-mt5-guide)もあわせて確認しておくと移行がスムーズです。
+ヒロセ通商の取引ツールはLION FXで、PC版・スマホアプリ版が提供されています。長年運営されてきたツールで、チャート機能や操作性に定評があります。JFXの取引ツールはMATRIX TRADERで、独自ツールに加えてMT5・TradingViewにも対応している点が特徴です。MT4・MT5を使い慣れているトレーダーや、TradingViewの描画ツール・アラート機能を活用したいトレーダーにとっては、JFXの対応幅の広さがメリットになります。他社のMT4・MT5口座と操作感を揃えたい場合は、公式サイトの操作ガイドもあわせて確認しておくと移行がスムーズです。
 
 ■ 2-3. 最低取引単位
 

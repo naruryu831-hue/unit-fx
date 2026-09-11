@@ -5,7 +5,7 @@ export const kokunaiFxKaraKaigaiFxNorikae: Article = {
   title: '国内FXから海外FXに乗り換える前に確認すべき7つのこと',
   category: 'problem-solving',
   brokerSlugs: ['xm', 'exness', 'hfm', 'fxgt'],
-  body: `国内FXの[25倍レバレッジ規制](/articles/fx-leverage-25bai-imi)に物足りなさを感じ、海外FXへの乗り換えを検討する人は少なくありません。しかし国内FXと海外FXは規制の枠組みも税金の扱いも大きく異なります。この記事では、乗り換える前に必ず確認しておきたい7つのポイントを具体的に整理します。結論から言えば、レバレッジの高さだけを理由に乗り換えると、税金や資金保護の面で想定外の不利益を被る可能性があるため、仕組みを理解してから判断することが重要です。
+  body: `国内FXの25倍レバレッジ規制に物足りなさを感じ、海外FXへの乗り換えを検討する人は少なくありません。しかし国内FXと海外FXは規制の枠組みも税金の扱いも大きく異なります。この記事では、乗り換える前に必ず確認しておきたい7つのポイントを具体的に整理します。結論から言えば、レバレッジの高さだけを理由に乗り換えると、税金や資金保護の面で想定外の不利益を被る可能性があるため、仕組みを理解してから判断することが重要です。
 
 ■ 1. 海外業者は日本の金融庁に未登録である
 
@@ -102,6 +102,5 @@ export const kokunaiFxKaraKaigaiFxNorikae: Article = {
     'kaigai-fx-hikaku-hub',
     'kokunai-vs-kaigai-fx-meritto-demeritto',
     'kaigai-fx-zero-cut',
-    'kokunai-fx-hikaku-hub',
   ],
 }

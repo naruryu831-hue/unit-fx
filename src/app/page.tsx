@@ -13,16 +13,30 @@ import { getArticleBySlug } from '@/lib/get-article'
 import { getBrokerLogoPath } from '@/lib/broker-logos'
 import { getBrokerShortName } from '@/lib/broker-visual'
 import { categoryLabels } from '@/lib/category-labels'
+import { SITE_MARKET } from '@/lib/site-config'
 
-const DOMESTIC_HUB_SLUG = 'kokunai-fx-hikaku-hub'
-const OVERSEAS_HUB_SLUG = 'kaigai-fx-hikaku-hub'
-const POPULAR_SLUGS = [
+const HUB_SLUG = SITE_MARKET === 'overseas' ? 'kaigai-fx-hikaku-hub' : 'kokunai-fx-hikaku-hub'
+const MARKET_BROKERS = SITE_MARKET === 'overseas' ? overseasBrokers : domesticBrokers
+const MARKET_ID = SITE_MARKET === 'overseas' ? 'kaigai' : 'kokunai'
+const MARKET_TITLE = SITE_MARKET === 'overseas' ? '海外FX' : '国内FX'
+
+const DOMESTIC_POPULAR_SLUGS = [
   'kokunai-fx-hikaku-hub',
   'kokunai-fx-shoshinsha-hajimekata',
+  'kokunai-fx-zeikin-kakutei-shinkoku',
+  'dmm-fx-review',
+  'kokunai-fx-spread-hikaku',
+]
+
+const OVERSEAS_POPULAR_SLUGS = [
   'kaigai-fx-hikaku-hub',
   'xm-review',
-  'kokunai-fx-zeikin-kakutei-shinkoku',
+  'kaigai-fx-hajimekata',
+  'kaigai-fx-kakutei-shinkoku-yarikata',
+  'exness-review',
 ]
+
+const POPULAR_SLUGS = SITE_MARKET === 'overseas' ? OVERSEAS_POPULAR_SLUGS : DOMESTIC_POPULAR_SLUGS
 
 const DOMESTIC_SECTIONS: { category: ArticleCategory; lead: string }[] = [
   { category: 'broker-review', lead: `金融庁登録の主要${domesticBrokers.length}社を、公表されている条件だけで整理` },
@@ -40,6 +54,8 @@ const OVERSEAS_SECTIONS: { category: ArticleCategory; lead: string }[] = [
   { category: 'bonus-roundup', lead: '各社ボーナスの条件と受け取り方' },
   { category: 'account-opening', lead: '登録画面の項目に沿った口座開設手順' },
 ]
+
+const MARKET_SECTIONS = SITE_MARKET === 'overseas' ? OVERSEAS_SECTIONS : DOMESTIC_SECTIONS
 
 function SectionHeading({ category, lead }: { category: ArticleCategory; lead: string }) {
   return (
@@ -71,7 +87,7 @@ function MarketBlock({
       <div className="border-b-2 border-navy-900 pb-3">
         <h2 className="flex items-center justify-between text-2xl font-black text-navy-900 md:text-3xl">
           {title}
-          <Link href={id === 'kokunai' ? '/kokunai' : '/kaigai'} className="text-sm font-bold text-navy-800 hover:underline">
+          <Link href={`/${id}`} className="text-sm font-bold text-navy-800 hover:underline">
             すべて見る →
           </Link>
         </h2>
@@ -118,10 +134,7 @@ function LogoStrip({ brokers, label }: { brokers: typeof domesticBrokers; label:
 }
 
 export default function Home() {
-  const domesticHub = getArticleBySlug(DOMESTIC_HUB_SLUG)
-  const overseasHub = getArticleBySlug(OVERSEAS_HUB_SLUG)
-  const domesticArticles = articles.filter((article) => article.market === 'domestic')
-  const overseasArticles = articles.filter((article) => article.market !== 'domestic')
+  const hub = getArticleBySlug(HUB_SLUG)
   const popularArticles = POPULAR_SLUGS.map((slug) => getArticleBySlug(slug)).filter(
     (article): article is NonNullable<typeof article> => article !== undefined
   )
@@ -137,7 +150,8 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-bold text-slate-200">
             <span className="h-1.5 w-1.5 rounded-full bg-gold-400" aria-hidden="true" />
-            国内{domesticBrokers.length}社 ・ 海外{overseasBrokers.length}社 ・ 記事{articles.length}本
+            {MARKET_TITLE}
+            {MARKET_BROKERS.length}社 ・ 記事{articles.length}本
           </p>
           <h1 className="mt-5 max-w-3xl text-3xl font-black leading-tight md:text-5xl">
             FX業者を、
@@ -145,20 +159,14 @@ export default function Home() {
             <span className="text-gold-400">事実だけ</span>で比べる。
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-slate-300 md:text-base">
-            取引単位・スプレッドの読み方・レバレッジ・税金。国内FXも海外FXも、公式サイトで確認できる条件だけを集め、断定的な利益表現を使わずに整理しています。
+            取引単位・スプレッドの読み方・レバレッジ・税金。{MARKET_TITLE}を、公式サイトで確認できる条件だけを集め、断定的な利益表現を使わずに整理しています。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href={`/articles/${DOMESTIC_HUB_SLUG}`}
+              href={`/articles/${HUB_SLUG}`}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-gold-400 to-gold-500 px-6 py-3.5 text-sm font-black text-navy-950 shadow-[0_2px_0_#b8891f] transition-transform hover:-translate-y-px"
             >
-              国内FX 比較ランキング <span aria-hidden="true">→</span>
-            </Link>
-            <Link
-              href={`/articles/${OVERSEAS_HUB_SLUG}`}
-              className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white/10"
-            >
-              海外FX 比較ランキング
+              {MARKET_TITLE} 比較ランキング <span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/tools"
@@ -168,52 +176,40 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-10 space-y-3">
-            <p className="text-[11px] font-bold tracking-wide text-slate-400">国内FX（金融庁登録）</p>
-            <LogoStrip brokers={domesticBrokers} label="掲載中の国内FX業者" />
-            <p className="pt-2 text-[11px] font-bold tracking-wide text-slate-400">海外FX</p>
-            <LogoStrip brokers={overseasBrokers} label="掲載中の海外FX業者" />
+            <LogoStrip brokers={MARKET_BROKERS} label={`掲載中の${MARKET_TITLE}業者`} />
           </div>
         </div>
       </section>
 
       <div className="mx-auto max-w-6xl space-y-6 px-5 pt-8">
-        <RiskDisclaimer compact market="domestic" />
-        <div className="grid min-w-0 gap-6 lg:grid-cols-2">
-          {domesticHub && (
-            <FeaturedArticleCard
-              article={domesticHub}
-              brokers={domesticBrokers}
-              badge="国内FX"
-              lead={`金融庁登録${domesticBrokers.length}社を、最低取引単位・通貨ペア数・ツールで横並び比較`}
-            />
-          )}
-          {overseasHub && (
-            <FeaturedArticleCard
-              article={overseasHub}
-              brokers={overseasBrokers}
-              badge="海外FX"
-              lead={`海外${overseasBrokers.length}社をレバレッジ・最低入金額・日本語対応で横並び比較`}
-            />
-          )}
-        </div>
-        <ToolsPromo market="domestic" />
+        <RiskDisclaimer compact market={SITE_MARKET} />
+        {hub && (
+          <FeaturedArticleCard
+            article={hub}
+            brokers={MARKET_BROKERS}
+            badge={MARKET_TITLE}
+            lead={
+              SITE_MARKET === 'overseas'
+                ? `海外${MARKET_BROKERS.length}社をレバレッジ・最低入金額・日本語対応で横並び比較`
+                : `金融庁登録${MARKET_BROKERS.length}社を、最低取引単位・通貨ペア数・ツールで横並び比較`
+            }
+          />
+        )}
+        <ToolsPromo market={SITE_MARKET} />
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 pt-12 lg:grid-cols-[1fr_320px]">
         <div className="min-w-0 space-y-20">
           <MarketBlock
-            id="kokunai"
-            title="国内FX"
-            lead="金融庁登録業者。レバレッジ25倍・追証あり・申告分離課税20.315%"
-            sections={DOMESTIC_SECTIONS}
-            items={domesticArticles}
-          />
-          <MarketBlock
-            id="kaigai"
-            title="海外FX"
-            lead="高レバレッジ・ゼロカット・総合課税。金融庁未登録の海外業者"
-            sections={OVERSEAS_SECTIONS}
-            items={overseasArticles}
+            id={MARKET_ID}
+            title={MARKET_TITLE}
+            lead={
+              SITE_MARKET === 'overseas'
+                ? '高レバレッジ・ゼロカット・総合課税。金融庁未登録の海外業者'
+                : '金融庁登録業者。レバレッジ25倍・追証あり・申告分離課税20.315%'
+            }
+            sections={MARKET_SECTIONS}
+            items={articles}
           />
         </div>
         <aside className="space-y-6 lg:sticky lg:top-20 lg:h-fit">
