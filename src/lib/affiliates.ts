@@ -36,6 +36,18 @@ const AFFILIATE_LINKS: Record<string, AffiliateLinks> = {
     homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM',
     signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM',
   },
+  jfx: {
+    // A8.net（掲載サイト UNIT-FX = wid 003）でＪＦＸ株式会社と提携（2026-09-10承認）。
+    // テキスト素材「JFX」（素材ID 003）。口座開設直行の素材は無いため両方に同じリンクを使う。
+    homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
+    signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
+  },
+  'dmm-fx': {
+    // A8.net（掲載サイト UNIT-FX = wid 003）で株式会社ＤＭＭ．ｃｏｍ証券と提携（2026-09-11承認）。
+    // homepage = 「【DMM FX】について詳しくはこちら」、signup = 「アカウント登録のお申込みはこちら」。
+    homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+PLPC2+1WP2+69WPU',
+    signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+PLPC2+1WP2+6JC82',
+  },
   // TitanFX / BigBoss / AXIORY はパートナー登録が未完了のため未設定。
   // 設定するまでは素の公式サイトURLにフォールバックし、報酬は発生しない。
 }
