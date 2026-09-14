@@ -13,7 +13,10 @@ export function generateStaticParams() {
 
 function buildDescription(body: string): string {
   const firstParagraph = body.split('\n').find((line) => line.trim() !== '' && !line.startsWith('■')) ?? ''
-  const text = firstParagraph.replace(/\s+/g, ' ').trim()
+  const text = firstParagraph
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim()
   return text.length > 118 ? `${text.slice(0, 118)}…` : text
 }
 
