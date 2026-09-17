@@ -42,6 +42,12 @@ const AFFILIATE_LINKS: Record<string, AffiliateLinks> = {
     homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
     signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
   },
+  'hirose-lionfx': {
+    // A8.net（掲載サイト UNIT-FX = wid 003）でヒロセ通商株式会社と提携（2026-09-16承認、プログラムID s00000006699001）。
+    // テキスト素材「ヒロセ通商【LION FX】」。口座開設直行の素材は無いため両方に同じリンクを使う。
+    homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+K8SW2+1FOU+62MDE',
+    signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+K8SW2+1FOU+62MDE',
+  },
   'dmm-fx': {
     // アクセストレード（報酬¥30,000）に差し替え。A8.net（報酬¥20,000）より高いため。
     // 素材「DMM FX公式サイトへ」= homepage、「DMM FX無料口座お申込みへ」= signup。
