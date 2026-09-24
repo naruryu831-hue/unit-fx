@@ -20,7 +20,7 @@ export function FeaturedArticleCard({
   const top = brokers.slice(0, 3)
 
   return (
-    <Link
+    <Link prefetch={false}
       href={`/articles/${article.slug}`}
       className="group relative block min-w-0 cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-700 p-7 text-white shadow-card transition-shadow duration-200 hover:shadow-card-hover md:p-10"
     >

@@ -80,7 +80,7 @@ export default function AboutPage() {
         <nav aria-label="パンくずリスト" className="text-xs text-slate-500">
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-navy-900">
+              <Link prefetch={false} href="/" className="hover:text-navy-900">
                 トップ
               </Link>
             </li>

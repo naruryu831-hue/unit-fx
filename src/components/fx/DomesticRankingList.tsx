@@ -80,7 +80,7 @@ export function DomesticRankingList({ brokers }: { brokers: Broker[] }) {
               </div>
               <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
                 {reviewSlug && (
-                  <Link
+                  <Link prefetch={false}
                     href={`/articles/${reviewSlug}`}
                     className="inline-flex cursor-pointer items-center justify-center rounded-xl border-2 border-navy-900 px-6 py-3 text-center text-sm font-black text-navy-900 transition-colors duration-200 hover:bg-navy-900 hover:text-white"
                   >

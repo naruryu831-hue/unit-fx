@@ -41,7 +41,7 @@ export function CategoryBrowse({ articles }: { articles: Article[] }) {
                 {items.map((article) => (
                   <li key={article.slug} className="flex gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold-500" aria-hidden="true" />
-                    <Link
+                    <Link prefetch={false}
                       href={`/articles/${article.slug}`}
                       className="text-sm leading-snug text-slate-700 transition-colors hover:text-navy-700"
                     >
