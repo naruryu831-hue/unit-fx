@@ -51,7 +51,7 @@ export function MarketIndex({
         <nav aria-label="パンくずリスト" className="text-xs text-slate-500">
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-navy-900">
+              <Link prefetch={false} href="/" className="hover:text-navy-900">
                 トップ
               </Link>
             </li>
@@ -65,7 +65,7 @@ export function MarketIndex({
           <p className="text-xs text-slate-500">
             掲載業者{brokers.length}社 ・ 記事{articles.length}本
           </p>
-          <Link
+          <Link prefetch={false}
             href={`/articles/${hubSlug}`}
             className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-gold-400 to-gold-500 px-5 py-3 text-sm font-black text-navy-950 shadow-[0_2px_0_#b8891f] transition-transform hover:-translate-y-px"
           >
@@ -85,7 +85,7 @@ export function MarketIndex({
               )
               return (
                 <li key={broker.slug}>
-                  <Link
+                  <Link prefetch={false}
                     href={review ? `/articles/${review.slug}` : `/articles/${hubSlug}`}
                     className="inline-block rounded-lg border border-line bg-white px-3 py-2 text-sm font-bold text-navy-900 transition-colors hover:border-navy-900"
                   >

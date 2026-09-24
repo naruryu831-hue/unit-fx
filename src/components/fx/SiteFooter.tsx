@@ -67,7 +67,7 @@ export function SiteFooter() {
             )}
             <p>
               本サイトはアフィリエイト広告を利用しています。掲載するリンクを経由して口座開設や申し込みが行われた場合、運営者が業者から成果報酬を受け取ることがあります。報酬の有無や金額が掲載順位・評価に影響しないよう、
-              <Link href="/about" className="text-slate-300 underline hover:text-gold-400">
+              <Link prefetch={false} href="/about" className="text-slate-300 underline hover:text-gold-400">
                 編集方針
               </Link>
               を定めて運用しています。
@@ -93,7 +93,7 @@ export function SiteFooter() {
               <ul className="mt-3 space-y-2">
                 {column.links.map((link) => (
                   <li key={link.href}>
-                    <Link
+                    <Link prefetch={false}
                       href={link.href}
                       className="text-xs text-slate-300 transition-colors hover:text-gold-400"
                     >

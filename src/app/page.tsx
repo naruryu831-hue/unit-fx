@@ -87,7 +87,7 @@ function MarketBlock({
       <div className="border-b-2 border-navy-900 pb-3">
         <h2 className="flex items-center justify-between text-2xl font-black text-navy-900 md:text-3xl">
           {title}
-          <Link href={`/${id}`} className="text-sm font-bold text-navy-800 hover:underline">
+          <Link prefetch={false} href={`/${id}`} className="text-sm font-bold text-navy-800 hover:underline">
             すべて見る →
           </Link>
         </h2>
@@ -162,13 +162,13 @@ export default function Home() {
             取引単位・スプレッドの読み方・レバレッジ・税金。{MARKET_TITLE}を、公式サイトで確認できる条件だけを集め、断定的な利益表現を使わずに整理しています。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
+            <Link prefetch={false}
               href={`/articles/${HUB_SLUG}`}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-gold-400 to-gold-500 px-6 py-3.5 text-sm font-black text-navy-950 shadow-[0_2px_0_#b8891f] transition-transform hover:-translate-y-px"
             >
               {MARKET_TITLE} 比較ランキング <span aria-hidden="true">→</span>
             </Link>
-            <Link
+            <Link prefetch={false}
               href="/tools"
               className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white/10"
             >

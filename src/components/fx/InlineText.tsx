@@ -28,7 +28,7 @@ export function InlineText({ text }: { text: string }) {
     const href = match[2] ?? match[3]
     const label = match[1] ?? PATH_LABELS[href.split('#')[0]] ?? href
     nodes.push(
-      <Link
+      <Link prefetch={false}
         key={`${match.index}-${href}`}
         href={href}
         className="font-bold text-navy-800 underline decoration-gold-500 decoration-2 underline-offset-2 hover:text-navy-950"

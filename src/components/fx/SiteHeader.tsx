@@ -21,7 +21,7 @@ const HUB_HREF =
 
 export function SiteLogo({ light = false }: { light?: boolean }) {
   return (
-    <Link href="/" className="inline-flex items-center gap-2" aria-label={`${SITE_NAME} トップへ`}>
+    <Link prefetch={false} href="/" className="inline-flex items-center gap-2" aria-label={`${SITE_NAME} トップへ`}>
       <span className="grid h-8 w-8 place-items-center rounded-lg bg-gold-500 text-sm font-black text-navy-950">
         {SITE_LOGO_LETTER}
       </span>
@@ -49,7 +49,7 @@ export function SiteHeader() {
         <SiteLogo />
         <nav aria-label="主要ナビゲーション" className="hidden items-center gap-1 md:flex">
           {NAV.map((item) => (
-            <Link
+            <Link prefetch={false}
               key={item.href}
               href={item.href}
               className="rounded-md px-3 py-1.5 text-sm font-bold text-slate-600 transition-colors hover:bg-navy-50 hover:text-navy-900"
@@ -58,7 +58,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
+        <Link prefetch={false}
           href={HUB_HREF}
           className="rounded-lg bg-navy-900 px-3.5 py-2 text-xs font-bold text-white transition-colors hover:bg-navy-800 md:text-sm"
         >

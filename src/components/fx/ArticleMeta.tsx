@@ -9,7 +9,7 @@ export function ArticleMeta({ updatedAt }: { updatedAt: string }) {
       </span>
       <span>
         執筆:{' '}
-        <Link href="/about" className="font-bold text-navy-800 hover:underline">
+        <Link prefetch={false} href="/about" className="font-bold text-navy-800 hover:underline">
           {SITE_NAME}編集部
         </Link>
       </span>
@@ -33,7 +33,7 @@ export function AuthorBox() {
           {SITE_MARKET === 'overseas' ? '海外FX' : '国内FX'}
           の取引条件を、各社の公式サイト・約款を一次情報として確認し、断定的な利益表現を使わずに整理しています。数値は最終確認日時点のもので、変更に気づき次第更新します。
         </p>
-        <Link href="/about" className="mt-2 inline-block font-bold text-navy-800 hover:underline">
+        <Link prefetch={false} href="/about" className="mt-2 inline-block font-bold text-navy-800 hover:underline">
           編集方針・運営者情報を見る →
         </Link>
       </div>

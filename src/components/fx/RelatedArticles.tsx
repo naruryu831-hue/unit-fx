@@ -19,7 +19,7 @@ export function RelatedArticles({ articles }: { articles: Article[] }) {
       <ul className="mt-4 grid gap-3 sm:grid-cols-2">
         {articles.map((article) => (
           <li key={article.slug}>
-            <Link
+            <Link prefetch={false}
               href={`/articles/${article.slug}`}
               className="group flex h-full cursor-pointer items-center justify-between gap-3 rounded-xl border border-line bg-paper px-4 py-3 transition-all duration-200 hover:border-navy-900 hover:bg-navy-900"
             >

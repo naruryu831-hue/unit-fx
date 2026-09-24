@@ -29,7 +29,7 @@ export function ToolsPromo({ market = 'overseas' }: { market?: BrokerMarket }) {
       <ul className="mt-4 grid gap-3 sm:grid-cols-3">
         {tools.map((tool) => (
           <li key={tool.href}>
-            <Link
+            <Link prefetch={false}
               href={tool.href}
               className="block h-full rounded-xl border border-line bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-navy-900 hover:shadow-card-hover"
             >

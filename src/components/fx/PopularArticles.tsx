@@ -25,7 +25,7 @@ export function PopularArticles({ articles }: { articles: Article[] }) {
             >
               {i + 1}
             </span>
-            <Link
+            <Link prefetch={false}
               href={`/articles/${article.slug}`}
               className="text-sm font-bold leading-snug text-slate-800 transition-colors hover:text-navy-700"
             >
