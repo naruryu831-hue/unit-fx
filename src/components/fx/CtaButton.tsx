@@ -31,7 +31,7 @@ export function CtaButton({
     )
   }
 
-  const rel = sponsored ? 'noopener noreferrer nofollow sponsored' : 'noopener noreferrer'
+  const rel = sponsored ? 'noopener noreferrer nofollow sponsored' : 'noopener noreferrer nofollow'
 
   if (variant === 'text') {
     const textSizeClass = size === 'lg' ? 'text-base' : size === 'sm' ? 'text-xs' : 'text-sm'
