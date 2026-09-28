@@ -37,7 +37,7 @@ export function CtaButton({
     const textSizeClass = size === 'lg' ? 'text-base' : size === 'sm' ? 'text-xs' : 'text-sm'
     const toneClass =
       tone === 'dark'
-        ? 'text-white hover:text-gold-300'
+        ? 'text-white hover:text-gold-400'
         : 'text-navy-900 hover:text-gold-600'
 
     return (
