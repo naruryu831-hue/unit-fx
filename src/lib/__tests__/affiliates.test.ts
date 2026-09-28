@@ -52,6 +52,11 @@ describe('getBrokerLink', () => {
     expect(getBrokerSignupLink('fxtf')).toBe('https://px.a8.net/svt/ejp?a8mat=4BC737+T6AYQ+48D0+6A4FM')
   })
 
+  it('returns the A8 tracking link for Matsui (domestic)', () => {
+    expect(getBrokerLink('matsui-fx')).toBe('https://px.a8.net/svt/ejp?a8mat=4BCDBN+85IRK2+3XCC+64C3M')
+    expect(getBrokerSignupLink('matsui-fx')).toBe('https://px.a8.net/svt/ejp?a8mat=4BCDBN+85IRK2+3XCC+64C3M')
+  })
+
   it('returns the A8 tracking link for Hirose LION FX (domestic)', () => {
     expect(getBrokerLink('hirose-lionfx')).toBe('https://px.a8.net/svt/ejp?a8mat=4BC737+K8SW2+1FOU+62MDE')
     expect(getBrokerSignupLink('hirose-lionfx')).toBe('https://px.a8.net/svt/ejp?a8mat=4BC737+K8SW2+1FOU+62MDE')

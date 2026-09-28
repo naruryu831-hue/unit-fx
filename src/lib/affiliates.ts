@@ -42,6 +42,14 @@ const AFFILIATE_LINKS: Record<string, AffiliateLinks> = {
     homepage: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
     signup: 'https://px.a8.net/svt/ejp?a8mat=4BC737+UYLS2+25B2+5YZ76',
   },
+  'matsui-fx': {
+    // A8.net（掲載サイト UNIT-FX = wid 003）で松井証券株式会社と提携（2026-09-24承認）。
+    // 承認されたのは「証券総合口座」案件（s00000018318001、新規口座開設1,000円）。
+    // MATSUI FX 案件（s00000022371001、12,000円）は否認。MATSUI FX は松井証券口座が前提なのでこちらを使う。
+    // テキスト素材「松井証券」。口座開設直行の素材は無いため両方に同じリンクを使う。
+    homepage: 'https://px.a8.net/svt/ejp?a8mat=4BCDBN+85IRK2+3XCC+64C3M',
+    signup: 'https://px.a8.net/svt/ejp?a8mat=4BCDBN+85IRK2+3XCC+64C3M',
+  },
   'hirose-lionfx': {
     // A8.net（掲載サイト UNIT-FX = wid 003）でヒロセ通商株式会社と提携（2026-09-16承認、プログラムID s00000006699001）。
     // テキスト素材「ヒロセ通商【LION FX】」。口座開設直行の素材は無いため両方に同じリンクを使う。
