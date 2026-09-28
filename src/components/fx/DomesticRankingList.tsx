@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Broker } from '@/data/brokers-types'
 import { articles } from '@/data/articles-index'
-import { getBrokerLink } from '@/lib/affiliates'
+import { getBrokerLink, hasAffiliateLink } from '@/lib/affiliates'
 import { RankBadge } from './RankBadge'
 import { CtaButton } from './CtaButton'
 import { BrokerLogo } from './BrokerLogo'
@@ -87,9 +87,19 @@ export function DomesticRankingList({ brokers }: { brokers: Broker[] }) {
                     この業者の紹介ページを見る
                   </Link>
                 )}
-                <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)}>
-                  公式サイトはこちら
-                </CtaButton>
+                {hasAffiliateLink(broker.slug) ? (
+                  <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)}>
+                    公式サイトはこちら
+                  </CtaButton>
+                ) : (
+                  <CtaButton
+                    href={broker.linkCaution ? null : getBrokerLink(broker.slug)}
+                    variant="text"
+                    sponsored={false}
+                  >
+                    公式サイトで確認する
+                  </CtaButton>
+                )}
               </div>
             </li>
           )

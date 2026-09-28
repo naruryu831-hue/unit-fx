@@ -3,11 +3,13 @@ export function CtaButton({
   children,
   sponsored = true,
   size = 'md',
+  variant = 'primary',
 }: {
   href: string | null
   children: React.ReactNode
   sponsored?: boolean
   size?: 'sm' | 'md' | 'lg'
+  variant?: 'primary' | 'text'
 }) {
   const sizeClass =
     size === 'lg'
@@ -28,6 +30,24 @@ export function CtaButton({
   }
 
   const rel = sponsored ? 'noopener noreferrer nofollow sponsored' : 'noopener noreferrer'
+
+  if (variant === 'text') {
+    const textSizeClass = size === 'lg' ? 'text-base' : size === 'sm' ? 'text-xs' : 'text-sm'
+
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel={rel}
+        className={`inline-flex items-center gap-1 font-bold text-navy-900 underline underline-offset-4 hover:text-gold-600 ${textSizeClass}`}
+      >
+        {children}
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-4 w-4">
+          <path d="M11 3h6v6h-2V6.4l-7.3 7.3-1.4-1.4L13.6 5H11V3zM5 5h4v2H7v6h6v-2h2v4H5V5z" />
+        </svg>
+      </a>
+    )
+  }
 
   return (
     <a

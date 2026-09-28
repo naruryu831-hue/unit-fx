@@ -1,5 +1,5 @@
 import type { Broker } from '@/data/brokers-types'
-import { getBrokerLink } from '@/lib/affiliates'
+import { getBrokerLink, hasAffiliateLink } from '@/lib/affiliates'
 import { SpecBar } from './SpecBar'
 import { CtaButton } from './CtaButton'
 
@@ -54,9 +54,20 @@ export function ComparisonTable({ brokers }: { brokers: Broker[] }) {
                 <td className="p-3">{broker.japaneseSupport ? 'あり' : 'なし'}</td>
                 <td className="p-3">{broker.minAgeYears}歳以上</td>
                 <td className="p-3">
-                  <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)} size="sm">
-                    公式サイト
-                  </CtaButton>
+                  {hasAffiliateLink(broker.slug) ? (
+                    <CtaButton href={broker.linkCaution ? null : getBrokerLink(broker.slug)} size="sm">
+                      公式サイト
+                    </CtaButton>
+                  ) : (
+                    <CtaButton
+                      href={broker.linkCaution ? null : getBrokerLink(broker.slug)}
+                      size="sm"
+                      variant="text"
+                      sponsored={false}
+                    >
+                      公式サイトで確認
+                    </CtaButton>
+                  )}
                 </td>
               </tr>
             ))}
