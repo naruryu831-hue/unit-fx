@@ -4,12 +4,14 @@ export function CtaButton({
   sponsored = true,
   size = 'md',
   variant = 'primary',
+  tone = 'light',
 }: {
   href: string | null
   children: React.ReactNode
   sponsored?: boolean
   size?: 'sm' | 'md' | 'lg'
   variant?: 'primary' | 'text'
+  tone?: 'light' | 'dark'
 }) {
   const sizeClass =
     size === 'lg'
@@ -33,13 +35,17 @@ export function CtaButton({
 
   if (variant === 'text') {
     const textSizeClass = size === 'lg' ? 'text-base' : size === 'sm' ? 'text-xs' : 'text-sm'
+    const toneClass =
+      tone === 'dark'
+        ? 'text-white hover:text-gold-300'
+        : 'text-navy-900 hover:text-gold-600'
 
     return (
       <a
         href={href}
         target="_blank"
         rel={rel}
-        className={`inline-flex items-center gap-1 font-bold text-navy-900 underline underline-offset-4 hover:text-gold-600 ${textSizeClass}`}
+        className={`inline-flex items-center gap-1 font-bold underline underline-offset-4 ${toneClass} ${textSizeClass}`}
       >
         {children}
         <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-4 w-4">

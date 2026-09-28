@@ -19,6 +19,7 @@ export function BrokerCtaBanner({ broker }: { broker: Broker }) {
             href={broker.linkCaution ? null : getBrokerSignupLink(broker.slug)}
             variant="text"
             sponsored={false}
+            tone="dark"
           >
             公式サイトで確認する
           </CtaButton>
