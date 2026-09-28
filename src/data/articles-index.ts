@@ -145,6 +145,17 @@ import { fxtfMt4Tsukaikata } from './articles/fxtf-mt4-tsukaikata'
 import { fxtfVsGmoClick } from './articles/fxtf-vs-gmo-click'
 import { kokunaiFxMt4EaJidoubaibai } from './articles/kokunai-fx-mt4-ea-jidoubaibai'
 import { kokunaiFxMt4Taiou } from './articles/kokunai-fx-mt4-taiou'
+import { dmmFxHitsuyouShorui } from './articles/dmm-fx-hitsuyou-shorui'
+import { dmmFxShinsa } from './articles/dmm-fx-shinsa'
+import { fxtfShinsaHitsuyouShorui } from './articles/fxtf-shinsa-hitsuyou-shorui'
+import { gmoClickHitsuyouShorui } from './articles/gmo-click-hitsuyou-shorui'
+import { gmoClickMushokuShinsa } from './articles/gmo-click-mushoku-shinsa'
+import { hiroseLionfxShinsaOchi } from './articles/hirose-lionfx-shinsa-ochi'
+import { jfxMatrixTraderTsukaikata } from './articles/jfx-matrix-trader-tsukaikata'
+import { jfxShinsaHitsuyouShorui } from './articles/jfx-shinsa-hitsuyou-shorui'
+import { matsuiFxHitsuyouShorui } from './articles/matsui-fx-hitsuyou-shorui'
+import { matsuiFxShinsa } from './articles/matsui-fx-shinsa'
+import { minnaFxMynumber } from './articles/minna-fx-mynumber'
 import type { Article } from './articles-types'
 import { SITE_MARKET } from '@/lib/site-config'
 
@@ -296,6 +307,17 @@ export const allArticles: Article[] = [
   fxtfVsGmoClick,
   kokunaiFxMt4EaJidoubaibai,
   kokunaiFxMt4Taiou,
+  dmmFxHitsuyouShorui,
+  dmmFxShinsa,
+  fxtfShinsaHitsuyouShorui,
+  gmoClickHitsuyouShorui,
+  gmoClickMushokuShinsa,
+  hiroseLionfxShinsaOchi,
+  jfxMatrixTraderTsukaikata,
+  jfxShinsaHitsuyouShorui,
+  matsuiFxHitsuyouShorui,
+  matsuiFxShinsa,
+  minnaFxMynumber,
 ]
 
 /** SITE_MARKET でフィルタ済みの記事一覧。market 未指定の記事は overseas 扱い。 */
