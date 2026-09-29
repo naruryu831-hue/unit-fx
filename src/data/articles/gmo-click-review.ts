@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const gmoClickReview: Article = {
   slug: 'gmo-click-review',
+  updatedAt: '2026-09-30',
   title: 'GMOクリック証券（FXネオ）の評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

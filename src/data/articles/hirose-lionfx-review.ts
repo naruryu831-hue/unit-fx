@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const hiroseLionfxReview: Article = {
   slug: 'hirose-lionfx-review',
+  updatedAt: '2026-09-30',
   title: 'ヒロセ通商（LION FX）の評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

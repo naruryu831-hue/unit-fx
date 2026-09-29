@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxPipsToha: Article = {
   slug: 'fx-pips-toha',
+  updatedAt: '2026-09-30',
   title: 'pipsとは？1pipsの価値と損益計算の方法',
   category: 'problem-solving',
   market: 'domestic',

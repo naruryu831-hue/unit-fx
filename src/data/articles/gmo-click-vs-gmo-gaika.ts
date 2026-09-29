@@ -18,7 +18,7 @@ export const gmoClickVsGmoGaika: Article = {
     'GMOクリック証券は取引高の大きさと自社PCツール、GMO外貨はスマホアプリの使いやすさが特徴',
     'GMO外貨は旧YJFX!（ワイジェイFX）の流れを汲むサービス',
   ],
-  updatedAt: '2026-09-10',
+  updatedAt: '2026-09-30',
   body: `[GMOクリック証券](/articles/gmo-click-review)（FXネオ）と[GMO外貨](/articles/gmo-gaika-review)（外貨ex）は、いずれもGMOインターネットグループが運営する国内FXサービスですが、運営会社は別で、それぞれ異なる特徴を持っています。GMOクリック証券は取引高の大きさと自社開発PCツールで知られ、GMO外貨は旧YJFX!（ワイジェイFX）の流れを汲み、スマホアプリの使いやすさで知られています。両社の違いを整理し、どのように選べばよいかを解説します。
 
 ■ 結論

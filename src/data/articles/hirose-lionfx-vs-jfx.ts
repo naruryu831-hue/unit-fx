@@ -17,7 +17,7 @@ export const hiroseLionfxVsJfx: Article = {
     'ヒロセ通商は50種類以上の通貨ペアとユニークなキャンペーン、JFXはMATRIX TRADERとスキャルピングの明示的な許容が特徴',
     'JFXはMT5・TradingViewにも対応しており、対応プラットフォームの幅が広い',
   ],
-  updatedAt: '2026-09-11',
+  updatedAt: '2026-09-30',
   body: `（2026年9月時点の情報です）[ヒロセ通商](/articles/hirose-lionfx-review)（LION FX）と[JFX](/articles/jfx-review)（MATRIX TRADER）は、いずれもヒロセ通商グループが運営する国内FXサービスです。同じグループでありながら、取引ツールや打ち出している特徴には違いがあります。特にスキャルピングを重視するトレーダーにとって、両社の違いは判断材料になります。本記事では公式サイトで確認できる情報をもとに、両社を7つの観点から比較します。
 
 ■ 結論：どちらを選ぶべきか

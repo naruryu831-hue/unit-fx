@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const kokunaiFxSpreadHikaku: Article = {
   slug: 'kokunai-fx-spread-hikaku',
+  updatedAt: '2026-09-30',
   title: '国内FXのスプレッドの見方と比較の仕方【原則固定と例外】',
   category: 'comparison',
   market: 'domestic',

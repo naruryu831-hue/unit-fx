@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const gaitameReview: Article = {
   slug: 'gaitame-review',
+  updatedAt: '2026-09-30',
   title: '外為どっとコム（外貨ネクストネオ）の評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

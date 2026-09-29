@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxShoukokinIjiritsu: Article = {
   slug: 'fx-shoukokin-ijiritsu',
+  updatedAt: '2026-09-30',
   title: '証拠金維持率とは？計算方法とロスカットされない目安',
   category: 'problem-solving',
   market: 'domestic',

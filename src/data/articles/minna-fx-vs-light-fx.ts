@@ -18,7 +18,7 @@ export const minnaFxVsLightFx: Article = {
     'みんなのFXはスワップポイント・高金利通貨とシストレ、LIGHT FXは低スプレッドのLIGHTペアとTradingViewが特徴',
     'LIGHT FXは一部通貨ペアの個人向けレバレッジが10倍とされる点に注意が必要',
   ],
-  updatedAt: '2026-09-10',
+  updatedAt: '2026-09-30',
   body: `[みんなのFX](/articles/minna-fx-review)と[LIGHT FX](/articles/light-fx-review)は、どちらもトレイダーズ証券株式会社が運営する国内FXサービスです。同じ会社が2つのブランドを展開している珍しいケースで、それぞれ特色の異なるサービスとして設計されています。両者の違いを整理し、どのように使い分ければよいかを解説します。
 
 ■ 結論

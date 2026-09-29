@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const dmmFxReview: Article = {
   slug: 'dmm-fx-review',
+  updatedAt: '2026-09-30',
   title: 'DMM FXの評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

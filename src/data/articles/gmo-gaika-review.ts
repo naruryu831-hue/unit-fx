@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const gmoGaikaReview: Article = {
   slug: 'gmo-gaika-review',
+  updatedAt: '2026-09-30',
   title: 'GMO外貨（外貨ex）の評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

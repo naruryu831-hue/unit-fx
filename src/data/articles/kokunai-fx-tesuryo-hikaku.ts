@@ -6,7 +6,7 @@ export const kokunaiFxTesuryoHikaku: Article = {
   category: 'comparison',
   market: 'domestic',
   brokerSlugs: ['dmm-fx', 'gmo-click', 'sbi-fxtrade', 'minna-fx', 'matsui-fx'],
-  updatedAt: '2026-09-10',
+  updatedAt: '2026-09-30',
   body: `国内FXの取引を検討する際、「手数料はいくらかかるのか」という点は気になるポイントのひとつです。しかし国内FXのコストは、取引手数料という単一の項目だけでなく、スプレッド、スワップポイント、入出金にかかる費用など複数の要素で構成されています。この記事では、国内FXの取引でコストが発生する場所を整理し、比較する際にどこを見ればよいかを解説します。具体的なスプレッド水準やキャンペーンの金額は業者や時期によって変動するため、本記事では数値そのものではなく、コストの構造と考え方を中心に説明します。
 
 ■ 結論

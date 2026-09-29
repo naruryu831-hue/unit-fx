@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const minnaFxReview: Article = {
   slug: 'minna-fx-review',
+  updatedAt: '2026-09-30',
   title: 'みんなのFXの評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

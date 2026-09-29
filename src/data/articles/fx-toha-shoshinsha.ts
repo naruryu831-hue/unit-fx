@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxTohaShoshinsha: Article = {
   slug: 'fx-toha-shoshinsha',
+  updatedAt: '2026-09-30',
   title: 'FXとは？仕組みを初心者向けにやさしく解説【国内FX】',
   category: 'problem-solving',
   market: 'domestic',

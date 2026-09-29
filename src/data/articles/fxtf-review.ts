@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxtfReview: Article = {
   slug: 'fxtf-review',
+  updatedAt: '2026-09-30',
   title: 'FXTF（ゴールデンウェイ・ジャパン）の評判・特徴を徹底解説【MT4対応】',
   category: 'broker-review',
   market: 'domestic',

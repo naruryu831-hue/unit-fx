@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const sbiFxtradeReview: Article = {
   slug: 'sbi-fxtrade-review',
+  updatedAt: '2026-09-30',
   title: 'SBI FXトレードの評判・特徴を徹底解説【1通貨から】',
   category: 'broker-review',
   market: 'domestic',

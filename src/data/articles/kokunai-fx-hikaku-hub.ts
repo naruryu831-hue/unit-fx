@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const kokunaiFxHikakuHub: Article = {
   slug: 'kokunai-fx-hikaku-hub',
+  updatedAt: '2026-09-30',
   title: '国内FX おすすめ比較ランキング【主要11社】',
   category: 'hub',
   market: 'domestic',

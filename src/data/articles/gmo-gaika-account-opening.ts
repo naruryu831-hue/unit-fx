@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const gmoGaikaAccountOpening: Article = {
   slug: 'gmo-gaika-account-opening',
+  updatedAt: '2026-09-30',
   title: 'GMO外貨（外貨ex）の口座開設方法【必要書類と手順】',
   category: 'account-opening',
   market: 'domestic',

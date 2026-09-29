@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const lightFxReview: Article = {
   slug: 'light-fx-review',
+  updatedAt: '2026-09-30',
   title: 'LIGHT FXの評判・特徴を徹底解説【みんなのFXとの違い】',
   category: 'broker-review',
   market: 'domestic',

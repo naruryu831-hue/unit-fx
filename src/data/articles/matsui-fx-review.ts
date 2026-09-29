@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const matsuiFxReview: Article = {
   slug: 'matsui-fx-review',
+  updatedAt: '2026-09-30',
   title: '松井証券（MATSUI FX）の評判・特徴を徹底解説',
   category: 'broker-review',
   market: 'domestic',

@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxtfAccountOpening: Article = {
   slug: 'fxtf-account-opening',
+  updatedAt: '2026-09-30',
   title: 'FXTFの口座開設方法【必要書類と手順】',
   category: 'account-opening',
   market: 'domestic',

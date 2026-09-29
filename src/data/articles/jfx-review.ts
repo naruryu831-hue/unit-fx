@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const jfxReview: Article = {
   slug: 'jfx-review',
+  updatedAt: '2026-09-30',
   title: 'JFX（MATRIX TRADER）の評判・特徴を徹底解説【スキャルピング公認】',
   category: 'broker-review',
   market: 'domestic',
