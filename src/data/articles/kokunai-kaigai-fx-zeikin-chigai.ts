@@ -5,6 +5,8 @@ export const kokunaiKaigaiFxZeikinChigai: Article = {
   title: '国内FXと海外FXの税金の違いまとめ',
   category: 'tax',
   brokerSlugs: ['xm', 'exness', 'titanfx', 'hfm', 'axiory'],
+  bridgeNote: '税制の違いを理解した後は、海外口座の損益を自分で正確に記録していくことが実務になります。そのため、取引記録の確認・保存のしやすさなど、公式サイトで確認したい項目を基準に見るのが現実的です。判断は税理士・税務署へ。下の表は、その観点で比べやすい海外FX業者です。',
+  relatedSlugs: ['kokunai-vs-kaigai-fx-meritto-demeritto', 'kaigai-fx-kakutei-shinkoku-yarikata', 'kaigai-fx-kokunai-soneki-tsusan', 'kaigai-fx-hikaku-hub'],
   body: `FXの利益にかかる税金は、国内FXと海外FXで課税の仕組みそのものが異なります。この記事では、その違いと、確定申告の場面で実際に何が変わってくるのかを整理します。税制は改正されることがあり、個人の状況によっても結論が変わるため、最終的な判断は必ず税理士・税務署・国税庁の情報で確認してください。
 
 ■ 結論：国内FXは申告分離課税、海外FXは総合課税

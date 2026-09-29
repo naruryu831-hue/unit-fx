@@ -7,6 +7,10 @@ export const kaigaiFxCtraderTaiou: Article = {
   brokerSlugs: ['axiory', 'xm', 'exness', 'hfm', 'fxgt', 'titanfx', 'bigboss'],
   body: `海外FXの取引プラットフォームといえばMT4・MT5が広く使われていますが、一部の業者はcTraderという別の取引プラットフォームにも対応しています。この記事では、cTraderの一般的な特徴とMT4/MT5との違い、対応業者について整理します。
 
+■ 結論
+
+本文で対応が確認できるのはAXIORYで、cTraderを使いたいならまずここから。MT4/MT5のEAに慣れているなら、XM・Exness・HFM・FXGTでMT4/MT5を続けるほうが移行の負担は少ない。
+
 ■ 1. cTraderに対応している業者
 
 AXIORY（アキシオリー）は、公式サイトの説明によるとMT4・MT5に加えてcTraderに対応している海外FX業者です。2011年設立、ベリーズ拠点のAxiory Global Ltd.が運営しており、日本語カスタマーサポートも提供されています。複数の取引プラットフォームから選べる点が特徴の一つです。他の業者（XM、Exness、HFM、FXGT、TitanFX、BigBoss）については、cTraderへの対応状況が変わる可能性があるため、興味がある場合は各社の公式サイトで対応プラットフォームを確認してください。

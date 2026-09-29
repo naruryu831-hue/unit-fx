@@ -13,6 +13,7 @@ export const kaigaiFxNihongoSupport: Article = {
     'fxgt',
     'axiory',
   ],
+  relatedSlugs: ['kaigai-fx-hikaku-hub', 'xm-account-opening', 'exness-account-opening', 'hfm-account-opening', 'kaigai-fx-hajimekata'],
   body: `入出金でつまずいたときや口座設定が分からないときに、日本語で相談できる窓口があるかどうかは実務上の差になります。この記事では日本語サポートを提供している主要7社について、公表内容から確認できることだけを業者ごとにまとめました。なお、ここで扱う業者はいずれも日本の金融庁に登録されていない海外業者であり、取引には元本を超える損失が生じる可能性があります。対応時間や窓口の種類は変更されることがあるため、最終確認は必ず各社の公式サイトで行ってください。
 
 ■ XM(XM Trading)｜日本人トレーダーへの知名度が最も高い

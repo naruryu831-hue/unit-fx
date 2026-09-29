@@ -13,6 +13,7 @@ export const kaigaiFxScalpingOk: Article = {
     'fxgt',
     'axiory',
   ],
+  relatedSlugs: ['kaigai-fx-hikaku-hub', 'exness-account-opening', 'xm-account-opening', 'kaigai-fx-kouza-type-hikaku', 'mt4-mt5-guide'],
   body: `スキャルピングは数秒から数分で売買を繰り返す手法ですが、業者の規約によっては制限の対象となり、違反と判断されると利益の取り消しや口座凍結につながることがあります。この記事では主要7社について、スキャルピングに関係する口座タイプやプラットフォームの傾向を業者ごとに整理します。ただし本記事には各社のスキャルピング可否を断定できる確認済みの情報はないため、「この業者はスキャルピングOK」という書き方はしていません。7社はいずれも日本の金融庁に登録されていない海外業者で、取引には元本を超える損失が生じる可能性があります。
 
 ■ AXIORY(アキシオリー)｜MT4・MT5・cTraderに対応、NDD方式

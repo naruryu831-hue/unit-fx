@@ -6,6 +6,7 @@ export const fxShoukokinIjiritsu: Article = {
   category: 'problem-solving',
   market: 'domestic',
   brokerSlugs: ['dmm-fx', 'gmo-click', 'sbi-fxtrade', 'minna-fx'],
+  bridgeNote: '証拠金維持率は、数値の見方を知るだけでなく、取引画面で実際に確認して初めて身につきます。表示の見やすさやスマホアプリでの確認のしやすさは、業者ごとに違います。下の表は、そうしたツール面の観点で比べやすい国内FX業者をまとめたものです。',
   body: `FXの取引画面を開くと必ず表示される「証拠金維持率」という数値ですが、この数値が何を意味し、どのくらいの水準を保てばよいのか分からないという方は多いはずです。この記事では、証拠金維持率の計算方法と、ロスカットされないための考え方を解説します。
 
 ■ 証拠金維持率とは

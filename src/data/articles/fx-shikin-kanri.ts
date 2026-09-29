@@ -6,6 +6,7 @@ export const fxShikinKanri: Article = {
   category: 'problem-solving',
   market: 'domestic',
   brokerSlugs: ['dmm-fx', 'gmo-click', 'sbi-fxtrade', 'matsui-fx'],
+  bridgeNote: '許容損失に合わせて取引数量を決める資金管理は、数量を細かく刻めると実践しやすくなります。最小の取引単位は業者ごとに異なるため、口座選びの観点になります。下の表は、1通貨単位から取引できる業者を含め、単位の違いで比べやすい国内FX業者をまとめたものです。',
   body: `FXで長く取引を続けていくうえで、[テクニカル分析](/articles/fx-technical-nyumon)や[ファンダメンタルズ分析](/articles/fx-fundamentals-nyumon)と同じくらい重要とされているのが資金管理です。どれだけ精度の高い分析ができても、1回の取引で許容範囲を超える損失を出してしまうと、資金全体に大きなダメージが及ぶ可能性があります。この記事では、FXの資金管理の基本的な考え方と、1回の許容損失・取引数量の決め方について解説します。
 
 ■ 1. 資金管理とは何か

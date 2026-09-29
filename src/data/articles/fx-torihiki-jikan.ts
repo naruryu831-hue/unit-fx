@@ -6,6 +6,7 @@ export const fxTorihikiJikan: Article = {
   category: 'problem-solving',
   market: 'domestic',
   brokerSlugs: ['dmm-fx', 'gmo-click', 'gaitame', 'hirose-lionfx'],
+  bridgeNote: '取引時間帯ごとの値動きの違いは、実際に時間を変えてチャートを見ると分かりやすくなります。生活時間に合わせて確認するなら、スマホアプリで手軽に見られる環境が助けになります。下の表は、アプリや取引ツールの観点で比べやすい国内FX業者をまとめたものです。',
   body: `FXは株式市場と異なり、平日であればほぼ24時間取引できると言われますが、実際にどの時間帯にどの市場が動いているのか、初心者にとっては分かりにくい部分です。この記事では、FXの取引時間の考え方と、値動きが大きくなりやすい時間帯について解説します。
 
 ■ FXはなぜ24時間取引できるのか

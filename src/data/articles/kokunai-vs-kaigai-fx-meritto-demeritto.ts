@@ -5,7 +5,12 @@ export const kokunaiVsKaigaiFxMerittoDemeritto: Article = {
   title: '国内FX vs 海外FX メリット・デメリットまとめ',
   category: 'comparison',
   brokerSlugs: ['xm', 'exness', 'titanfx', 'hfm', 'axiory'],
+  relatedSlugs: ['kaigai-fx-hikaku-hub', 'kokunai-kaigai-fx-zeikin-chigai', 'kokunai-fx-kara-kaigai-fx-norikae', 'kaigai-fx-ihou'],
   body: `FXを始めるとき、多くの人が最初に迷うのが「国内FX業者を使うか、海外FX業者を使うか」です。この記事では、両者の違いをメリット・デメリットの形で整理します。どちらが絶対に優れているという話ではなく、仕組みの違いを理解して自分に合うほうを選ぶための比較です。
+
+■ 結論
+
+規制や信託保全の安心感を重視するなら国内FX、資金効率や取引条件の自由度を重視するなら海外FXが向く。違いはレバレッジ・ゼロカット・税金の3点で、海外は金融庁未登録のリスクを理解して選びたい。
 
 ■ 一番の違いは「レバレッジ」「ゼロカット」「税金」の3点
 

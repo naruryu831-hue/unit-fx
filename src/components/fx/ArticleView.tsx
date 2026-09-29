@@ -8,6 +8,7 @@ import { BrokerRankingList } from './BrokerRankingList'
 import { DomesticRankingList } from './DomesticRankingList'
 import { BrokerCtaBanner } from './BrokerCtaBanner'
 import { ArticleSummaryBox } from './ArticleSummaryBox'
+import { ArticleKeyFacts } from './ArticleKeyFacts'
 import { BrokerLogo } from './BrokerLogo'
 import { FaqSection } from './FaqSection'
 import { RelatedArticles } from './RelatedArticles'
@@ -151,6 +152,9 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
               {singleBroker && article.summaryPoints && (
                 <ArticleSummaryBox brokerName={singleBroker.name} points={article.summaryPoints} />
               )}
+              {singleBroker && article.keyFacts && article.keyFacts.length > 0 && (
+                <ArticleKeyFacts brokerName={singleBroker.name} facts={article.keyFacts} />
+              )}
               {singleBroker && <BrokerCtaBanner broker={singleBroker} />}
               {isTwoBrokerCta && (
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -166,6 +170,14 @@ export function ArticleView({ article, brokers }: { article: Article; brokers: B
                   <ComparisonTable brokers={brokers} />
                 ))}
               <ArticleBody body={article.body} />
+              {showComparisonAfterBody && article.bridgeNote && (
+                <p
+                  data-testid="bridge-note"
+                  className="rounded-xl border-l-4 border-gold-500 bg-paper p-4 text-sm font-bold leading-relaxed text-navy-900"
+                >
+                  {article.bridgeNote}
+                </p>
+              )}
               {showComparisonAfterBody &&
                 (isDomestic ? (
                   <DomesticComparisonTable brokers={brokers} />
