@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxtfAccountOpening: Article = {
   slug: 'fxtf-account-opening',
+  updatedAt: '2026-09-30',
   title: 'FXTFの口座開設方法【必要書類と手順】',
   category: 'account-opening',
   market: 'domestic',
@@ -19,7 +20,7 @@ export const fxtfAccountOpening: Article = {
   ],
   keyFacts: [
     { label: '運営会社（登録）', value: 'ゴールデンウェイ・ジャパン株式会社（関東財務局長（金商）第258号）' },
-    { label: '最低取引単位', value: '公式サイト参照' },
+    { label: '最低取引単位', value: '1,000通貨' },
     { label: '取引ツール', value: 'FXTF MT4 / FXTF GX' },
     { label: '本人確認の方法', value: '提出方法（スマホ撮影か郵送）は時期によって変わるため、公式サイトで最新の流れを確認する' },
     { label: '申込条件・取引開始', value: 'クイック入金対応の金融機関なら即時反映される場合がある。提携外の銀行振込は翌営業日以降になることも' },

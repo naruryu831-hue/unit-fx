@@ -15,7 +15,11 @@ export const sbiFxtrade: Broker = {
   company: 'SBI FXトレード株式会社',
   registration: '公式サイト参照',
   minTradeUnit: '1通貨',
-  spreadUsdJpy: '公式サイト参照',
+  spreadUsdJpy: '0.18銭（1〜100万通貨の基準値・例外あり）',
   currencyPairs: '34通貨ペア',
+  spreads: { usdjpy: 0.18, eurjpy: 0.38, gbpjpy: 0.88, audjpy: 0.48, eurusd: 0.3 },
+  spreadNote: '注文数量1〜100万通貨の基準値。9:00〜翌3:00。市場急変・重要指標発表時は拡大する場合あり',
+  spreadSource: 'https://www.sbifxt.co.jp/service/detailedspread.html',
+  spreadCheckedAt: '2026-09-30',
   tools: 'SBI FXTRADE（PC/スマホアプリ）',
 }

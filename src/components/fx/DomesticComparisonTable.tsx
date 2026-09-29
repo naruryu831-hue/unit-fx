@@ -10,11 +10,12 @@ export function DomesticComparisonTable({ brokers }: { brokers: Broker[] }) {
         掲載業者の比較表
       </h2>
       <div className="overflow-x-auto rounded-xl border border-line">
-        <table className="w-full min-w-[860px] border-collapse text-sm">
+        <table className="w-full min-w-[1020px] border-collapse text-sm">
           <thead>
             <tr className="bg-navy-900 text-left text-xs text-white">
               <th className="p-3 font-bold">業者名</th>
               <th className="p-3 font-bold">最低取引単位</th>
+              <th className="p-3 font-bold">米ドル/円スプレッド</th>
               <th className="p-3 font-bold">通貨ペア数</th>
               <th className="p-3 font-bold">レバレッジ</th>
               <th className="p-3 font-bold">取引ツール</th>
@@ -37,6 +38,7 @@ export function DomesticComparisonTable({ brokers }: { brokers: Broker[] }) {
                   )}
                 </td>
                 <td className="p-3 font-bold text-navy-900">{broker.minTradeUnit ?? '公式サイト参照'}</td>
+                <td className="p-3 text-xs font-bold text-navy-900">{broker.spreadUsdJpy ?? '公式サイト参照'}</td>
                 <td className="p-3">{broker.currencyPairs ?? '公式サイト参照'}</td>
                 <td className="p-3 text-xs">{broker.maxLeverage}</td>
                 <td className="p-3 text-xs">{broker.tools ?? '公式サイト参照'}</td>
@@ -63,7 +65,7 @@ export function DomesticComparisonTable({ brokers }: { brokers: Broker[] }) {
         </table>
       </div>
       <p className="mt-2 text-[11px] leading-relaxed text-slate-500">
-        ※ 数値は各社公式サイトの公表情報をもとに編集部が整理したものです（最終確認日: 2026年9月）。取引条件は変更されることがあるため、口座開設前に必ず公式サイトでご確認ください。
+        ※ スプレッドは各社公式サイトの公表値（原則固定・例外あり）。2026年9月30日確認。その他の数値も各社公式サイトの公表情報をもとに編集部が整理したものです。取引条件は変更されることがあるため、口座開設前に必ず公式サイトでご確認ください。
       </p>
     </section>
   )

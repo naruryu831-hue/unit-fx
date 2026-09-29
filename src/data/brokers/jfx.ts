@@ -15,7 +15,11 @@ export const jfx: Broker = {
   company: 'JFX株式会社',
   registration: '関東財務局長（金商）第238号',
   minTradeUnit: '1,000通貨（一部の通貨ペアは1万通貨）',
-  spreadUsdJpy: '公式サイト参照',
+  spreadUsdJpy: '0.2銭（原則固定・例外あり）',
   currencyPairs: '52種類',
+  spreads: { usdjpy: 0.2, eurjpy: 0.4, gbpjpy: 0.9, audjpy: 0.5, eurusd: 0.3 },
+  spreadNote: 'AM9:00〜翌AM3:00は原則固定（例外あり）、AM3:00〜AM9:00は拡大。単位: 対円は銭、EUR/USDはpips',
+  spreadSource: 'https://www.jfx.co.jp/trading_rule/spread_list/',
+  spreadCheckedAt: '2026-09-30',
   tools: 'MATRIX TRADER（PC/スマホアプリ）・MT5・TradingView対応',
 }

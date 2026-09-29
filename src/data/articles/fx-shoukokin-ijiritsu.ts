@@ -2,6 +2,7 @@ import type { Article } from '../articles-types'
 
 export const fxShoukokinIjiritsu: Article = {
   slug: 'fx-shoukokin-ijiritsu',
+  updatedAt: '2026-09-30',
   title: '証拠金維持率とは？計算方法とロスカットされない目安',
   category: 'problem-solving',
   market: 'domestic',
@@ -49,7 +50,7 @@ export const fxShoukokinIjiritsu: Article = {
 
 ■ 国内FX業者ごとの証拠金維持率に関わる違い
 
-証拠金維持率そのものの計算方法は各社共通ですが、ロスカット水準や最低取引単位は業者によって異なります。例えばDMM FXやGMOクリック証券は最低取引単位が1,000通貨からの設定がある一方、[SBI FXトレード](/articles/sbi-fxtrade-review)は1通貨単位から取引できるため、証拠金額に対して取引数量をより細かく調整でき、証拠金維持率をコントロールしやすいという特徴があります。ロスカット水準の正確な数値は、いずれの業者も公式サイトで確認するようにしてください。国内FX業者の比較は[国内FX比較ランキング](/articles/kokunai-fx-hikaku-hub)でまとめています。
+証拠金維持率そのものの計算方法は各社共通ですが、ロスカット水準や最低取引単位は業者によって異なります。例えばDMM FXは最低取引単位が通常10,000通貨（ミニ通貨ペアは1,000通貨）、GMOクリック証券は1,000通貨である一方、[SBI FXトレード](/articles/sbi-fxtrade-review)は1通貨単位から取引できるため、証拠金額に対して取引数量をより細かく調整でき、証拠金維持率をコントロールしやすいという特徴があります。ロスカット水準の正確な数値は、いずれの業者も公式サイトで確認するようにしてください。国内FX業者の比較は[国内FX比較ランキング](/articles/kokunai-fx-hikaku-hub)でまとめています。
 
 ■ 証拠金維持率に関する具体的な目安の考え方
 
