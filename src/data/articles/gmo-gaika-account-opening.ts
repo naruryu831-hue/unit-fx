@@ -14,7 +14,7 @@ export const gmoGaikaAccountOpening: Article = {
   ],
   keyFacts: [
     { label: '運営会社（登録）', value: 'GMO外貨株式会社（関東財務局長（金商）第271号）' },
-    { label: '最低取引単位', value: '1,000通貨' },
+    { label: '最低取引単位', value: '1,000通貨（一部の通貨ペアは1万通貨）' },
     { label: '取引ツール', value: '外貨ex アプリ / Exチャート' },
     { label: '本人確認の方法', value: 'マイナンバーカードがあればスマホ撮影（eKYC）で完結しやすい' },
     { label: '申込条件・取引開始', value: '審査完了後に入金して取引開始。手続きは他の国内FXと同様オンライン完結' },

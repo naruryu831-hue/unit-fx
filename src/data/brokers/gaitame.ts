@@ -15,7 +15,11 @@ export const gaitame: Broker = {
   company: '株式会社外為どっとコム',
   registration: '関東財務局長（金商）第262号',
   minTradeUnit: '1,000通貨',
-  spreadUsdJpy: '公式サイト参照',
+  spreadUsdJpy: '0.2銭（原則固定・例外あり）',
   currencyPairs: '42通貨ペア',
+  spreads: { usdjpy: 0.2, eurjpy: 0.4, gbpjpy: 0.9, audjpy: 0.5, eurusd: 0.3 },
+  spreadNote: '9:00〜翌3:00は原則固定（例外あり）。流動性の低い時間帯・主要経済指標前後は拡大する場合あり',
+  spreadSource: 'https://www.gaitame.com/service/fx/spread.html',
+  spreadCheckedAt: '2026-09-30',
   tools: '外貨ネクストネオ / GFX（スマホアプリ）',
 }

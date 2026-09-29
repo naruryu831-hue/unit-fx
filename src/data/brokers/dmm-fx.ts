@@ -15,7 +15,11 @@ export const dmmFx: Broker = {
   company: '株式会社DMM.com証券',
   registration: '関東財務局長（金商）第1629号',
   minTradeUnit: '10,000通貨（ミニ通貨ペア4種は1,000通貨）',
-  spreadUsdJpy: '公式サイト参照',
+  spreadUsdJpy: '0.2銭（原則固定・例外あり）',
   currencyPairs: '31通貨ペア（通常23＋ミニ4＋ラージ4）',
+  spreads: { usdjpy: 0.2, eurjpy: 0.4, gbpjpy: 0.9, audjpy: 0.5, eurusd: 0.3 },
+  spreadNote: 'コアタイム9:00〜翌5:00は原則固定（例外あり）。主要国祝日・取引時間終了前後・経済指標発表時などは拡大する場合あり。単位: 対円は銭、EUR/USDはpips',
+  spreadSource: 'https://fx.dmm.com/fx/aboutfx/spread/',
+  spreadCheckedAt: '2026-09-30',
   tools: 'DMMFX PLUS / DMMFX スマホアプリ',
 }

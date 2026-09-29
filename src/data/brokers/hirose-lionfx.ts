@@ -15,7 +15,11 @@ export const hiroseLionfx: Broker = {
   company: 'ヒロセ通商株式会社',
   registration: '近畿財務局長（金商）第41号',
   minTradeUnit: '1,000通貨',
-  spreadUsdJpy: '公式サイト参照',
+  spreadUsdJpy: '0.2銭（原則固定・例外あり）',
   currencyPairs: '50種類以上（正確な数は公式サイト参照）',
+  spreads: { usdjpy: 0.2, eurjpy: 0.4, gbpjpy: 0.9, audjpy: 0.5, eurusd: 0.3 },
+  spreadNote: 'AM9:00〜翌AM3:00は原則固定（例外あり）、AM3:00〜AM9:00は拡大。単位: 対円は銭、EUR/USDはpips（掲載日2026/9/28）',
+  spreadSource: 'https://hirose-fx.co.jp/spread/',
+  spreadCheckedAt: '2026-09-30',
   tools: 'LION FX（PC/スマホアプリ）',
 }
