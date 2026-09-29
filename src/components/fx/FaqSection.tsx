@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { stripLinkMarkup } from '@/lib/parse-body'
+import { InlineText } from './InlineText'
 
 export type FaqItem = {
   question: string
@@ -15,10 +17,10 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
     '@type': 'FAQPage',
     mainEntity: items.map((item) => ({
       '@type': 'Question',
-      name: item.question,
+      name: stripLinkMarkup(item.question),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: stripLinkMarkup(item.answer),
       },
     })),
   }
@@ -41,7 +43,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="flex w-full cursor-pointer items-start justify-between gap-3 text-left font-bold text-navy-900"
                 >
-                  <span className="flex gap-2"><span className="shrink-0 font-black text-gold-600">Q.</span><span>{item.question}</span></span>
+                  <span className="flex gap-2"><span className="shrink-0 font-black text-gold-600">Q.</span><span>{stripLinkMarkup(item.question)}</span></span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -60,7 +62,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
                 </button>
               </dt>
               <dd id={answerId} className="mt-2 text-sm leading-7 text-slate-700" hidden={!isOpen}>
-                {item.answer}
+                <InlineText text={item.answer} />
               </dd>
             </div>
           )
