@@ -28,3 +28,19 @@ describe('ArticleView', () => {
     expect(screen.getByText('よくある質問')).toBeInTheDocument()
   })
 })
+
+describe('ArticleView bridgeNote / keyFacts', () => {
+  it('renders the bridge note before the comparison table of an explainer article', () => {
+    const article = getArticleBySlug('fx-pips-toha')!
+    expect(article.bridgeNote).toBeTruthy()
+    render(<ArticleView article={article} brokers={getBrokersForArticle(article)} />)
+    expect(screen.getByTestId('bridge-note')).toHaveTextContent(article.bridgeNote!)
+  })
+
+  it('renders the key facts table for an account-opening article', () => {
+    const article = getArticleBySlug('light-fx-account-opening')!
+    expect(article.keyFacts?.length).toBeGreaterThan(0)
+    render(<ArticleView article={article} brokers={getBrokersForArticle(article)} />)
+    expect(screen.getByText('本人確認の方法')).toBeInTheDocument()
+  })
+})

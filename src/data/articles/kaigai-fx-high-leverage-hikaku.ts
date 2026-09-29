@@ -13,6 +13,7 @@ export const kaigaiFxHighLeverageHikaku: Article = {
     'fxgt',
     'axiory',
   ],
+  relatedSlugs: ['exness-leverage-museigen', 'kaigai-fx-xm-vs-exness', 'exness-account-opening', 'fxgt-account-opening', 'kaigai-fx-hikaku-hub'],
   body: `主要な海外FX業者を、公式サイトで確認できる最大レバレッジが高い順に並べた比較です。数値を推測で補うことはせず、公式サイトで具体的な数値が確認できなかった業者は最後にまとめています。
 
 いずれも日本の金融庁に登録のない海外業者で、高いレバレッジは利益だけでなく損失も同じ倍率で拡大させます。相場急変時には預けた証拠金を超える損失が生じる可能性がある点を前提にお読みください。最大レバレッジは口座タイプ・銘柄・時期により変動するため、最終確認は各社の公式サイトで行ってください。

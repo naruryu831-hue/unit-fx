@@ -6,6 +6,13 @@ export const bigbossAccountOpening: Article = {
   category: 'account-opening',
   brokerSlugs: ['bigboss'],
   relatedSlugs: ['mt4-mt5-guide', 'bigboss-review', 'kaigai-fx-hikaku-hub'],
+  keyFacts: [
+    { label: '運営・設立', value: 'BigBoss（セントビンセント・グレナディーン諸島を拠点）／2013年設立（日本語サポートあり）' },
+    { label: '取引プラットフォーム', value: 'MT4・MT5' },
+    { label: '最大レバレッジ', value: '最大2222倍（口座タイプにより異なる。公式サイト参照）' },
+    { label: '最低入金額', value: '公式サイト参照' },
+    { label: 'この業者の手続き上の特徴', value: 'MT4またはMT5と口座タイプ・基本通貨を申込時に選ぶ。口座タイプと基本通貨は開設後に変更できないことが多い' },
+  ],
   body: `本記事は、BigBoss（ビッグボス）の口座開設を、公式サイトを開くところから取引プラットフォーム（MT4/MT5）にログインするまでの流れに沿って解説します。書類を手元に用意しておけば、フォームの入力自体は短時間で終わり、その後の本人確認（KYC）審査を経て取引を始められます。なお、BigBossは日本の金融庁に登録されていない[海外FX業者](/articles/kaigai-fx-hikaku-hub)であり、高いレバレッジを利用できる一方で、相場の変動によっては預けた資金を超える損失が生じる可能性もある取引です。
 
 ■ 事前に用意するもの

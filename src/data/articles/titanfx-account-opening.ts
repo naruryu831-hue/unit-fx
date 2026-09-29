@@ -6,6 +6,13 @@ export const titanfxAccountOpening: Article = {
   category: 'account-opening',
   brokerSlugs: ['titanfx'],
   relatedSlugs: ['mt4-mt5-guide', 'titanfx-review', 'kaigai-fx-hikaku-hub'],
+  keyFacts: [
+    { label: '運営・設立', value: 'TitanFX／2014年設立（日本語サポートあり）' },
+    { label: '取引プラットフォーム', value: 'MT4・MT5' },
+    { label: '最大レバレッジ', value: '最大2,000倍（口座タイプにより異なり、Zeroマイクロ口座が最大2,000倍、Zeroスタンダード/ブレード口座は最大1,000倍。詳細・適用条件は公式サイト参照）' },
+    { label: '最低入金額', value: '公式サイト参照' },
+    { label: 'この業者の手続き上の特徴', value: '口座タイプでレバレッジ条件が分かれる（Zeroマイクロ口座とそれ以外）。電話番号は国番号（+81）付きの形式を求められるのが一般的' },
+  ],
   body: `本記事では、[TitanFX(タイタンFX)](/articles/titanfx-review)の公式サイトで口座を開設し、本人確認を済ませてMT4/MT5で取引を始めるまでの手順を、実際の流れに沿って解説します。書類が手元にそろっていれば、登録フォームの入力そのものは10〜15分程度で終わり、あとは本人確認の審査を待つだけです。この記事を開いたまま、別のタブで公式サイトを開いて進めてください。
 
 なお、TitanFXは日本の金融庁に登録されていない[海外FX業者](/kaigai)です。国内FX業者とは規制環境が異なり、相場の急変によっては預けた資金を上回る損失が生じる可能性もあります。その点を理解したうえで手続きを進めてください。他の海外FX業者と比較したい場合は[海外FX比較](/articles/kaigai-fx-hikaku-hub)も参考にしてください。

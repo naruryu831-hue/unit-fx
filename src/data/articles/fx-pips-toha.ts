@@ -6,6 +6,7 @@ export const fxPipsToha: Article = {
   category: 'problem-solving',
   market: 'domestic',
   brokerSlugs: ['dmm-fx', 'sbi-fxtrade', 'minna-fx'],
+  bridgeNote: 'pipsと損益の関係は、取引数量を変えて数字を追うと理解が深まります。数量を細かく調整できるかは、取引単位の違いで決まります。下の表は、1通貨から始められる業者や1,000通貨単位の業者など、単位の観点で比べやすい国内FX業者をまとめたものです。',
   body: `FXの解説記事やチャートを見ていると必ず登場する「pips（ピプス）」という単位ですが、初めて聞くと具体的に何を表しているのか分かりにくいかもしれません。この記事では、pipsの意味と、1pipsあたりの価値、損益計算の方法について解説します。FXの基本的な仕組みは[FXとは？仕組みを初心者向けにやさしく解説](/articles/fx-toha-shoshinsha)でも解説しています。
 
 ■ pipsとは何か

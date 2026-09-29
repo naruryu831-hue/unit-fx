@@ -6,6 +6,7 @@ export const fxTsukaPairShoshinsha: Article = {
   category: 'problem-solving',
   market: 'domestic',
   brokerSlugs: ['dmm-fx', 'gmo-click', 'sbi-fxtrade', 'gaitame'],
+  bridgeNote: 'まず米ドル/円で慣れたあと、他の通貨ペアにも広げたくなることがあります。そのとき確認したいのが取扱通貨ペアの数で、業者ごとに差があります。下の表は、通貨ペアの幅や取引単位の観点で公式サイトを見比べやすい国内FX業者をまとめたものです。',
   body: `FX口座を開設したものの、数十種類ある通貨ペアの中からどれを選べばよいのか迷ってしまうという初心者は多いはずです。この記事では、初心者が最初に取引する通貨ペアの選び方と、米ドル/円が選ばれやすい理由について解説します。FXの基本的な仕組みは[FXとは？仕組みを初心者向けにやさしく解説](/articles/fx-toha-shoshinsha)でも解説しています。
 
 ■ 通貨ペアとは

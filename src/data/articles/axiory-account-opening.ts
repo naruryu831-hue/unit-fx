@@ -6,6 +6,13 @@ export const axioryAccountOpening: Article = {
   category: 'account-opening',
   brokerSlugs: ['axiory'],
   relatedSlugs: ['mt4-mt5-guide', 'axiory-review', 'kaigai-fx-hikaku-hub'],
+  keyFacts: [
+    { label: '運営・設立', value: 'Axiory Global Ltd.（ベリーズ）／2011年設立（日本語サポートあり）' },
+    { label: '取引プラットフォーム', value: 'MT4・MT5・cTrader（口座タイプによって選べるものが決まる場合がある）' },
+    { label: '最大レバレッジ', value: '公式サイト参照' },
+    { label: '最低入金額', value: '公式サイト参照' },
+    { label: 'この業者の手続き上の特徴', value: '取引プラットフォームと口座タイプを申込時に選ぶ。口座タイプと基本通貨は開設後に変更できないことが多い' },
+  ],
   body: `本記事は、AXIORY(アキシオリー)の口座開設を、公式サイトを開くところから取引プラットフォーム(MT4・MT5・cTrader)にログインするまでの流れに沿って解説します。書類を手元に用意しておけば、フォームの入力自体は短時間で終わり、その後の本人確認(KYC)審査を経て取引を始められます。なお、AXIORYはベリーズのAxiory Global Ltd.が運営する、日本の金融庁に登録されていない[海外FX業者](/articles/kaigai-fx-hikaku-hub)であり、高いレバレッジを利用できる一方で、相場の変動によっては預けた資金を超える損失が生じる可能性もある取引です。
 
 ■ 事前に用意するもの
