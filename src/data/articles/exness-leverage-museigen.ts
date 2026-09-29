@@ -58,7 +58,7 @@ Exnessは公式に「無制限（Unlimited）」のレバレッジを提供す�
 ・日本語サポート：日本語対応のライブチャットサポートを提供しているとされる
 ・口座開設可能年齢：18歳以上
 
-これらの数値や条件は変更される可能性があるため、口座開設や取引を行う前に必ず公式サイト（https://www.exness.com/）で最新情報を確認してください。Exness全体の評判は[Exnessの評判・特徴を徹底解説](/articles/exness-review)、口座開設の手順は[Exnessの口座開設方法](/articles/exness-account-opening)、出金の流れは[Exnessの出金方法](/articles/exness-shukkin)でそれぞれ解説しています。
+これらの数値や条件は変更される可能性があるため、口座開設や取引を行う前に必ず公式サイトで最新情報を確認してください。Exness全体の評判は[Exnessの評判・特徴を徹底解説](/articles/exness-review)、口座開設の手順は[Exnessの口座開設方法](/articles/exness-account-opening)、出金の流れは[Exnessの出金方法](/articles/exness-shukkin)でそれぞれ解説しています。
 
 ■ トレーダーのタイプ別に見るレバレッジとの向き合い方
 
@@ -121,7 +121,7 @@ Exnessの無制限レバレッジは、口座残高等の条件によって適�
     {
       question: 'レバレッジの具体的な段階条件はどこで確認できますか？',
       answer:
-        '本記事では創作した数値は記載していません。最新かつ正確な条件は必ずExness公式サイト（https://www.exness.com/）のレバレッジに関するページでご確認ください。',
+        '本記事では創作した数値は記載していません。最新かつ正確な条件は必ずExness公式サイトのレバレッジに関するページでご確認ください。',
     },
     {
       question: '海外FX業者のレバレッジを使うリスクは何ですか？',

@@ -14,6 +14,13 @@ const HEADING_NUMBER_RE = /^(\d+)(-\d+)?\.\s?/
 // Matches "1. ", "2. " ... at the start of an ordinary (non-heading) line.
 const OL_ITEM_RE = /^\d+\.\s?(.*)$/
 
+// `[表示文字](/path)` のリンク記法を表示文字だけにする。見出し・目次・
+// JSON-LD など、リンクを置かない場所で記法が生のまま出ないようにする。
+const LINK_MARKUP_RE = /\[([^\]]+)\]\((\/[^\s)]+)\)/g
+export function stripLinkMarkup(text: string): string {
+  return text.replace(LINK_MARKUP_RE, '$1')
+}
+
 function isHeadingLine(line: string): boolean {
   return line.startsWith(HEADING_PREFIX)
 }
@@ -79,7 +86,7 @@ export function parseBody(body: string): BodyBlock[] {
     if (isHeadingLine(line)) {
       flushAll()
       headingCount += 1
-      const text = line.slice(HEADING_PREFIX.length).trim()
+      const text = stripLinkMarkup(line.slice(HEADING_PREFIX.length).trim())
       blocks.push({
         type: 'heading',
         level: headingLevel(text),
